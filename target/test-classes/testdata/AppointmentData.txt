@@ -1,0 +1,9 @@
+Appointment{firstname='Derek', lastname='Dooley', ssn='667-83-2181', email='dianne.ruecker@yahoo.com', phoneNumber='305-150-0625', date='14-04-2022'}
+Appointment{firstname='Gemma', lastname='Rohan', ssn='116-93-4273', email='linda.bauch@hotmail.com', phoneNumber='(992) 239-1082', date='15-04-2022'}
+Appointment{firstname='Guadalupe', lastname='Kunze', ssn='497-19-9914', email='ezequiel.buckridge@hotmail.com', phoneNumber='(779) 049-4338', date='14-04-2022'}
+Appointment{firstname='Clyde', lastname='Hills', ssn='644-92-7020', email='johnathan.senger@yahoo.com', phoneNumber='247-830-8763', date='14-04-2022'}
+Appointment{firstname='Teodora', lastname='Mante', ssn='740-72-5852', email='domenic.lang@yahoo.com', phoneNumber='(865) 182-3502', date='15-04-2022'}
+Appointment{firstname='Darryl', lastname='Funk', ssn='189-01-5608', email='nikita.kilback@hotmail.com', phoneNumber='565.769.6413', date='15-04-2022'}
+Appointment{firstname='Albina', lastname='Stanton', ssn='481-48-1458', email='gia.kemmer@yahoo.com', phoneNumber='384.751.6125', date='15-04-2022'}
+Appointment{firstname='Deann', lastname='Haley', ssn='193-22-1343', email='dorris.torphy@hotmail.com', phoneNumber='777-04-0404', date='15-04-2022'}
+Appointment{firstname='Monroe', lastname='Schoen', ssn='502-90-8585', email='marietta.lind@gmail.com', phoneNumber='777-555-0404', date='15-04-2022'}
