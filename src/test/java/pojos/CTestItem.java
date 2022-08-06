@@ -3,7 +3,7 @@ package pojos;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TestItem {
+public class CTestItem {
 
     private String name;
     private String description;
@@ -51,10 +51,10 @@ public class TestItem {
         this.defaultValMax = defaultValMax;
     }
 
-    public TestItem() {
+    public CTestItem() {
     }
 
-    public TestItem(String name, String description, int price, String defaultValMin, String defaultValMax) {
+    public CTestItem(String name, String description, int price, String defaultValMin, String defaultValMax) {
         this.name = name;
         this.description = description;
         this.price = price;
