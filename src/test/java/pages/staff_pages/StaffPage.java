@@ -1,11 +1,11 @@
-package pages;
+package pages.staff_pages;
 
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
-public class LoginPage {
+public class StaffPage {
 
-    public LoginPage(){
+    public StaffPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 }

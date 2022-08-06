@@ -45,6 +45,7 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
+        <!--org.apache.poi -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -56,32 +57,38 @@
             <artifactId>poi-ooxml</artifactId>
             <version>5.2.2</version>
         </dependency>
+        <!--   io.rest-assured   -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.1.1</version>
         </dependency>
+        <!--org.json-->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
             <version>20220320</version>
         </dependency>
+        <!--com.google.code.gson -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.9.0</version>
         </dependency>
+        <!--org.codehaus.jackson -->
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
         </dependency>
+        <!--junit -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        <!--com.microsoft.sqlserver -->
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>                      <!-- JDBC -->
             <artifactId>mssql-jdbc</artifactId>
@@ -94,19 +101,20 @@
             <version>7.2.3</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>                                   <!-- API -->
+        <!--org.testng -->
+      <dependency>
+            <groupId>org.testng</groupId>                                           <!-- API -->
             <artifactId>testng</artifactId>
             <version>7.5</version>
             <scope>test</scope>
         </dependency>
+        <!--org.projectlombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>                            <!-- API -->
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
             <scope>provided</scope>
         </dependency>
-
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -114,10 +122,34 @@
             <version>1.0.6</version>
             <scope>provided</scope>
         </dependency>
+        <!--fasterxml.jackson.core -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.8</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.4.2</version>
+        </dependency>
+        <!--postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.2.8</version>
+        </dependency>
+
+
+
+
+
     </dependencies>
 
     <build>
         <plugins>
+
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
@@ -156,7 +188,6 @@
                     </includes>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -177,6 +208,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
 
