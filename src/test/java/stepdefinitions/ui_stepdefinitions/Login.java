@@ -26,7 +26,7 @@ public class Login {
     @Then("kullanici {string} ve {string} girerek giris yapar")
     public void kullaniciVeGirerekGirisYapar(String username, String password) {
         loginPage.accountMenu.click();
-        loginPage.loginButton.click();
+        loginPage.signIn.click();
         loginPage.usernameTextbox.sendKeys(ConfigReader.getProperty(username));
         loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
         loginPage.signInButton.click();
