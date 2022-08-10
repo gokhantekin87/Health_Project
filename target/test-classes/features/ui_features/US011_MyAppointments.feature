@@ -5,10 +5,10 @@ Scenario US011 TC001 "Create or Edit an Appointment" alanı doktor tarafından d
 
  Given Doktor Medunna url'sine gider
  Then Doktor "account menü" yü tıklar
-Doktor giriş seçeneğini tıklar
-Doktor kullanıcı bilgilerini girer ve  giriş yapar
-Sayfalarım bölümünden  "randevularım" ı secer
-Doktor randevuda "edit" butonunu tıklar
-Doktor "anamnesis", "treatment" ve "diagnosis" alanlarını doldurur
-Doktor randevuyu kaydeder
-Doktor "Kaydınız başarılı" mesajını görür
+And Doktor giriş seçeneğini tıklar
+And Doktor kullanıcı bilgilerini girer ve  giriş yapar
+And Sayfalarım bölümünden  "randevularım" ı secer
+And Doktor randevuda "edit" butonunu tıklar
+And Doktor "anamnesis", "treatment" ve "diagnosis" alanlarını doldurur
+And Doktor randevuyu kaydeder
+And Doktor "Kaydınız başarılı" mesajını görür
