@@ -13,8 +13,4 @@ search-patient
 patient-update
  */
 
-
-   // @FindBy(xpath = "//tbody")public WebElement paientTbody;
-
-
 }
