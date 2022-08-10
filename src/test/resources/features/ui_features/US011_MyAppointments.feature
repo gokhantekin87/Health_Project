@@ -12,3 +12,5 @@ Scenario US011 TC001 "Create or Edit an Appointment" alanı doktor tarafından d
  And Doktor "anamnesis", "treatment" ve "diagnosis" alanlarını doldurur
  And Doktor randevuyu kaydeder
  Then Doktor "Kaydınız başarılı" mesajını görür
+
+ Scenario:
