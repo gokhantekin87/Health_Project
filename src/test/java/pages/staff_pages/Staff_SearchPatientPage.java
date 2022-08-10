@@ -7,7 +7,7 @@ import utilities.Driver;
 
 public class Staff_SearchPatientPage {
 
-    Staff_SearchPatientPage(){PageFactory.initElements(Driver.getDriver(),this);}
+    public Staff_SearchPatientPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
     @FindBy(xpath = "//tbody")public WebElement patientTbody;
     @FindBy(id = "patient-id")public WebElement patientIdTextbox;
