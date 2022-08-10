@@ -1,16 +1,14 @@
 package pages.doctor_pages;
 
 import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
 public class Doctor_MyAppointmentsPage {
 
-    Doctor_MyAppointmentsPage(){
-
-        PageFactory.initElements(Driver.getDriver(),this);
-
+   Doctor_MyAppointmentsPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
         @FindBy(xpath = "//a[@aria-haspopup='true']")
         public WebElement accountButton;
@@ -53,15 +51,16 @@ public class Doctor_MyAppointmentsPage {
 
         @FindBy(xpath = "//textarea[@name='anamnesis']")
         public WebElement anamnesisBox;
-        (//div[@class='text-danger form-group'])[2]
+        //(//div[@class='text-danger form-group'])[2]
 
         @FindBy(xpath = "//textarea[@name='treatment']")
         public WebElement treatmentBox;
-        (//div[@class='text-danger form-group'])[4]
+      //  @FindBy(xpath = "(//div[@class='text-danger form-group'])[4]")
+
 
         @FindBy(xpath = "//textarea[@name='diagnosis']")
         public WebElement diagnosisBox;
-        (//div[@class='text-danger form-group'])[5]
+        //(//div[@class='text-danger form-group'])[5]
 
         @FindBy(xpath = "//textarea[@name='prescription']")
         public WebElement prescriptionBox;
@@ -132,4 +131,4 @@ public class Doctor_MyAppointmentsPage {
 
 
     }
-}
+
