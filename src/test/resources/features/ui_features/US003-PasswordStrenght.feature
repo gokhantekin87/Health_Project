@@ -58,7 +58,7 @@
 
       Examples:
         |Password|
-        |Gemş11*/|
+        |Gemş1*/|
         |ABC*/99|
 
 

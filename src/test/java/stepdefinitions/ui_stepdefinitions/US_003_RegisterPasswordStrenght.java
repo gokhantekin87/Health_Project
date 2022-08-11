@@ -4,12 +4,18 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import pages.us_pages.US003_RegisterPage;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class US_003_RegisterPasswordStrenght {
 
         US003_RegisterPage rgstr=new US003_RegisterPage();
+
+    Actions actions = new Actions(Driver.getDriver());
 
 
     @When("User sağ üst köşedeki user ikonuna tiklar")
@@ -20,12 +26,16 @@ public class US_003_RegisterPasswordStrenght {
 
     @When("User Register buttonuna tiklar")
     public void user_register_buttonuna_tiklar() {
-       rgstr.registrationText.click();
+       rgstr.registertext.click();
+       actions.sendKeys(Keys.PAGE_DOWN).perform();
+
+
     }
 
     @When("User yedi karakterden az {string} girer")
     public void user_yedi_karakterden_az_girer(String password) {
         rgstr.registerNewPasswordBox.sendKeys(password);
+
         Driver.wait(1);
 
     }
