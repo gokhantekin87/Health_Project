@@ -13,8 +13,8 @@ public class RegistrationPage {
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement userIcon;
 
-    @FindBy(xpath = "//*[text()='Registration']")
-    public WebElement registrationText;
+    @FindBy(xpath = "//span[text()='Register']")
+    public WebElement registertext;
 
     @FindBy(xpath = "//input[@id='ssn']")
     public WebElement registerSsnBox;
