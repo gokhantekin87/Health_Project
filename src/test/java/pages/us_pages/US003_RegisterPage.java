@@ -14,9 +14,11 @@ public class US003_RegisterPage {
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement userIcon;
 
+    @FindBy(xpath = "//*[text()='Registration']")
+    public WebElement registrationText;
 
     @FindBy(xpath = "//input[@id='firstPassword']")
-    public WebElement RegisterNewPasswordBox;
+    public WebElement registerNewPasswordBox;
 
     @FindBy(xpath = "//input[@id='secondPassword']")
     public WebElement registerConfirmPasswordBox;
