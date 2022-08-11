@@ -17,10 +17,8 @@ Staff_SearchPatientPage patientPage=new Staff_SearchPatientPage();
 
     }
 
-
-    @Then("Tablo <{string}> icerdigini dogrular")
+    @Then("Tablo {string} icerdigini dogrular")
     public void tabloIcerdiginiDogrular(String patientInfo) {
         Assert.assertTrue(patientPage.patientTbody.getText().contains(patientInfo));
-
     }
 }
