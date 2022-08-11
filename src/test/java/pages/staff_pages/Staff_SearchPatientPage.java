@@ -24,4 +24,5 @@ public class Staff_SearchPatientPage {
     @FindBy(id = "patient-country")public WebElement patientCountryddm;
     @FindBy(id = "patient-cstate")public WebElement patientStateddm;
     @FindBy(xpath = "//span[text()='Save']")public WebElement saveButton;
+
 }
