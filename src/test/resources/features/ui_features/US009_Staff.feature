@@ -10,26 +10,36 @@ Scenario: US009 TC001 Staff "My Pages" sekmesinden hasta bilgilerini gorebilmeli
         Examples:
         | patient info |
         |16563         |
-        |420-07-1110   |
+        |456-87-1234   |
         |Hasta         |
         |Team59        |
-        |12/08/57 12:08|
         |123-123-1234  |
         |dokunma@gmail.com|
-        |FEMALE           |
-        |AB+              |
         |team59 hause     |
         |team59 patient   |
         |hy               |
         |Moldova, Republic of |
 
-        Scenario: US_009 TC_002
+Scenario: US_009 TC_002 Staff butun hasta bilgilerini: id, firstname, lastname, birthdate, email, phone,
+          gender, blood group, address,description, user, country and state/city" duzenleyebilmelidir
+    When Staff Edit butonuna tiklar
+    And Staff Gender, Blood Group, User, Country, State City duzenler
 
+    Scenario Outline: TC_002 No:02
+        And Staff "<patient info>" duzenler ve "<test data>" girer
+        Examples:
+        | patient info       | test data       |
+        |patient-id          |deneme           |
+        |patient-firstName   |deneme           |
+        |patient-lastName    |deneme           |
+        |patient-birthDate   |12345678910111   |
+        |email               |deneme@gmail.com |
+        |patient-phone       |123-123-1234     |
+        |patient-adress      |deneme           |
+        |patient-description |deneme           |
 
-
-
-
-
-
+    Scenario: TC_002 No:03
+        Then Staff Save butonuna tiklar
+        And Acilan sayfada duzenlemeler kaydedildimi dogrular
 
 
