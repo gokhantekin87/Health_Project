@@ -65,4 +65,36 @@ public class US009_StaffStepDefs {
     }
 
 
+    @Then("Staff Patient View sayfasinda Delete butonu olmadigini dogrular")
+    public void staffPatientViewSayfasindaDeleteButonuOlmadiginiDogrular() {
+    }
+
+    @And("Staff arama cubuguna SSN numarasi {string} girer")
+    public void staffAramaCubugunaSSNNumarasiGirer(String ssn) {
+
+    }
+
+    @Then("Sonucun aranan SSN numarasi icerdigini {string} dogrular")
+    public void sonucunArananSSNNumarasiIcerdiginiDogrular(String ssn) {
+    }
+
+    @And("Show Appointment butonuna tiklar")
+    public void showAppointmentButonunaTiklar() {
+    }
+
+    @Then("Appointments tablosunda kayit bilgilerini icerdigini dogrular")
+    public void appointmentsTablosundaKayitBilgileriniIcerdiginiDogrular() {
+    }
+
+    @When("Staff Crate or Edit Patinet sayfasinda")
+    public void staffCrateOrEditPatinetSayfasinda() {
+    }
+
+    @Then("Staff hasta bigilerini siler ve kaydeder")
+    public void staffHastaBigileriniSilerVeKaydeder() {
+    }
+
+    @And("Staff duzenleme kaydedildi mi dogrular")
+    public void staffDuzenlemeKaydedildiMiDogrular() {
+    }
 }
