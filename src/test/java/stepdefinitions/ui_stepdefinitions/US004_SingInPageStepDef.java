@@ -7,7 +7,7 @@ import org.junit.Assert;
 import pages.us_pages.US_004_LoginPage;
 import utilities.Driver;
 
-public class US004_LoginPageStepDef {
+public class US004_SingInPageStepDef {
      US_004_LoginPage login4=new US_004_LoginPage();
 
 
