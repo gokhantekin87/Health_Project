@@ -13,7 +13,7 @@ public class Staff_SearchPatientPage {
     @FindBy(xpath = "//input[@name='ssn']")public WebElement ssnTextbox;
     @FindBy(xpath= "//a[@href='/patient-update/16559']")public WebElement editButton; //no: 16561? 16559
     @FindBy(xpath= "//span[text()='Delete']")public WebElement deleteButton; //any
-    @FindBy(xpath= "//span[text()='Show Appointments']")public WebElement showAppButton; //arama sonucu sonra
+    @FindBy(xpath= "//a[@href='/patient-appointments/163989']")public WebElement showAppButton; //arama sonucu sonra
 
 
 
@@ -44,6 +44,7 @@ public class Staff_SearchPatientPage {
     @FindBy(xpath = "//td[text()='08/08/22 04:00']")public WebElement EndDateValid; //
     @FindBy(xpath = "//td[text()='UNAPPROVED']")public WebElement statusValid; //
     @FindBy(xpath = "//td[text()='Hasta']")public WebElement patientNameValid; //
+    @FindBy(xpath = "//td[text()='123-78-9871']']")public WebElement ssnValid; //
 
 
 
