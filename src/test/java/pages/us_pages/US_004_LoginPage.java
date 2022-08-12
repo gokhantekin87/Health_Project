@@ -32,7 +32,7 @@ public class US_004_LoginPage {
     public WebElement rememberMeBox;
 
     @FindBy(xpath = "//*[@id='login-page']/div/form/div[2]/div[3]/a/span")
-    public WebElement didYouForgetPasswd;
+    public WebElement didYouForgetPasswrd;
 
     @FindBy(xpath = "//*[@id='login-page']/div/form/div[2]/div[4]/a")
     public WebElement registerNewAccount;
