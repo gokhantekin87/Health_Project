@@ -14,6 +14,9 @@ public class US002_AyhanPage {
     @FindBy(xpath = "//a[@aria-haspopup='true']")
     public WebElement character;
 
+    @FindBy(xpath = "//span[text()='Register']")
+    public WebElement Register;
+
     @FindBy(xpath = "//*[@name='username']")
     public WebElement usernameTextBox;
 
@@ -25,5 +28,16 @@ public class US002_AyhanPage {
 
     @FindBy(xpath = "(//*[@class='invalid-feedback'])[5]")
     public WebElement invalidEmailFeedback;
+
+    ///////
+    @FindBy(xpath = "//*[@id='register-form']/div[5]/div")
+    public WebElement yourEmailIsRequiredMessage;
+
+    @FindBy(xpath = "//*[@id='register-form']/div[4]/div")
+    public WebElement usernameIsRequiredMessage;
+
+    @FindBy(xpath = "//*[@id='register-form']/div[5]/div")
+    public WebElement thisFieldIsInvalidMessage;
+
 
 }
