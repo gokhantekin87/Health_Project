@@ -51,16 +51,23 @@ public class Doctor_MyAppointmentsPage {
 
         @FindBy(xpath = "//textarea[@name='anamnesis']")
         public WebElement anamnesisBox;
-        //(//div[@class='text-danger form-group'])[2]
+
+     @FindBy(xpath = "(//div[@class='text-danger form-group'])[2]")
+     public WebElement anamnesisHataBox;
 
         @FindBy(xpath = "//textarea[@name='treatment']")
         public WebElement treatmentBox;
-      //  @FindBy(xpath = "(//div[@class='text-danger form-group'])[4]")
+
+     @FindBy(xpath = "(//div[@class='text-danger form-group'])[4]")
+     public WebElement treatmentHataBox;
 
 
         @FindBy(xpath = "//textarea[@name='diagnosis']")
         public WebElement diagnosisBox;
-        //(//div[@class='text-danger form-group'])[5]
+
+     @FindBy(xpath = "(//div[@class='text-danger form-group'])[5]")
+     public WebElement diagnosisHataBox;
+
 
         @FindBy(xpath = "//textarea[@name='prescription']")
         public WebElement prescriptionBox;
