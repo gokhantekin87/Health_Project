@@ -7,9 +7,7 @@ import java.util.Map;
 import static hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 public class Authentication {
-    public static String generateToken(String admin_username, String admin_password){
-        //Set the base url
-        //api/authenticate
+    public static String generateToken(){String username ="r-come";String password ="20412041";
         spec.pathParams("first", "api", "second", "authenticate");
         //Set the expected data
         Map<String, Object> expectedData = new HashMap<>();
@@ -24,3 +22,4 @@ public class Authentication {
         return json.getString("id_token");
     }
 }
+
