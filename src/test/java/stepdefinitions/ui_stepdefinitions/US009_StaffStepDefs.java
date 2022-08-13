@@ -7,7 +7,7 @@ import org.testng.asserts.SoftAssert;
 import pages.staff_pages.StaffPage;
 import pages.staff_pages.Staff_SearchPatientPage;
 import utilities.Driver;
-import utilities.JSUtils;
+import utilities.JSUtils;;
 
 public class US009_StaffStepDefs {
 
@@ -55,14 +55,57 @@ public class US009_StaffStepDefs {
 
 
     @Then("Staff Save butonuna tiklar")
-    public void staffSaveButonunaTiklar() {
-        patientPage.saveButton.click();
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));
-    }
+    public void staffSaveButonunaTiklar() {JSUtils.clickElementByJS(patientPage.saveButton);}
 
     @And("Acilan sayfada duzenlemeler kaydedildimi dogrular")
     public void acilanSayfadaDuzenlemelerKaydedildimiDogrular() {
+        softAssert.assertTrue(Driver.waitForVisibility(patientPage.updatePopup,2).isDisplayed());
+        softAssert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));
+        softAssert.assertAll();
     }
 
+    @And("Staff arama cubuguna SSN numarasi {string} girer")
+    public void staffAramaCubugunaSSNNumarasiGirer(String ssn) {
+        Driver.getDriver().navigate().refresh();
+        patientPage.ssnTextbox.sendKeys(ssn);
+    }
 
+    @Then("Sonucun aranan SSN numarasi icerdigini {string} dogrular")
+    public void sonucunArananSSNNumarasiIcerdiginiDogrular(String ssn) {
+      //Assert.assertTrue(patientPage.patientTbody.getText().contains(ssn));
+        Assert.assertTrue(""+ssn+" yok",Driver.getDriver().findElement(By.xpath("//td[text()='"+ssn+"']")).isDisplayed());
+    //Assert.assertTrue(patientPage.ssnValid.isDisplayed());
+    }
+
+    @And("Show Appointment butonuna tiklar")
+    public void showAppointmentButonunaTiklar() {
+       JSUtils.clickElementByJS(patientPage.showAppButton);
+        }
+
+    @Then("Appointments tablosunda kayit bilgilerini icerdigini dogrular")
+    public void appointmentsTablosundaKayitBilgileriniIcerdiginiDogrular() {
+        softAssert.assertTrue(patientPage.patientTbody.getText().contains("164343"),"id");
+        softAssert.assertTrue(patientPage.patientTbody.getText().contains("08/08/22 03:00"),"start date");
+        softAssert.assertTrue(patientPage.patientTbody.getText().contains("08/08/22 04:00"),"end date");
+        softAssert.assertTrue(patientPage.patientTbody.getText().contains("UNAPPROVED"),"status");
+        softAssert.assertTrue(patientPage.patientTbody.getText().contains("Hasta"),"patient name");
+        softAssert.assertAll();}
+
+    @Then("Staff hasta bigilerini siler ve kaydeder")
+    public void staffHastaBigileriniSilerVeKaydeder() {
+        // Invalid State--> patientPage.patientIdTextbox.clear();
+        Driver.getDriver().navigate().refresh();
+        patientPage.patientFirstnameTextbox.clear();
+        patientPage.patientLastnameTextbox.clear();
+        patientPage.patientBirthTextbox.clear();
+        patientPage.patientEmailTextbox.clear();
+        patientPage.paitientPhoneTextbox.clear();
+        patientPage.patientAdressTextbox.clear();
+        patientPage.patientDescTextbox.clear();
+        JSUtils.clickElementByJS(patientPage.saveButton);
+        }
+
+    @And("Staff duzenleme kaydedildi mi dogrular")
+    public void staffDuzenlemeKaydedildiMiDogrular() {
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));}
 }
