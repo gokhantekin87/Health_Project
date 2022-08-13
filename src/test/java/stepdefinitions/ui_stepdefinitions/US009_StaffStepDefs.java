@@ -2,17 +2,12 @@ package stepdefinitions.ui_stepdefinitions;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.interactions.Action;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 import pages.staff_pages.StaffPage;
 import pages.staff_pages.Staff_SearchPatientPage;
-import utilities.ConfigReader;
 import utilities.Driver;
-import utilities.JSUtils;
-
-import static utilities.ReusableMethods.waitFor;
+import utilities.JSUtils;;
 
 public class US009_StaffStepDefs {
 
@@ -65,28 +60,26 @@ public class US009_StaffStepDefs {
     @And("Acilan sayfada duzenlemeler kaydedildimi dogrular")
     public void acilanSayfadaDuzenlemelerKaydedildimiDogrular() {
         softAssert.assertTrue(Driver.waitForVisibility(patientPage.updatePopup,2).isDisplayed());
-        softAssert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));}
+        softAssert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));
+        softAssert.assertAll();
+    }
 
     @And("Staff arama cubuguna SSN numarasi {string} girer")
     public void staffAramaCubugunaSSNNumarasiGirer(String ssn) {
-        Actions actions=new Actions(Driver.getDriver());
-        //patientPage.ssnTextbox.sendKeys(ssn);
-       // patientPage.ssnTextbox.sendKeys("123-78-9871");
-       // patientPage.ssnTextbox.sendKeys(ConfigReader.getProperty("us9ssn"));
-        //actions.click(patientPage.ssnTextbox).sendKeys("123-78-9871").perform();
-        waitFor(5);
+        Driver.getDriver().navigate().refresh();
+        patientPage.ssnTextbox.sendKeys(ssn);
     }
 
     @Then("Sonucun aranan SSN numarasi icerdigini {string} dogrular")
     public void sonucunArananSSNNumarasiIcerdiginiDogrular(String ssn) {
-      Assert.assertTrue(patientPage.patientTbody.getText().contains(ssn));
-       // Assert.assertTrue(""+ssn+" yok",Driver.getDriver().findElement(By.xpath("//td[text()='"+ssn+"']")).isDisplayed());
+      //Assert.assertTrue(patientPage.patientTbody.getText().contains(ssn));
+        Assert.assertTrue(""+ssn+" yok",Driver.getDriver().findElement(By.xpath("//td[text()='"+ssn+"']")).isDisplayed());
     //Assert.assertTrue(patientPage.ssnValid.isDisplayed());
     }
 
     @And("Show Appointment butonuna tiklar")
     public void showAppointmentButonunaTiklar() {
-      // JSUtils.clickElementByJS(patientPage.showAppButton);
+       JSUtils.clickElementByJS(patientPage.showAppButton);
         }
 
     @Then("Appointments tablosunda kayit bilgilerini icerdigini dogrular")
@@ -100,14 +93,19 @@ public class US009_StaffStepDefs {
 
     @Then("Staff hasta bigilerini siler ve kaydeder")
     public void staffHastaBigileriniSilerVeKaydeder() {
-        patientPage.patientIdTextbox.clear();
+        // Invalid State--> patientPage.patientIdTextbox.clear();
+        Driver.getDriver().navigate().refresh();
         patientPage.patientFirstnameTextbox.clear();
         patientPage.patientLastnameTextbox.clear();
         patientPage.patientBirthTextbox.clear();
-        //JSUtils.clickElementByJS(patientPage.saveButton);
+        patientPage.patientEmailTextbox.clear();
+        patientPage.paitientPhoneTextbox.clear();
+        patientPage.patientAdressTextbox.clear();
+        patientPage.patientDescTextbox.clear();
+        JSUtils.clickElementByJS(patientPage.saveButton);
         }
 
     @And("Staff duzenleme kaydedildi mi dogrular")
     public void staffDuzenlemeKaydedildiMiDogrular() {
-        Assert.assertTrue(patientPage.updatePopup.isDisplayed());}
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));}
 }

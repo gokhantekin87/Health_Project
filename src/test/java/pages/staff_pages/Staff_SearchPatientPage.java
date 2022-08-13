@@ -11,7 +11,7 @@ public class Staff_SearchPatientPage {
 
     @FindBy(xpath = "//tbody")public WebElement patientTbody;
     @FindBy(xpath = "//input[@name='ssn']")public WebElement ssnTextbox;
-    @FindBy(xpath= "//a[@href='/patient-update/16559']")public WebElement editButton; //no: 16561? 16559
+    @FindBy(xpath= "//a[@href='/patient-update/16569']")public WebElement editButton; //no: 16561? 16559
     @FindBy(xpath= "//span[text()='Delete']")public WebElement deleteButton; //any
     @FindBy(xpath= "//a[@href='/patient-appointments/163989']")public WebElement showAppButton; //arama sonucu sonra
 
