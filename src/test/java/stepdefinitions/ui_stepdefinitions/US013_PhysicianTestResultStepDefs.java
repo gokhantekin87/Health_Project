@@ -26,8 +26,10 @@ public class US013_PhysicianTestResultStepDefs {
     @Then("Physician giris yapar")
     public void physician_giris_yapar() {
         this.us13page.signInButonu.click();
+        //this.us13page.usernameKutusu.sendKeys(ConfigReader.getProperty("drUserName"));
         this.us13page.usernameKutusu.sendKeys("doctorKibar");
         this.us13page.passwordKutusu.sendKeys("Kocaeli5.");
+        //this.us13page.passwordKutusu.sendKeys(ConfigReader.getProperty("drPassword"));
         this.us13page.signInButonu2.click();
     }
     @Then("Physician My Pages sekmesine gecis yapar ve tıklar")
@@ -57,12 +59,10 @@ public class US013_PhysicianTestResultStepDefs {
     }
     @And("Physician Test Result tablosunu gorebilir")
     public void physicianTestResultTablosunuGorebilir() {
-
         this.us13page.testResultBody.isDisplayed();
     }
     @And("Physician Request Inpatient butonuna tıklar.")
     public void physicianRequestInpatientButonunaTıklar() {
-
         this.us13page.requestInpatientButonu.click();
     }
 }
