@@ -1,4 +1,5 @@
 package stepdefinitions.ui_stepdefinitions;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.LoginPage;
@@ -30,5 +31,15 @@ public class  Login {
         loginPage.usernameTextbox.sendKeys(ConfigReader.getProperty(username));
         loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
         loginPage.signInButton.click();
+    }
+
+    @And("insan ikonuna tiklar")
+    public void insanIkonunaTiklar() {
+        loginPage.accountMenu.click();
+    }
+
+    @And("register butonuna tiklar")
+    public void registerButonunaTiklar() {
+        loginPage.register.click();
     }
 }
