@@ -5,13 +5,39 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 public class DoctorPage {
+
+    @FindBy (xpath = "//*[text()='Appointments']")
+    public static WebElement apppointmentsPagesText;
+
+    @FindBy (xpath = "//tbody//tr[1]")
+    public static List<WebElement> alinanRandevular;
+
+    @FindBy (xpath = "//tbody//tr")
+    public static WebElement ilkRandevuID;
+
+    @FindBy (xpath = "//tbody//td[1]")
+    public static WebElement patientID;
+
+    @FindBy (xpath = "//tbody//td[2]")
+    public static WebElement startdate;
+
+    @FindBy (xpath = "//tbody//td[3]")
+    public static WebElement enddate;
+
+    @FindBy (xpath = "//tbody//td[4]")
+    public static WebElement status;
 
     public DoctorPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
     @FindBy(xpath = "//a[text()='My Appointments']")
     public WebElement MyAppointments;
+
+    @FindBy (xpath = "//*[text()='My Appointments']")
+    public WebElement myAppointmentsButonu;
 
     @FindBy(xpath = "//span[text()='MY PAGES']")
     public WebElement MyPAGES;
@@ -87,6 +113,8 @@ public class DoctorPage {
 
     @FindBy(id = "app-view-container")
     public WebElement physicianUpdatedMessage;
+
+
 
 }
 
