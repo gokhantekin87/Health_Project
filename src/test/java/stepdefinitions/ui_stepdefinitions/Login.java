@@ -5,7 +5,7 @@ import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class Login {
+public class  Login {
     /*
     Bu methodu kullanmak icin Scenario da yazdiginiz ile method isminin ayni olmasi gerekiyor
     Bu class daki method da hic bir degisiklik yapmiyoruz
