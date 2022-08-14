@@ -4,7 +4,7 @@ Feature:US01 Kayıt olmak için SSN, Firstname ve Lastname bilgileri girililebil
     Given Kullanici "medunnaUrl" adresine gider
     Then Kullanici sayfanin sag ust kosesinde yer alan insan ikonuna tiklar
     Then Kullanici Register butonuna tiklar
-    And Kullanici sayfayi kapatir
+
 
   @TC001
   Scenario Outline: Gecerli bir SSN uc ve besinci rakamdan sonra - icermeli ve dokuz rakamdan olusmalıdır.
@@ -12,6 +12,7 @@ Feature:US01 Kayıt olmak için SSN, Firstname ve Lastname bilgileri girililebil
     * Kullanici dokuz haneli "<ssn>" girer
     * Kullanici bos alana tiklar
     * Kullanici Your SSN is required yazisinin gorunmedigini test eder
+    And Kullanici sayfayi kapatir
     Examples:
       |ssn|
       |123-56-1235|
@@ -25,11 +26,13 @@ Feature:US01 Kayıt olmak için SSN, Firstname ve Lastname bilgileri girililebil
     *  Kullanici ssn kutucuguna tiklar
     *  Kullanici firstname kutucuguna tiklar
     *  Kullanici Your SSN is required yazisinin goruntulendigini dogrular
+    And Kullanici sayfayi kapatir
   @TC003
   Scenario Outline: Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir FirstName  olmalıdır
     * Kullanici firstname kutucuguna tiklar
     * Kullanici firstname kutucuguna karakter iceren "<isim>" girer
     * Kullanici hata metni goruldugunu dogrular
+    And Kullanici sayfayi kapatir
     Examples:|isim|
     |ali*|
   @TC003_1
@@ -37,11 +40,13 @@ Feature:US01 Kayıt olmak için SSN, Firstname ve Lastname bilgileri girililebil
     * Kullanici firstname kutucuguna tiklar
     * Kullanici bos alana tiklar
     * Kullanici firstname kutucugunun bos olup olmadigini dogrular
+    And Kullanici sayfayi kapatir
   @TC004
   Scenario Outline: Herhangi bir karakter içeren ve boş bırakılamayan geçerli bir LastName  olmalıdır
     * Kullanici lastname kutucuguna tiklar
     * Kullanici lastname kutucuguna sembolik karakter iceren "<soyisim>" girer
     * Kullanici hata metni goruldugunu dogrular
+    And Kullanici sayfayi kapatir
     Examples:|soyisim|
     |ali*|
   @TC004_1
@@ -49,3 +54,4 @@ Feature:US01 Kayıt olmak için SSN, Firstname ve Lastname bilgileri girililebil
     * Kullanici lastname kutucuguna tiklar
     * Kullanici bos alana tiklar
     * Kullanici lastname kutucugunun bos olup olmadigini dogrular
+    And Kullanici sayfayi kapatir
