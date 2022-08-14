@@ -1,11 +1,12 @@
 package stepdefinitions.ui_stepdefinitions;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class Login {
+public class  Login {
     /*
     Bu methodu kullanmak icin Scenario da yazdiginiz ile method isminin ayni olmasi gerekiyor
     Bu class daki method da hic bir degisiklik yapmiyoruz
@@ -30,5 +31,15 @@ public class Login {
         loginPage.usernameTextbox.sendKeys(ConfigReader.getProperty(username));
         loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
         loginPage.signInButton.click();
+    }
+
+    @And("insan ikonuna tiklar")
+    public void insanIkonunaTiklar() {
+        loginPage.accountMenu.click();
+    }
+
+    @And("register butonuna tiklar")
+    public void registerButonunaTiklar() {
+        loginPage.register.click();
     }
 }

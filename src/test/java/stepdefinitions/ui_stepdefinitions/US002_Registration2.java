@@ -29,15 +29,15 @@ public class US002_Registration2 {
         this.us02Page.Register.click();
     }
 
-    @Then("kullanici username kutusuna gider")
+   /* @Then("kullanici {string} kutusuna gider")
     public void kullanici_username_kutusuna_gider(String username) {
         us02Page.usernameTextBox.sendKeys(username);
     }
 
-    @Then("kullanici email kutusuna gider")
+    @Then("kullanici {string} kutusuna gider")
     public void kullanici_email_kutusuna_gider(String email) {
         us02Page.emailTextBox.sendKeys(email);
-    }
+    }*/
 
     //////////////
     @Then("kullanıcı username kusutusuna giriş yapamaz")
