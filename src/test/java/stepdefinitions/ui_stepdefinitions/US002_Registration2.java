@@ -29,7 +29,7 @@ public class US002_Registration2 {
         this.us02Page.Register.click();
     }
 
- /*   @Then("kullanici {string} kutusuna gider")
+   /* @Then("kullanici {string} kutusuna gider")
     public void kullanici_username_kutusuna_gider(String username) {
         us02Page.usernameTextBox.sendKeys(username);
     }
