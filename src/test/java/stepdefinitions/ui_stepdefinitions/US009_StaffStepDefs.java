@@ -7,7 +7,7 @@ import org.testng.asserts.SoftAssert;
 import pages.staff_pages.StaffPage;
 import pages.staff_pages.Staff_SearchPatientPage;
 import utilities.Driver;
-import utilities.JSUtils;;
+import utilities.JSUtils;
 
 public class US009_StaffStepDefs {
 
