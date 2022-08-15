@@ -15,13 +15,9 @@ import org.junit.runner.RunWith;
         },
         features = "./src/test/resources/features",
         glue = "stepdefinitions",
-<<<<<<< Updated upstream
-        tags = "@",
-        dryRun =false
-=======
-        tags = "@all",
-        dryRun =true
->>>>>>> Stashed changes
+        tags = "@tum",
+        dryRun = true
+
 )
 public class TestRunner {
 
