@@ -137,7 +137,9 @@ public class Doctor_MyAppointmentsPage {
         public WebElement patient;
 
 
-
+//div[@role='alert'] kaydınız basarılı
+    //button[@id='save-entity'] tahlil save
+    //div[@role='alert']
 
     }
 

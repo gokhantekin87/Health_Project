@@ -17,7 +17,7 @@ public class US011_MyAppointmentsDef {
 
 Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
 
-Select select= new Select(myAppointments.statüsBox);
+
 
 
     @Given("Doktor medunnaUrl ine gider")
@@ -75,31 +75,20 @@ Select select= new Select(myAppointments.statüsBox);
     }
 
     @When("Doktor anamnesis, treatment ve diagnosis alanlarini doldurur")
-    public void doktor_anamnesis_treatment_ve_diagnosis_alanlarini_doldurur() {
+    public void doktor_anamnesis_treatment_ve_diagnosis_alanlarini_doldurur() throws InterruptedException {
         myAppointments.anamnesisBox.clear();
         myAppointments.treatmentBox.clear();
         myAppointments.diagnosisBox.clear();
 
         myAppointments.anamnesisBox.sendKeys(ConfigReader.getProperty("doktorNot"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(1000);
+
 
         myAppointments.treatmentBox.sendKeys(ConfigReader.getProperty("doktorNot"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(1000);
 
         myAppointments.diagnosisBox.sendKeys(ConfigReader.getProperty("doktorNot"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(1000);
     }
     @When("Doktor randevuyu kaydeder")
     public void doktor_randevuyu_kaydeder() throws InterruptedException {
@@ -172,23 +161,28 @@ Select select= new Select(myAppointments.statüsBox);
         Thread.sleep(2000);
     }
 
-    @When("Doktor statüs kutusunda pending secer")
+   @When("Doktor statüs kutusunda pending secer")
     public void doktor_statüs_kutusunda_pending_secer() throws InterruptedException {
-        select.selectByVisibleText("PENDING");
+    Select select=new Select(myAppointments.statüsBox);
+    clickElementByJS(myAppointments.statüsBox);
+
+       select.selectByVisibleText("PENDING");
         Thread.sleep(1000);
 
 
     }
     @When("Doktor statüs kutusunda pending yazisini gorur")
     public void doktor_statüs_kutusunda_pending_yazisini_gorur() {
+        clickElementByJS(myAppointments.statüsBox);
 
         String actualStatus=myAppointments.statüsBox.getText();
-        String expectedStatus="PENDİNG";
-        Assert.assertEquals(actualStatus, expectedStatus);
+        String expectedStatus="PENDING";
+        Assert.assertEquals(actualStatus,expectedStatus);
 
     }
     @When("Doktor statüs kutusunda completed secer")
     public void doktor_statüs_kutusunda_completed_secer() throws InterruptedException {
+        Select select=new Select(myAppointments.statüsBox);
         select.selectByVisibleText("COMPLETED");
         Thread.sleep(1000);
 
@@ -202,6 +196,7 @@ Select select= new Select(myAppointments.statüsBox);
     }
     @When("Doktor statüs kutusunda cancelled secer")
     public void doktor_statüs_kutusunda_cancelled_secer() throws InterruptedException {
+        Select select=new Select(myAppointments.statüsBox);
         select.selectByVisibleText("CANCELLED");
         Thread.sleep(1000);
 
@@ -213,6 +208,7 @@ Select select= new Select(myAppointments.statüsBox);
         Assert.assertEquals(actualStatus, expectedStatus);
 
     }
+
 
     @And("Doktor Requeest a test butonunu tıklar")
     public void doktorRequeestATestButonunuTıklar() {
@@ -240,13 +236,7 @@ Select select= new Select(myAppointments.statüsBox);
       //  myAppointments.hemoglobinButton.click();
     }
 
-    @And("Doktor randevü baslangic tarihini test eder")
-    public void doktorRandevüBaslangicTarihiniTestEder() {
-        String actualData =myAppointments.fromBox.getText();
-        String expectedData ="10.08.2022";
-       Assert.assertEquals(expectedData,actualData);
-    }
-    //And Doktor randevü baslangic tarihini test eder
+
 
 
 
