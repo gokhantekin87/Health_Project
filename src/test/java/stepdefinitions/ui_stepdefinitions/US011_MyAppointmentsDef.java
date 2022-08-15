@@ -5,6 +5,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.w3c.dom.html.HTMLInputElement;
 import pages.doctor_pages.Doctor_MyAppointmentsPage;
 import utilities.ConfigReader;
@@ -16,6 +17,7 @@ public class US011_MyAppointmentsDef {
 
 Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
 
+Select select= new Select(myAppointments.statüsBox);
 
 
     @Given("Doktor medunnaUrl ine gider")
@@ -67,8 +69,9 @@ Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
         }
     }
     @When("Doktor randevuda edit butonunu tiklar")
-    public void doktor_randevuda_edit_butonunu_tiklar() {
+    public void doktor_randevuda_edit_butonunu_tiklar() throws InterruptedException {
        myAppointments.randevuEditButton.click();
+       Thread.sleep(2000);
     }
 
     @When("Doktor anamnesis, treatment ve diagnosis alanlarini doldurur")
@@ -170,29 +173,81 @@ Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
     }
 
     @When("Doktor statüs kutusunda pending secer")
-    public void doktor_statüs_kutusunda_pending_secer() {
+    public void doktor_statüs_kutusunda_pending_secer() throws InterruptedException {
+        select.selectByVisibleText("PENDING");
+        Thread.sleep(1000);
+
 
     }
     @When("Doktor statüs kutusunda pending yazisini gorur")
     public void doktor_statüs_kutusunda_pending_yazisini_gorur() {
 
+        String actualStatus=myAppointments.statüsBox.getText();
+        String expectedStatus="PENDİNG";
+        Assert.assertEquals(actualStatus, expectedStatus);
+
     }
     @When("Doktor statüs kutusunda completed secer")
-    public void doktor_statüs_kutusunda_completed_secer() {
+    public void doktor_statüs_kutusunda_completed_secer() throws InterruptedException {
+        select.selectByVisibleText("COMPLETED");
+        Thread.sleep(1000);
 
     }
     @When("Doktor statüs kutusunda completed yazisini gorur")
     public void doktor_statüs_kutusunda_completed_yazisini_gorur() {
+        String actualStatus=myAppointments.statüsBox.getText();
+        String expectedStatus="COMPLETED";
+        Assert.assertEquals(actualStatus,expectedStatus);
 
     }
     @When("Doktor statüs kutusunda cancelled secer")
-    public void doktor_statüs_kutusunda_cancelled_secer() {
+    public void doktor_statüs_kutusunda_cancelled_secer() throws InterruptedException {
+        select.selectByVisibleText("CANCELLED");
+        Thread.sleep(1000);
 
     }
     @When("Doktor statüs kutusunda cancelled yazisini gorur")
     public void doktor_statüs_kutusunda_cancelled_yazisini_gorur() {
+        String actualStatus=myAppointments.statüsBox.getText();
+        String expectedStatus="CANCELLED";
+        Assert.assertEquals(actualStatus, expectedStatus);
 
     }
+
+    @And("Doktor Requeest a test butonunu tıklar")
+    public void doktorRequeestATestButonunuTıklar() {
+        clickElementByJS(myAppointments.testRequestButton);
+
+    }
+
+    @And("Doktor Glucose, Urea, Creatinine, Sodium,Potassium, Total protein, Albumin, Hemoglobin  butonlarını tıklar")
+    public void doktorGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobinButonlarınıTıklar() {
+        clickElementByJS(myAppointments.glucoseButton);
+       // myAppointments.glucoseButton.click();
+        clickElementByJS(myAppointments.ureaButton);
+        //myAppointments.ureaButton.click();
+        clickElementByJS(myAppointments.creatinineButton);
+        //myAppointments.creatinineButton.click();
+        clickElementByJS(myAppointments.sodiumButton);
+       // myAppointments.sodiumButton.click();
+        clickElementByJS(myAppointments.potasiumButton);
+        //myAppointments.potasiumButton.click();
+        clickElementByJS(myAppointments.totalProteinButton);
+       // myAppointments.totalProteinButton.click();
+        clickElementByJS(myAppointments.albuminButton);
+       // myAppointments.albuminButton.click();
+        clickElementByJS(myAppointments.hemoglobinButton);
+      //  myAppointments.hemoglobinButton.click();
+    }
+
+    @And("Doktor randevü baslangic tarihini test eder")
+    public void doktorRandevüBaslangicTarihiniTestEder() {
+        String actualData =myAppointments.fromBox.getText();
+        String expectedData ="10.08.2022";
+       Assert.assertEquals(expectedData,actualData);
+    }
+    //And Doktor randevü baslangic tarihini test eder
+
 
 
 
