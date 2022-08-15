@@ -91,5 +91,7 @@ public class US001_Page{
     @FindBy(xpath = "//div[@class='invalid-feedback'][1]")
     public WebElement YourFirstNameIsrequiredMesaji;
 
+    @FindBy(xpath = "//div[text()='Registration Saved']") public WebElement registrationSavedPopup;
+
 
 }
