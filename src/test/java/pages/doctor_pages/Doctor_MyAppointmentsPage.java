@@ -45,6 +45,16 @@ public class Doctor_MyAppointmentsPage {
         @FindBy(xpath = "//select[@id='appointment-status']")
         public WebElement statüsBox;
 
+        @FindBy(xpath = "//option[@value='PENDING']")
+        public WebElement statusPending;
+    @FindBy(xpath = "//option[@value='COMPLETED']")
+    public WebElement statusCompleted;
+    @FindBy(xpath = "//option[@value='CANCELLED']")
+    public WebElement statusCancelled;
+    //option[@value='PENDING']COMPLETED
+    //option[@value='COMPLETED']
+    //option[@value='CANCELLED']
+
         @FindBy(xpath = "//div[@class='invalid-feedback']")
         public WebElement invalidFeedbackBox;
 
@@ -137,7 +147,9 @@ public class Doctor_MyAppointmentsPage {
         public WebElement patient;
 
 
-
+//div[@role='alert'] kaydınız basarılı
+    //button[@id='save-entity'] tahlil save
+    //div[@role='alert']
 
     }
 
