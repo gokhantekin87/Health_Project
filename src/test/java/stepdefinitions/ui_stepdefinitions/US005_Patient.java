@@ -86,10 +86,7 @@ public class US005_Patient {
         }
     }
 
-    @And("sayfayi kapatir")
-    public void sayfayiKapatir() {
-        Driver.getDriver().close();
-    }
+
 
     @And("kullanıcı lastName boş bırakilmadan kayıt oluşturulmadıgını kontrol eder")
     public void kullanıcıLastNameBoşBırakilmadanKayıtOluşturulmadıgınıKontrolEder() {

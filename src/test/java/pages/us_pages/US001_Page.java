@@ -1,6 +1,8 @@
 package pages.us_pages;
 
 import org.openqa.selenium.WebElement;
+
+
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
@@ -8,6 +10,9 @@ import utilities.Driver;
 import java.util.List;
 
 public class US001_Page{
+
+    public US001_Page(){
+        PageFactory.initElements(Driver.getDriver(), this);}
 
     @FindBy(xpath = "//span[text()='Register']")
     public WebElement Register;
@@ -66,10 +71,10 @@ public class US001_Page{
     public WebElement passwordbox;
 //input[@name="firstPassword"]
 
-//    @FindBy(xpath = "//div[@class='invalid-feedback'][1]")
-  //  public WebElement YourFirstNameIsrequiredMesaji;
-@FindBy(xpath = "//li[@id='account-menu']")
-public WebElement anasayfaInsanIkonu;
+    //    @FindBy(xpath = "//div[@class='invalid-feedback'][1]")
+    //  public WebElement YourFirstNameIsrequiredMesaji;
+    @FindBy(xpath = "//li[@id='account-menu']")
+    public WebElement anasayfaInsanIkonu;
 
     @FindBy(xpath = "//a[@id='login-item']")
     public WebElement anasayfaInsanIkonuSignInElementi;
@@ -85,4 +90,6 @@ public WebElement anasayfaInsanIkonu;
 
     @FindBy(xpath = "//div[@class='invalid-feedback'][1]")
     public WebElement YourFirstNameIsrequiredMesaji;
+
+
 }
