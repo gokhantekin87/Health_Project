@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.support.ui.Select;
 import pages.us_pages.US014_PhysicianInpatientPage;
+import utilities.Driver;
 import utilities.JSUtils;
 import utilities.ReusableMethods;
 
@@ -25,6 +26,8 @@ public class US014_PhysicianInpatientStepDefs {
     @Then("Physician Inpatients bilgilerini gorur")
     public void physician_ınpatients_bilgilerini_gorur() {
         us14Page.inpatientsBilgileri.isDisplayed();
+        ReusableMethods.waitFor(2);
+        Driver.closeDriver();
     }
 
     @Then("Physician unapproved edit butonuna tıklar")
@@ -46,6 +49,8 @@ public class US014_PhysicianInpatientStepDefs {
         JSUtils.scrollDownByJS();
         //Actions actions=new Actions(Driver.getDriver());
         JSUtils.clickElementByJS(us14Page.unapprovedSaveButton);
+        ReusableMethods.waitFor(2);
+        Driver.closeDriver();
         //us14Page.saveButton.click();
         //us14Page.savingTable.isDisplayed();
         //String expectedStatus ="STAYING";
@@ -74,6 +79,8 @@ public class US014_PhysicianInpatientStepDefs {
         //us14Page.webTableRoom.getText();
         ReusableMethods.waitFor(2);
         Assert.assertTrue(actualRoom.contains("907"));
+        ReusableMethods.waitFor(2);
+        Driver.closeDriver();
     }
 
 

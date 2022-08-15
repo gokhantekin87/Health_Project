@@ -54,16 +54,21 @@ public class US013_PhysicianTestResultStepDefs {
     }
     @Then("Physician View Result sekmesine gecis yapar ve tıklar")
     public void physician_view_result_sekmesine_gecis_yapar_ve_tıklar() {
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
         this.us13page.viewTestResultButonu.click();
     }
     @And("Physician Test Result tablosunu gorebilir")
     public void physicianTestResultTablosunuGorebilir() {
+        ReusableMethods.waitFor(5);
         this.us13page.testResultBody.isDisplayed();
+        Driver.closeDriver();
+
     }
     @And("Physician Request Inpatient butonuna tıklar.")
     public void physicianRequestInpatientButonunaTıklar() {
+        ReusableMethods.waitFor(5);
         this.us13page.requestInpatientButonu.click();
+        Driver.closeDriver();
     }
 }
 

@@ -1,3 +1,4 @@
+
 Feature: Physician Test Result islemleri yapabilir
   Background: TC01 ve TC02
 
@@ -10,14 +11,14 @@ Feature: Physician Test Result islemleri yapabilir
 
 
 
-  @US13_TC01
+  @US_013All @US13_TC01
   Scenario: TC01 Physician Test Result islemleri yapabilir
     And Physician Show Test Result sekmesine gecis yapar ve tıklar
     And Physician View Result sekmesine gecis yapar ve tıklar
     And Physician Test Result tablosunu gorebilir
 
 
-  @US13_TC02
+  @US_013All @US13_TC02
   Scenario:Physician Request Inpatient isteğinde bulunabilmeli
     And Physician Request Inpatient butonuna tıklar.
 
