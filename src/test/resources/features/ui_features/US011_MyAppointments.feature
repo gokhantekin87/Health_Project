@@ -53,9 +53,8 @@ Feature: US011 "My Appointments" Physician (Doctor) tarafindan duzenlenebilmeli
     And Doktor prescription ve description alanlarini siler
     And Doktor randevuyu kaydeder
     Then Doktor 'Kaydiniz basarili' mesajini görür
+    And Doktor sayfayi kapatir
 
-
-      And Doktor sayfayi kapatir
   Scenario: US011 TC005 "Status" doktor tarafından "PENDING, COMPLETED veya CANCELLED" olarak seçilebilmeli
     And Doktor randevuda edit butonunu tiklar
     And Doktor statüs kutusunda pending secer
@@ -65,6 +64,8 @@ Feature: US011 "My Appointments" Physician (Doctor) tarafindan duzenlenebilmeli
     And Doktor statüs kutusunda cancelled secer
     And Doktor statüs kutusunda cancelled yazisini gorur
     And Doktor sayfayi kapatir
+
+
 
   Scenario: US012 TC001 Doctor içeriğinde "Glucose, Urea, Creatinine, Sodium
   Potassium, Total protein, Albumin, Hemoglobin" olan test isteyebilmeli
