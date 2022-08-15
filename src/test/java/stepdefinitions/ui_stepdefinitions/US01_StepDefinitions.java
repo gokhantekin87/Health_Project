@@ -11,6 +11,9 @@ import pages.us_pages.US001_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import static utilities.Driver.waitForVisibility;
+import static utilities.ReusableMethods.waitFor;
+
 
 public class US01_StepDefinitions {
     US001_Page medunna = new US001_Page();
@@ -96,5 +99,11 @@ public class US01_StepDefinitions {
     @Then("Kullanici lastname kutucugunun bos olup olmadigini dogrular")
     public void kullanici_lastname_kutucugunun_bos_olup_olmadigini_dogrular() {
         Assert.assertTrue(medunna.lastNameHataMesasji.isDisplayed());
+    }
+
+    @Then("kullanici basarili Registration yaptigini dogrular")
+    public void kullaniciBasariliRegistrationYaptiginiDogrular() {
+        waitFor(2);
+        Assert.assertTrue(medunna.registrationSavedPopup.isDisplayed());
     }
 }
