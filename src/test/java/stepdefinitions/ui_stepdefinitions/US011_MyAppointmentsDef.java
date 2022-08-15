@@ -165,8 +165,8 @@ Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
     public void doktor_statüs_kutusunda_pending_secer() throws InterruptedException {
     Select select=new Select(myAppointments.statüsBox);
     clickElementByJS(myAppointments.statüsBox);
+    myAppointments.statusPending.click();
 
-       select.selectByVisibleText("PENDING");
         Thread.sleep(1000);
 
 
@@ -175,7 +175,7 @@ Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
     public void doktor_statüs_kutusunda_pending_yazisini_gorur() {
         clickElementByJS(myAppointments.statüsBox);
 
-        String actualStatus=myAppointments.statüsBox.getText();
+        String actualStatus=myAppointments.statusPending.getText();
         String expectedStatus="PENDING";
         Assert.assertEquals(actualStatus,expectedStatus);
 
@@ -183,13 +183,14 @@ Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
     @When("Doktor statüs kutusunda completed secer")
     public void doktor_statüs_kutusunda_completed_secer() throws InterruptedException {
         Select select=new Select(myAppointments.statüsBox);
-        select.selectByVisibleText("COMPLETED");
+        myAppointments.statusCompleted.click();
+
         Thread.sleep(1000);
 
     }
     @When("Doktor statüs kutusunda completed yazisini gorur")
     public void doktor_statüs_kutusunda_completed_yazisini_gorur() {
-        String actualStatus=myAppointments.statüsBox.getText();
+        String actualStatus=myAppointments.statusCompleted.getText();
         String expectedStatus="COMPLETED";
         Assert.assertEquals(actualStatus,expectedStatus);
 
@@ -197,13 +198,13 @@ Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
     @When("Doktor statüs kutusunda cancelled secer")
     public void doktor_statüs_kutusunda_cancelled_secer() throws InterruptedException {
         Select select=new Select(myAppointments.statüsBox);
-        select.selectByVisibleText("CANCELLED");
+        myAppointments.statusCancelled.click();
         Thread.sleep(1000);
 
     }
     @When("Doktor statüs kutusunda cancelled yazisini gorur")
     public void doktor_statüs_kutusunda_cancelled_yazisini_gorur() {
-        String actualStatus=myAppointments.statüsBox.getText();
+        String actualStatus=myAppointments.statusCancelled.getText();
         String expectedStatus="CANCELLED";
         Assert.assertEquals(actualStatus, expectedStatus);
 
