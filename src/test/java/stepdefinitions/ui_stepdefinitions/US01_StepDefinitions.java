@@ -39,7 +39,7 @@ public class US01_StepDefinitions {
 
     @Given("Kullanici ssn kutucuguna tiklar")
     public void kullanici_ssn_kutucuguna_tiklar() {
-        medunna.SSNBox.click();
+
     }
     @Then("Kullanici dokuz haneli {string} girer")
     public void kullanici_dokuz_haneli_girer(String ssn) {
