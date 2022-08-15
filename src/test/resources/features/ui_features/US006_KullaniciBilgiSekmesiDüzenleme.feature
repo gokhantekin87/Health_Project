@@ -5,7 +5,7 @@ Feature: US006 kullanici bilgi sekmesi
         #Kullanıcı bilgileri "firstname, lastname, email and language" girerken doldurulan kullanıcı bilgileri olmalıdır.
     Scenario: Kullanıici bilgilerini düzenleyebilmeli
     Given kullanici medunna anasayfasinda
-    And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+    And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
     And kullanici adamIkonuna tiklar
     And kunnalici accountSettingse tıklar
     And kullanici savedButtonuna tıklar
@@ -18,7 +18,7 @@ Feature: US006 kullanici bilgi sekmesi
         #"Firstname"güncelleme seçeneği olmalıdır.
   Scenario: FirstName güncelleme secenegi olamli
     Given kullanici medunna anasayfasinda
-    And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+    And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
     And kullanici adamIkonuna tiklar
     And kunnalici accountSettingse tıklar
     And kullanıcı firstName kutusuna "Poalt1" bilgi girer
@@ -30,7 +30,7 @@ Feature: US006 kullanici bilgi sekmesi
           #"Lastname" güncelleme seçeneği olmalıdır.
   Scenario: LastName güncelleme secenegi olmalıdır
       Given kullanici medunna anasayfasinda
-      And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+      And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
       And kullanici adamIkonuna tiklar
       And kunnalici accountSettingse tıklar
       And kullanıcı lastName kutusuna "Alemdar1" bilgi girer
@@ -42,7 +42,7 @@ Feature: US006 kullanici bilgi sekmesi
             #"E-mail" güncelleme seçeneği olmalıdır.
   Scenario: Email güncelleme secenegi olmalı
         Given kullanici medunna anasayfasinda
-        And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+        And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
         And kullanici adamIkonuna tiklar
         And kunnalici accountSettingse tıklar
         And kullanıcı eMail kutusuna "erkouzn1@gmail.com" bilgi girer

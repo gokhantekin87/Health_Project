@@ -5,7 +5,7 @@ Feature:US005 Hastaların randevu oluşturabildigini test et
   @TC001 @US05
   Scenario Outline: Hastalar hastaneden randevu oluşturabilmelidir
     Given kullanici medunna anasayfasinda
-    And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+    And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
     And kullanıcı myPagese tıklar
     Then kullanıcı makeAnAppoitmente tıklar
     And kullanıcı firstName kutusuna "<firstName>" bilgi girer
@@ -28,7 +28,7 @@ Feature:US005 Hastaların randevu oluşturabildigini test et
       #Kullanıcı SSN numarası girmeli (kayıtlı SSN) boş bırakılamaz.
 
     Given kullanici medunna anasayfasinda
-    And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+    And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
     And kullanıcı myPagese tıklar
     Then kullanıcı makeAnAppoitmente tıklar
     And kullanıcı firstName kutusuna "<firstName>" bilgi girer
@@ -52,7 +52,7 @@ Feature:US005 Hastaların randevu oluşturabildigini test et
     #Kullanıcı, herhangi bir karakter içeren "Last Name" yazması gerekir, boş bırakılamaz.
 
     Given kullanici medunna anasayfasinda
-    And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+    And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
     And kullanıcı myPagese tıklar
     Then kullanıcı makeAnAppoitmente tıklar
     And kullanıcı firstName kutusuna "<firstName>" bilgi girer
@@ -73,7 +73,7 @@ Feature:US005 Hastaların randevu oluşturabildigini test et
   Scenario Outline: kullanıcı telefon numarasını bos bırakamaz
 
     Given kullanici medunna anasayfasinda
-    And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+    And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
     And kullanıcı myPagese tıklar
     Then kullanıcı makeAnAppoitmente tıklar
     And kullanıcı firstName kutusuna "<firstName>" bilgi girer
@@ -93,7 +93,7 @@ Feature:US005 Hastaların randevu oluşturabildigini test et
       #Kullanıcı randevu alıp kaydolduğunda, profillerini görebilir ve uygulamada oturum açabilir.
   Scenario Outline: kullanıcı kayıt oldugunda profillerini görebilir
     Given kullanici medunna anasayfasinda
-    And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+    And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
     And kullanıcı myPagese tıklar
     Then kullanıcı makeAnAppoitmente tıklar
     And kullanıcı firstName kutusuna "<firstName>" bilgi girer

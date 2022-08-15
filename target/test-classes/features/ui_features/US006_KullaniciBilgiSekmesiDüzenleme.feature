@@ -30,7 +30,7 @@ Feature: US006 kullanici bilgi sekmesi
           #"Lastname" güncelleme seçeneği olmalıdır.
   Scenario: LastName güncelleme secenegi olmalıdır
       Given kullanici medunna anasayfasinda
-      And kullanici "patientUserName" ve "patientPassword" girerek giris yapar
+      And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
       And kullanici adamIkonuna tiklar
       And kunnalici accountSettingse tıklar
       And kullanıcı lastName kutusuna "Alemdar1" bilgi girer
