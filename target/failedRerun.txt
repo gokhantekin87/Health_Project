@@ -1,0 +1,1 @@
+file:src/test/resources/features/ui_features/US005_HastahaneRandevu.feature:48:72

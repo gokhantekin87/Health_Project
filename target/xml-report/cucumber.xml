@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="2" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="3" time="15.185">
+    <testcase classname="US005 Hastaların randevu oluşturabildigini test et" name="Hastalar hastaneden randevu oluşturabilmelidir" time="14.697">
+        <system-out>
+            <![CDATA[Given kullanici medunna anasayfasinda.......................................passed
+And kullanici "patientUserName" ve "patientPassword" girerek giris yapar....passed
+And kullanıcı myPagese tıklar...............................................passed
+Then kullanıcı makeAnAppoitmente tıklar.....................................passed
+And kullanıcı firstName kutusuna "" bilgi girer.............................passed
+And kullanıcı lastName kutusuna "tasiyan" bilgi girer.......................passed
+And kullanıcı ssn kutusuna "325-02-1234" bilgi girer........................passed
+And kullanıcı eMail kutusuna "memati@gmail.com" bilgi girer.................passed
+And kullanıcı phone kutusuna "234-245-4455" bilgi girer.....................passed
+And kullanıcı appoitmentDateTime kutusuna "11.09.2022" bilgi girer..........passed
+And kullannıcı Send an Appoitment Requeste tıklar...........................passed
+And kayıt oluşturulup oluşturulmadıgını kontrol eder........................passed
+And sayfayi kapatir.........................................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="US005 Hastaların randevu oluşturabildigini test et" name="ssn bos bırakılmaz" time="0.097">
+        <failure message="invalid session id&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'DESKTOP-GS4TO2S', ip: '192.168.1.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [925467dab948c97fc491c7cc31a53d2a, get {url=https://www.medunna.com}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.80, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\erkam\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52329}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52329/devtoo..., se:cdpVersion: 104.0.5112.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 925467dab948c97fc491c7cc31a53d2a" type="org.openqa.selenium.NoSuchSessionException">
+            <![CDATA[Given kullanici medunna anasayfasinda.......................................failed
+And kullanici "patientUserName" ve "patientPassword" girerek giris yapar....skipped
+And kullanıcı myPagese tıklar...............................................skipped
+Then kullanıcı makeAnAppoitmente tıklar.....................................skipped
+And kullanıcı firstName kutusuna "hakan" bilgi girer........................skipped
+And kullanıcı lastName kutusuna "tasiyan" bilgi girer.......................skipped
+And kullanıcı ssn kutusuna "" bilgi girer...................................skipped
+And kullanıcı eMail kutusuna "memati@gmail.com" bilgi girer.................skipped
+And kullanıcı phone kutusuna "234-245-4455" bilgi girer.....................skipped
+And kullanıcı appoitmentDateTime kutusuna "11.09.2022" bilgi girer..........skipped
+And kullannıcı Send an Appoitment Requeste tıklar...........................skipped
+And kullanıcı ssn olmadan kayıt oluşturulamadıgını kontrol eder.............skipped
+And sayfayi kapatir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'DESKTOP-GS4TO2S', ip: '192.168.1.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [925467dab948c97fc491c7cc31a53d2a, get {url=https://www.medunna.com}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.80, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\erkam\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52329}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52329/devtoo..., se:cdpVersion: 104.0.5112.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 925467dab948c97fc491c7cc31a53d2a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:330)
+	at stepdefinitions.ui_stepdefinitions.Login.kullaniciMedunnaAnasayfasinda(Login.java:23)
+	at ✽.kullanici medunna anasayfasinda(file:///C:/IdealProjects/health_project_team59/./src/test/resources/features/ui_features/US005_HastahaneRandevu.feature:32)
+]]>
+        </failure>
+    </testcase>
+    <testcase classname="US005 Hastaların randevu oluşturabildigini test et" name="lastName bos bırakılamaz" time="0.036">
+        <failure message="invalid session id&#10;Build info: version: '4.1.3', revision: '7b1ebf28ef'&#10;System info: host: 'DESKTOP-GS4TO2S', ip: '192.168.1.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [925467dab948c97fc491c7cc31a53d2a, get {url=https://www.medunna.com}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.80, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\erkam\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52329}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52329/devtoo..., se:cdpVersion: 104.0.5112.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 925467dab948c97fc491c7cc31a53d2a" type="org.openqa.selenium.NoSuchSessionException">
+            <![CDATA[Given kullanici medunna anasayfasinda.......................................failed
+And kullanici "patientUserName" ve "patientPassword" girerek giris yapar....skipped
+And kullanıcı myPagese tıklar...............................................skipped
+Then kullanıcı makeAnAppoitmente tıklar.....................................skipped
+And kullanıcı firstName kutusuna "hakan" bilgi girer........................skipped
+And kullanıcı lastName kutusuna "" bilgi girer..............................skipped
+And kullanıcı ssn kutusuna "145-22-2255" bilgi girer........................skipped
+And kullanıcı eMail kutusuna "memati@gmail.com" bilgi girer.................skipped
+And kullanıcı phone kutusuna "234-245-4455" bilgi girer.....................skipped
+And kullanıcı appoitmentDateTime kutusuna "11.09.2022" bilgi girer..........skipped
+And kullannıcı Send an Appoitment Requeste tıklar...........................skipped
+And kullanıcı lastName boş bırakilmadan kayıt oluşturulmadıgını kontrol eder.skipped
+And sayfayi kapatir.........................................................skipped
+
+StackTrace:
+org.openqa.selenium.NoSuchSessionException: invalid session id
+Build info: version: '4.1.3', revision: '7b1ebf28ef'
+System info: host: 'DESKTOP-GS4TO2S', ip: '192.168.1.104', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.14.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [925467dab948c97fc491c7cc31a53d2a, get {url=https://www.medunna.com}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.80, chrome: {chromedriverVersion: 104.0.5112.79 (3cf3e8c8a07d..., userDataDir: C:\Users\erkam\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52329}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52329/devtoo..., se:cdpVersion: 104.0.5112.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 925467dab948c97fc491c7cc31a53d2a
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:330)
+	at stepdefinitions.ui_stepdefinitions.Login.kullaniciMedunnaAnasayfasinda(Login.java:23)
+	at ✽.kullanici medunna anasayfasinda(file:///C:/IdealProjects/health_project_team59/./src/test/resources/features/ui_features/US005_HastahaneRandevu.feature:56)
+]]>
+        </failure>
+    </testcase>
+</testsuite>
