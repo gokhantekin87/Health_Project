@@ -54,6 +54,7 @@ Feature: US011 "My Appointments" Physician (Doctor) tarafindan duzenlenebilmeli
     And Doktor randevuyu kaydeder
     Then Doktor 'Kaydiniz basarili' mesajini görür
 
+
       And Doktor sayfayi kapatir
   Scenario: US011 TC005 "Status" doktor tarafından "PENDING, COMPLETED veya CANCELLED" olarak seçilebilmeli
     And Doktor randevuda edit butonunu tiklar
@@ -67,7 +68,8 @@ Feature: US011 "My Appointments" Physician (Doctor) tarafindan duzenlenebilmeli
 
   Scenario: US012 TC001 Doctor içeriğinde "Glucose, Urea, Creatinine, Sodium
   Potassium, Total protein, Albumin, Hemoglobin" olan test isteyebilmeli
-    And Doktor "Requeest a test" butonunu tıklar
+    And Doktor randevuda edit butonunu tiklar
+    And Doktor Requeest a test butonunu tıklar
     And Doktor Glucose, Urea, Creatinine, Sodium,Potassium, Total protein, Albumin, Hemoglobin  butonlarını tıklar
     And Doktor randevuyu kaydeder
     Then Doktor 'Kaydiniz basarili' mesajini görür
