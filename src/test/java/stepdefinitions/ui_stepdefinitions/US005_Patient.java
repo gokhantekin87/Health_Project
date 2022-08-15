@@ -1,15 +1,13 @@
 package stepdefinitions.ui_stepdefinitions;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import pages.AppointmentPage;
 import pages.HomePage;
 import utilities.Driver;
-
 import java.util.ArrayList;
 import java.util.List;
 

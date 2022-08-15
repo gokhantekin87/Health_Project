@@ -1,7 +1,4 @@
 package stepdefinitions.api_stepdefinitions;
-
-
-import baseUrl.Medunna;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
