@@ -1,4 +1,4 @@
-@US08
+@EndtoEndTest @US08
 Feature: US008_Password_duzenleme
   Background: Password Sayfasina Girilir
   Scenario: US008_password_duzenleme

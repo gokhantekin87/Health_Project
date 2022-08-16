@@ -11,21 +11,13 @@ import org.junit.runner.RunWith;
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
-                "rerun:target/failedRerun.txt"
-
+                "rerun:target/failedRerun.txt",
+                "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         features = "./src/test/resources/features",
-<<<<<<< Updated upstream
-
         glue = "Registration2",
         tags = "@UIAyhan",
         dryRun = true
-
-=======
-        glue = "stepdefinitions",
-        tags = "@",
-        dryRun =false
->>>>>>> Stashed changes
 )
 public class Runner {
      /*

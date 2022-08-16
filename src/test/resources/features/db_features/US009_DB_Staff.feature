@@ -1,4 +1,4 @@
-@EndtoEnd
+@EndtoEndTest
 Feature: Kullanici Database de hasta bilgilerinin oldugunu dogrular
   Scenario Outline: Kullanici Hasta bilgilerini dogrular
     Given kullanici database baglanir
