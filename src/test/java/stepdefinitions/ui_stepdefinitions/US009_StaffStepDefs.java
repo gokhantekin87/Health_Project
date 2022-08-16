@@ -109,6 +109,4 @@ public class US009_StaffStepDefs {
     @And("Staff duzenleme kaydedildi mi dogrular")
     public void staffDuzenlemeKaydedildiMiDogrular() {
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));}
-
-
 }
