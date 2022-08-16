@@ -1,4 +1,4 @@
-
+@EndtoEndTest
 Feature:  US002 : Registration e-posta ve kullanıcı adı kullanılarak başarılı olmalıdır
 
   @UIayhan

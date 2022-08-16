@@ -1,9 +1,10 @@
 Feature: US009 Staff, hasta bilgilerini gorebilmeli, duzenleyebilmeli ve silebilmelidir
-
+@EndtoEndTest
 Scenario: US009 TC001 Staff "My Pages" sekmesinden hasta bilgilerini gorebilmelidir
     Given kullanici medunna anasayfasinda
     Then kullanici "staffUsername" ve "staffPassword" girerek giris yapar
     And My Pages sekmesinden Search Patient tiklar
+@EndtoEndTest
     Scenario Outline: TC_001 No_02
         Then Tabloda "<patient info>" gorunur oldugunu dogrular
         Examples:
@@ -19,12 +20,12 @@ Scenario: US009 TC001 Staff "My Pages" sekmesinden hasta bilgilerini gorebilmeli
         |hy               |
         |Moldova, Republic of |
 
-
+@EndtoEndTest
 Scenario: US_009 TC_005 Staff hastalari SSN numarasina gore arayabilir
         And Staff arama cubuguna SSN numarasi "123-78-9871" girer
         Then Sonucun aranan SSN numarasi icerdigini "123-78-9871" dogrular
 
-
+@EndtoEndTest
 Scenario: US_009 TC_006 Staff SSN numarasina gore yeni bir basvuru sahibi arayabilmeli
           ve tum kayit bilgilerinin dolduruldugunu gorebilmelidir
         And Staff arama cubuguna SSN numarasi "123-78-9871" girer

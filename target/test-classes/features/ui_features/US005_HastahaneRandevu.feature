@@ -1,4 +1,4 @@
-@us05
+@EndtoEndTest @us05
 Feature:US005 Hastaların randevu oluşturabildigini test et
 
       #Kullanıcının herhangi bir karakter içeren "First Name" yazması gerekir ve boş bırakılamaz.

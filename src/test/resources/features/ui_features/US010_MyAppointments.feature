@@ -1,4 +1,4 @@
-@US010_UI
+@EndtoEndTest @US010_UI
 
 Feature: US010 randevular
 

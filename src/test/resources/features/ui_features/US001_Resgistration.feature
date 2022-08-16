@@ -1,4 +1,4 @@
-@US01_UI
+@US01_UI  @EndtoEndTest
 Feature:US01 Kayıt olmak için SSN, Firstname ve Lastname bilgileri girililebilmelidir.
   Background: Kullanici_register_sayfasina_gider
     Given Kullanici "medunnaUrl" adresine gider
