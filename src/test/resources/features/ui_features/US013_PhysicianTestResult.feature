@@ -1,4 +1,3 @@
-@EndtoEndTest
 Feature: Physician Test Result islemleri yapabilir
   Background: TC01 ve TC02
 
