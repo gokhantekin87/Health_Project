@@ -17,4 +17,4 @@ Feature: Kullanici basarili Registration yapabilmeli
     And sayfayi kapatir
     Examples:
     | SSN       | firstname  | lastname | username      | email                 | password  |
-    |133-95-7132|team7      |usera7     |usera7         |user7@gmail.com        |user       |
+    |133-95-7133|team8      |usera8     |usera8         |user8@gmail.com        |user       |

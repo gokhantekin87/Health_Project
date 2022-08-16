@@ -11,6 +11,8 @@ import utilities.Driver;
 import java.util.ArrayList;
 import java.util.List;
 
+import static utilities.ReusableMethods.waitFor;
+
 public class US005_Patient {
     AppointmentPage appointmentPage=new AppointmentPage();
     HomePage homePage=new HomePage();
@@ -132,6 +134,17 @@ public class US005_Patient {
             System.out.println("Hastanın profili gözüküyor..");
             System.out.println("Bütün testler PASS");
         }
+    }
+
+    @And("Make an Appointment butonuna tiklar")
+    public void makeAnAppointmentButonunaTiklar() {
+        appointmentPage.makeAnAppoitmentbutton.click();
+    }
+
+    @Then("kullanici basarili randevu olusturdugunu dogrular")
+    public void kullaniciBasariliRandevuOlusturdugunuDogrular() {
+        waitFor(1);
+        Assert.assertTrue(appointmentPage.sucsess.isDisplayed());
     }
 }
 
