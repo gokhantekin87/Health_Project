@@ -15,11 +15,17 @@ import org.junit.runner.RunWith;
 
         },
         features = "./src/test/resources/features",
+<<<<<<< Updated upstream
 
         glue = "Registration2",
         tags = "@UIAyhan",
         dryRun = true
 
+=======
+        glue = "stepdefinitions",
+        tags = "@",
+        dryRun =false
+>>>>>>> Stashed changes
 )
 public class Runner {
      /*
