@@ -66,12 +66,14 @@ public class US_009_DBStepDefs {
 
     @And("kullanici {int} {string} li hastanin bilgilerini {string} {string} tablosundan alir")
     public void kullaniciLiHastaninBilgileriniTablosundanAlir(int actualId, String idColumn, String column, String table) {
+        //sadece verilen id li hastanin bilgilerini alir
         String query = "select " + column + " from " + table + " where " + idColumn + "=" + actualId;
         DBUtils.executeQuery(query);
     }
 
     @Then("kullanici hasta {string} i {string} oldugunu dogrular")
     public void kullaniciHastaIOldugunuDogrular(String firstNameColumn, String actualFirstName) throws SQLException {
+        // belirli id li hasta bilgilerinin icinden first_name degerinin actualfirstname le ayni oldugunu dogrular
         DBUtils.getResultset().next();
         Assert.assertEquals(DBUtils.getResultset().getObject(firstNameColumn), actualFirstName);
     }
