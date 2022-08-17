@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -29,21 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="ec0d691e-19b0-4df9-8d69-87bad21f3325">
-      <console name="Medunna" type="STANDARD" schema="information_schema" session="Main"><![CDATA[select * from pg_catalog.pg_tables
-
-select * from public.physician
-
-select * from public.physician where id=147333
-
-select * from public.appointment
-
-select * from public.appointment where id=153033
-
-select * from public.patient
-
-select * from public.patient where id=152832
-
-select * from public.patient where first_name='Hasta']]></console>
+      <console name="Medunna" type="STANDARD" schema="public" session="Main"><![CDATA[select * from jhi_user]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -51,6 +37,32 @@ select * from public.patient where first_name='Hasta']]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="ec0d691e-19b0-4df9-8d69-87bad21f3325" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.staff" active-filter-id="" />
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.patient" active-filter-id="c7d85a17-54d5-48f6-9320-c6bf47315aef">
+      <filter id="c7d85a17-54d5-48f6-9320-c6bf47315aef" name="154272" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="154272" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.country" active-filter-id="" />
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.appointment" active-filter-id="" />
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.jhi_user_authority" active-filter-id="6ccc9f71-c370-4e4e-a81b-828c54c09b21">
+      <filter id="6ccc9f71-c370-4e4e-a81b-828c54c09b21" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="authority_name" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.jhi_user" active-filter-id="e79fd110-7628-46fb-8d79-5f89e41eb132">
+      <filter id="e79fd110-7628-46fb-8d79-5f89e41eb132" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.in_patient" active-filter-id="" />
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.jhi_authority" active-filter-id="bc880360-f771-40d2-8491-9afee2b4d670">
+      <filter id="bc880360-f771-40d2-8491-9afee2b4d670" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="name" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -206,6 +218,7 @@ select * from public.patient where first_name='Hasta']]></console>
         <object-type name="FUNCTION" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRIBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
         <object-type name="VIEW" editor-type="SELECTION" />
