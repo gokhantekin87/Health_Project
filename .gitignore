@@ -4,3 +4,13 @@
 /target
 target
 target/
+.idea/dbnavigator.xml
+.target/default-cucumber-reports.html
+.target/failedRerun.txt
+.target/json-reports/cucumber.json
+.target/test-classes/features/apiFeatures/firstSprint/US001_API.feature
+.target/test-classes/features/dbFeatures/firstSprint/US001_DB.feature
+.target/test-classes/features/uiFeatures/firstSprint/US001.feature
+.target/test-classes/runners/TestRunner1.class
+.target/xml-report/cucumber.xml
+.idea/dbnavigator.xml.

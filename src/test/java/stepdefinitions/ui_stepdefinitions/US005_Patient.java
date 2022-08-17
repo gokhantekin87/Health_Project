@@ -1,17 +1,17 @@
 package stepdefinitions.ui_stepdefinitions;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import pages.AppointmentPage;
 import pages.HomePage;
 import utilities.Driver;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import static utilities.ReusableMethods.waitFor;
 
 public class US005_Patient {
     AppointmentPage appointmentPage=new AppointmentPage();
@@ -86,10 +86,7 @@ public class US005_Patient {
         }
     }
 
-    @And("sayfayi kapatir")
-    public void sayfayiKapatir() {
-        Driver.getDriver().close();
-    }
+
 
     @And("kullanıcı lastName boş bırakilmadan kayıt oluşturulmadıgını kontrol eder")
     public void kullanıcıLastNameBoşBırakilmadanKayıtOluşturulmadıgınıKontrolEder() {
@@ -137,6 +134,17 @@ public class US005_Patient {
             System.out.println("Hastanın profili gözüküyor..");
             System.out.println("Bütün testler PASS");
         }
+    }
+
+    @And("Make an Appointment butonuna tiklar")
+    public void makeAnAppointmentButonunaTiklar() {
+        appointmentPage.makeAnAppoitmentbutton.click();
+    }
+
+    @Then("kullanici basarili randevu olusturdugunu dogrular")
+    public void kullaniciBasariliRandevuOlusturdugunuDogrular() {
+        waitFor(1);
+        Assert.assertTrue(appointmentPage.sucsess.isDisplayed());
     }
 }
 

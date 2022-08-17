@@ -74,6 +74,8 @@ public class AppointmentPage {
     public WebElement polatButton;
     @FindBy(xpath = "//h2")
     public WebElement patientBaslık;
+    @FindBy(xpath = "(//a[@href='#appointment'])[1]") public WebElement makeAnAppoitmentbutton;
+    @FindBy(xpath = "//div[@class='Toastify__toast Toastify__toast--success toastify-toast']") public WebElement sucsess;
 
 
 
