@@ -29,7 +29,21 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="ec0d691e-19b0-4df9-8d69-87bad21f3325">
-      <console name="Medunna" type="STANDARD" schema="public" session="Main"><![CDATA[select * from jhi_user]]></console>
+      <console name="Medunna" type="STANDARD" schema="information_schema" session="Main">select * from pg_catalog.pg_tables
+
+select * from public.physician
+
+select * from public.physician where id=147333
+
+select * from public.appointment
+
+select * from public.appointment where id=153033
+
+select * from public.patient
+
+select * from public.patient where id=152832
+
+select * from public.patient where first_name='Hasta'</console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
