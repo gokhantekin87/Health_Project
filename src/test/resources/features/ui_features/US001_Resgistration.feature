@@ -2,10 +2,8 @@
 Feature:US01 Kayıt olmak için SSN, Firstname ve Lastname bilgileri girililebilmelidir.
   Background: Kullanici_register_sayfasina_gider
     Given Kullanici "medunnaUrl" adresine gider
-    And insan ikonuna tiklar
-    And register butonuna tiklar
-    #Then Kullanici sayfanin sag ust kosesinde yer alan insan ikonuna tiklar
-    #Then Kullanici Register butonuna tiklar
+    Then Kullanici sayfanin sag ust kosesinde yer alan insan ikonuna tiklar
+    Then Kullanici Register butonuna tiklar
 
 
   @TC001 @SmokeTest
