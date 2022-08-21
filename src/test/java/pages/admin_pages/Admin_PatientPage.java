@@ -5,10 +5,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
- public class US_015 {
+ public class Admin_PatientPage {
 
 
-     US_015(){PageFactory.initElements(Driver.getDriver(),this);};
+     Admin_PatientPage(){PageFactory.initElements(Driver.getDriver(),this);};
 
      @FindBy(xpath = "//a[@aria-haspopup='true']")
      public WebElement accountButton;
