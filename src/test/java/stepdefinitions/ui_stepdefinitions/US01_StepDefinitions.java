@@ -50,13 +50,12 @@ public class US01_StepDefinitions {
     }
     @Then("Kullanici bos alana tiklar")
     public void kullanici_bos_alana_tiklar() {
-        medunna.bosAlan.click();
-
+        medunna.firstNameBox.click();
     }
     @Given("Kullanici Your SSN is required yazisinin gorunmedigini test eder")
     public void kullanici_your_ssn_is_required_yazisinin_gorunmedigini_test_eder() {
-        medunna.SSNBox.click();
-        medunna.bosAlan.click();
+
+
         Assert.assertEquals(0,medunna.YourSSNisinvalidmesaji.size());
     }
                 //  TC2
@@ -94,7 +93,7 @@ public class US01_StepDefinitions {
     }
     @Given("Kullanici hata metni goruldugunu dogrular")
     public void kullanici_hata_metni_goruldugunu_dogrular() {
-                             //BUG
+        Assert.assertTrue(medunna.YourFirstNameIsrequiredMesaji.isDisplayed());
     }
     @Then("Kullanici lastname kutucugunun bos olup olmadigini dogrular")
     public void kullanici_lastname_kutucugunun_bos_olup_olmadigini_dogrular() {

@@ -13,4 +13,4 @@ Feature: Kullanici giris yapmadan basarili randevu olusturabilmeli
     Then kullanici basarili randevu olusturdugunu dogrular
     Examples: Tarih(ay/g/y) =>08/21/2022
     | firstName  | lastName   | ssn            | eMail              | phone        | appoitmentDateTime |
-    |team59      |user        |123-45-9371     |useer12@gmail.com   |000-000-0000  |08212022            |
+    |team59      |user        |123-45-9371     |useer12@gmail.com   |000-000-0000  |08222022            |
