@@ -11,6 +11,9 @@ import pages.us_pages.US001_Page;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import static utilities.Driver.waitForVisibility;
+import static utilities.ReusableMethods.waitFor;
+
 
 public class US01_StepDefinitions {
     US001_Page medunna = new US001_Page();
@@ -39,7 +42,7 @@ public class US01_StepDefinitions {
 
     @Given("Kullanici ssn kutucuguna tiklar")
     public void kullanici_ssn_kutucuguna_tiklar() {
-        medunna.SSNBox.click();
+
     }
     @Then("Kullanici dokuz haneli {string} girer")
     public void kullanici_dokuz_haneli_girer(String ssn) {
@@ -47,13 +50,12 @@ public class US01_StepDefinitions {
     }
     @Then("Kullanici bos alana tiklar")
     public void kullanici_bos_alana_tiklar() {
-        medunna.bosAlan.click();
-
+        medunna.firstNameBox.click();
     }
     @Given("Kullanici Your SSN is required yazisinin gorunmedigini test eder")
     public void kullanici_your_ssn_is_required_yazisinin_gorunmedigini_test_eder() {
-        medunna.SSNBox.click();
-        medunna.bosAlan.click();
+
+
         Assert.assertEquals(0,medunna.YourSSNisinvalidmesaji.size());
     }
                 //  TC2
@@ -91,10 +93,16 @@ public class US01_StepDefinitions {
     }
     @Given("Kullanici hata metni goruldugunu dogrular")
     public void kullanici_hata_metni_goruldugunu_dogrular() {
-                             //BUG
+        Assert.assertTrue(medunna.YourFirstNameIsrequiredMesaji.isDisplayed());
     }
     @Then("Kullanici lastname kutucugunun bos olup olmadigini dogrular")
     public void kullanici_lastname_kutucugunun_bos_olup_olmadigini_dogrular() {
         Assert.assertTrue(medunna.lastNameHataMesasji.isDisplayed());
+    }
+
+    @Then("kullanici basarili Registration yaptigini dogrular")
+    public void kullaniciBasariliRegistrationYaptiginiDogrular() {
+        waitFor(2);
+        Assert.assertTrue(medunna.registrationSavedPopup.isDisplayed());
     }
 }

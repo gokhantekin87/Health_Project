@@ -1,9 +1,10 @@
 Feature: US009 Staff, hasta bilgilerini gorebilmeli, duzenleyebilmeli ve silebilmelidir
-
+@EndtoEndTest
 Scenario: US009 TC001 Staff "My Pages" sekmesinden hasta bilgilerini gorebilmelidir
     Given kullanici medunna anasayfasinda
     Then kullanici "staffUsername" ve "staffPassword" girerek giris yapar
     And My Pages sekmesinden Search Patient tiklar
+@EndtoEndTest
     Scenario Outline: TC_001 No_02
         Then Tabloda "<patient info>" gorunur oldugunu dogrular
         Examples:

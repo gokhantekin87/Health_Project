@@ -3,7 +3,6 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.asserts.SoftAssert;
 import pages.staff_pages.StaffPage;
 import pages.staff_pages.Staff_SearchPatientPage;
 import utilities.Driver;
@@ -13,7 +12,6 @@ public class US009_StaffStepDefs {
 
     StaffPage page=new StaffPage();
     Staff_SearchPatientPage patientPage=new Staff_SearchPatientPage();
-    SoftAssert softAssert = new SoftAssert();
  
 
     @And("My Pages sekmesinden Search Patient tiklar")
@@ -24,9 +22,10 @@ public class US009_StaffStepDefs {
 
     @Then("Tabloda {string} gorunur oldugunu dogrular")
     public void tablodaGorunurOldugunuDogrular(String patientInfo) {
-     softAssert.assertTrue(Driver.getDriver().findElement(By.xpath("//td[text()='"+patientInfo+"']")).isDisplayed(),
-             " "+patientInfo+" is not displayed ");
-        softAssert.assertAll();}
+     Assert.assertTrue(Driver.getDriver().findElement(By.xpath("//td[text()='"+patientInfo+"']")).isDisplayed());
+
+        }
+
 
 
     @When("Staff Edit butonuna tiklar")
@@ -59,9 +58,9 @@ public class US009_StaffStepDefs {
 
     @And("Acilan sayfada duzenlemeler kaydedildimi dogrular")
     public void acilanSayfadaDuzenlemelerKaydedildimiDogrular() {
-        softAssert.assertTrue(Driver.waitForVisibility(patientPage.updatePopup,2).isDisplayed());
-        softAssert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));
-        softAssert.assertAll();
+        Assert.assertTrue(Driver.waitForVisibility(patientPage.updatePopup,2).isDisplayed());
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("patient-detail"));
+
     }
 
     @And("Staff arama cubuguna SSN numarasi {string} girer")
@@ -72,9 +71,9 @@ public class US009_StaffStepDefs {
 
     @Then("Sonucun aranan SSN numarasi icerdigini {string} dogrular")
     public void sonucunArananSSNNumarasiIcerdiginiDogrular(String ssn) {
-      //Assert.assertTrue(patientPage.patientTbody.getText().contains(ssn));
+      Assert.assertTrue(patientPage.patientTbody.getText().contains(ssn));
         Assert.assertTrue(""+ssn+" yok",Driver.getDriver().findElement(By.xpath("//td[text()='"+ssn+"']")).isDisplayed());
-    //Assert.assertTrue(patientPage.ssnValid.isDisplayed());
+    Assert.assertTrue(patientPage.ssnValid.isDisplayed());
     }
 
     @And("Show Appointment butonuna tiklar")
@@ -84,12 +83,13 @@ public class US009_StaffStepDefs {
 
     @Then("Appointments tablosunda kayit bilgilerini icerdigini dogrular")
     public void appointmentsTablosundaKayitBilgileriniIcerdiginiDogrular() {
-        softAssert.assertTrue(patientPage.patientTbody.getText().contains("164343"),"id");
-        softAssert.assertTrue(patientPage.patientTbody.getText().contains("08/08/22 03:00"),"start date");
-        softAssert.assertTrue(patientPage.patientTbody.getText().contains("08/08/22 04:00"),"end date");
-        softAssert.assertTrue(patientPage.patientTbody.getText().contains("UNAPPROVED"),"status");
-        softAssert.assertTrue(patientPage.patientTbody.getText().contains("Hasta"),"patient name");
-        softAssert.assertAll();}
+        Assert.assertTrue(patientPage.patientTbody.getText().contains("164343"));
+        Assert.assertTrue(patientPage.patientTbody.getText().contains("08/08/22 03:00"));
+        Assert.assertTrue(patientPage.patientTbody.getText().contains("08/08/22 04:00"));
+        Assert.assertTrue(patientPage.patientTbody.getText().contains("UNAPPROVED"));
+        Assert.assertTrue(patientPage.patientTbody.getText().contains("Hasta"));
+
+    }
 
     @Then("Staff hasta bigilerini siler ve kaydeder")
     public void staffHastaBigileriniSilerVeKaydeder() {

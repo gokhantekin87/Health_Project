@@ -1,4 +1,3 @@
-@US014
 Feature: Physician Inpatient islemleri yapabilir
   Background: TC01 ve TC02
 
