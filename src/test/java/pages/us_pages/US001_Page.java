@@ -42,6 +42,7 @@ public class US001_Page{
     public WebElement lastNameHataMesasji;
     @FindBy(xpath="(//div[@class='invalid-feedback'])[1]")
     public List<WebElement> YourSSNisinvalidmesaji;
+
     @FindBy(xpath = "//input[@id=\"username\"]")
     public WebElement usernamebox;
     @FindBy(xpath = "//div[@class=\"invalid-feedback\"]")
