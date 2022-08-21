@@ -45,12 +45,16 @@ select * from public.patient where id=152832
 
 select * from public.patient where first_name='Hasta']]></console>
     </connection>
+    <connection id="a14737f1-d919-46d0-a342-4bdbc86c3bb2">
+      <console name="Connection" type="STANDARD" schema="" session="Main" />
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="ec0d691e-19b0-4df9-8d69-87bad21f3325" />
+    <connection id="a14737f1-d919-46d0-a342-4bdbc86c3bb2" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.staff" active-filter-id="" />
@@ -191,6 +195,90 @@ select * from public.patient where first_name='Hasta']]></console>
           <object-name-filters />
         </object-filters>
       </connection>
+      <connection id="a14737f1-d919-46d0-a342-4bdbc86c3bb2" active="true" signed="true">
+        <database>
+          <name value="Connection" />
+          <description value="Medunna" />
+          <database-type value="POSTGRES" />
+          <config-type value="BASIC" />
+          <database-version value="9999.0" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="DATABASE" />
+          <host value="medunna.com" />
+          <port value="5432" />
+          <database value="medunna_db" />
+          <type value="USER_PASSWORD" />
+          <user value="medunnadb_user" />
+          <deprecated-pwd value="" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="false" />
+          <environment-type value="default" />
+          <connectivity-timeout value="5" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter>
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
     </connections>
     <browser-settings>
       <general>
@@ -229,13 +317,13 @@ select * from public.patient where first_name='Hasta']]></console>
       </filters>
       <sorting>
         <object-type name="COLUMN" sorting-type="NAME" />
-        <object-type name="FUNCTION" sorting-type="NAME" />
+        <object-type name="FUNCTİON" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
-        <object-type name="TYPE ATTRIBUTE" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRİBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
-        <object-type name="VIEW" editor-type="SELECTION" />
+        <object-type name="VİEW" editor-type="SELECTION" />
         <object-type name="PACKAGE" editor-type="SELECTION" />
         <object-type name="TYPE" editor-type="SELECTION" />
       </default-editors>
@@ -246,24 +334,24 @@ select * from public.patient where first_name='Hasta']]></console>
           <object-type name="SCHEMA" enabled="true" />
           <object-type name="USER" enabled="false" />
           <object-type name="ROLE" enabled="false" />
-          <object-type name="PRIVILEGE" enabled="false" />
+          <object-type name="PRİVİLEGE" enabled="false" />
           <object-type name="CHARSET" enabled="false" />
           <object-type name="TABLE" enabled="true" />
-          <object-type name="VIEW" enabled="true" />
-          <object-type name="MATERIALIZED VIEW" enabled="true" />
-          <object-type name="INDEX" enabled="true" />
-          <object-type name="CONSTRAINT" enabled="true" />
-          <object-type name="DATASET TRIGGER" enabled="true" />
-          <object-type name="DATABASE TRIGGER" enabled="true" />
+          <object-type name="VİEW" enabled="true" />
+          <object-type name="MATERİALİZED VİEW" enabled="true" />
+          <object-type name="İNDEX" enabled="true" />
+          <object-type name="CONSTRAİNT" enabled="true" />
+          <object-type name="DATASET TRİGGER" enabled="true" />
+          <object-type name="DATABASE TRİGGER" enabled="true" />
           <object-type name="SYNONYM" enabled="false" />
           <object-type name="SEQUENCE" enabled="true" />
           <object-type name="PROCEDURE" enabled="true" />
-          <object-type name="FUNCTION" enabled="true" />
+          <object-type name="FUNCTİON" enabled="true" />
           <object-type name="PACKAGE" enabled="true" />
           <object-type name="TYPE" enabled="true" />
-          <object-type name="DIMENSION" enabled="false" />
+          <object-type name="DİMENSİON" enabled="false" />
           <object-type name="CLUSTER" enabled="false" />
-          <object-type name="DBLINK" enabled="true" />
+          <object-type name="DBLİNK" enabled="true" />
         </lookup-objects>
         <force-database-load value="false" />
         <prompt-connection-selection value="true" />
