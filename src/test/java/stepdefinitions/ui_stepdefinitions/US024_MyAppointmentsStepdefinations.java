@@ -82,6 +82,7 @@ public class US024_MyAppointmentsStepdefinations {
         System.out.println("fatura SSN: "+ssnn);
         System.out.println("odeme yontemi: "+ payment);
         System.out.println("ucret:  "+totalcst);
+        System.out.println("deneme");
 
 
 
