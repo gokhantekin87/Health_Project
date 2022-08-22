@@ -102,4 +102,9 @@ import utilities.Driver;
      @FindBy(xpath = "//div[@class='Toastify__toast-body']")
      public WebElement güncelemeBasariliButton;
 
+     @FindBy(xpath = " (//th[@class='hand'])[1]")
+     public WebElement patientsIdButton;
+
+
+
 }
