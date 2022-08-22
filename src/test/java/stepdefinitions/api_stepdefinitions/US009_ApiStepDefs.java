@@ -158,6 +158,5 @@ public class US009_ApiStepDefs {
         assertEquals(jsonpath.get("phone"),phone);
         assertEquals(jsonpath.get("adress"),adress);
 
-
     }
 }
