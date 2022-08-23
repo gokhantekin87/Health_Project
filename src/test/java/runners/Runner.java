@@ -16,9 +16,9 @@ import org.junit.runner.RunWith;
 
         },
         features = "./src/test/resources/features",
-        glue = "stepdefinitions",
-        tags = "@US028_UI_feature",
-        dryRun = false
+        glue = "Registration2",
+        tags = "@UIhepsi",
+        dryRun = true
 )
 public class Runner {
      /*
