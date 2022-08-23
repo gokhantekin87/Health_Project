@@ -1,6 +1,6 @@
 Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
 
-    Scenario:
+    Scenario: 1
       Given Admin medunna url e gider
       And Admin accountButton u tiklar
       And Admin sign in secenegini tiklar
@@ -11,7 +11,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
       And Admin  hasta bilgilerini girer
       And Admin kayıt butonuna tıklar
       Then Admin islem basarili uyarisini görür
-
+      And Admin sayfayi kapatir
       Scenario:
         Given Admin medunna url e gider
         When Admin accountButton u tiklar
