@@ -51,18 +51,30 @@ public class US015_PatientStepDef {
         action.click(admin_patientPage.birthDateBox).sendKeys("01011991").
                 sendKeys(Keys.TAB).sendKeys("0101").
                 sendKeys(Keys.TAB).sendKeys("ayla@gmail.com").
-                sendKeys(Keys.TAB).sendKeys("5554443322").
-                sendKeys(Keys.TAB).sendKeys("FEMALE").
+                sendKeys(Keys.TAB).sendKeys("5554443322").perform();
+
+                action.sendKeys(Keys.TAB).sendKeys("FEMALE").
                 sendKeys(Keys.TAB).sendKeys("A+").
-                sendKeys(Keys.TAB).sendKeys("ss sokak").
+                sendKeys(Keys.TAB).sendKeys("light sokak").
                 sendKeys(Keys.TAB).sendKeys("oksuruk").
                 sendKeys(Keys.TAB).sendKeys("bakalım").
-                sendKeys(Keys.TAB).sendKeys("USA").
+                sendKeys(Keys.TAB).sendKeys(admin_patientPage.usaBox).
+                sendKeys(Keys.TAB).sendKeys(admin_patientPage.californiaOption).
+                perform();
+
+
+
+
+           /*     sendKeys(Keys.TAB).sendKeys("US").
                 sendKeys(Keys.TAB).sendKeys("California").
 
                 perform();
 
-        /*
+Select select4=new Select(admin_patientPage.countryIdBox);
+        select4.selectByVisibleText("US");
+        //js.executeScript("arguments[0].click();",admin_patientPage.cStateBox);
+        Select select5=new Select(admin_patientPage.cStateBox);
+        select5.selectByValue("43522");
 
 
         admin_patientPage.emailBox.sendKeys("ayla@gmail.com");

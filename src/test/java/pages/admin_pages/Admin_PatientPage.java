@@ -8,7 +8,7 @@ import utilities.Driver;
  public class Admin_PatientPage {
 
 
-    public Admin_PatientPage(){PageFactory.initElements(Driver.getDriver(),this);};
+    public Admin_PatientPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
      @FindBy(xpath = "//a[@aria-haspopup='true']")
      public WebElement accountButton;
@@ -74,7 +74,7 @@ import utilities.Driver;
      @FindBy(xpath = "//select[@name='cstate.id']")
      public WebElement cStateBox;
 
-     @FindBy(xpath = "//option[@value='43522']")
+     @FindBy(xpath = "//option[@value='43522']")//option[@value='43522']
      public WebElement californiaOption;
 
      @FindBy(id = "save-entity")
@@ -98,11 +98,9 @@ import utilities.Driver;
      @FindBy(xpath = "(//button[@type='button'])[4]")
      public WebElement delete2Button;
 
-     @FindBy(xpath = "//div[@class='Toastify__toast-body']")
-     public WebElement serverErrorButton;
 
      @FindBy(xpath = "//div[@class='Toastify__toast-body']")
-     public WebElement güncelemeBasariliButton;
+     public WebElement guncelemeBasariliButton;
 
      @FindBy(xpath = " (//th[@class='hand'])[1]")
      public WebElement patientsIdButton;
