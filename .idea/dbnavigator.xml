@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -51,6 +51,32 @@ select * from public.patient where first_name='Hasta']]></console>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="ec0d691e-19b0-4df9-8d69-87bad21f3325" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.staff" active-filter-id="" />
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.patient" active-filter-id="c7d85a17-54d5-48f6-9320-c6bf47315aef">
+      <filter id="c7d85a17-54d5-48f6-9320-c6bf47315aef" name="154272" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="154272" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.country" active-filter-id="" />
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.appointment" active-filter-id="" />
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.jhi_user_authority" active-filter-id="6ccc9f71-c370-4e4e-a81b-828c54c09b21">
+      <filter id="6ccc9f71-c370-4e4e-a81b-828c54c09b21" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="authority_name" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.jhi_user" active-filter-id="e79fd110-7628-46fb-8d79-5f89e41eb132">
+      <filter id="e79fd110-7628-46fb-8d79-5f89e41eb132" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.in_patient" active-filter-id="" />
+    <filter-actions connection-id="ec0d691e-19b0-4df9-8d69-87bad21f3325" dataset="public.jhi_authority" active-filter-id="bc880360-f771-40d2-8491-9afee2b4d670">
+      <filter id="bc880360-f771-40d2-8491-9afee2b4d670" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="name" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -203,12 +229,13 @@ select * from public.patient where first_name='Hasta']]></console>
       </filters>
       <sorting>
         <object-type name="COLUMN" sorting-type="NAME" />
-        <object-type name="FUNCTION" sorting-type="NAME" />
+        <object-type name="FUNCTİON" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRİBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
-        <object-type name="VIEW" editor-type="SELECTION" />
+        <object-type name="VİEW" editor-type="SELECTION" />
         <object-type name="PACKAGE" editor-type="SELECTION" />
         <object-type name="TYPE" editor-type="SELECTION" />
       </default-editors>
@@ -219,24 +246,24 @@ select * from public.patient where first_name='Hasta']]></console>
           <object-type name="SCHEMA" enabled="true" />
           <object-type name="USER" enabled="false" />
           <object-type name="ROLE" enabled="false" />
-          <object-type name="PRIVILEGE" enabled="false" />
+          <object-type name="PRİVİLEGE" enabled="false" />
           <object-type name="CHARSET" enabled="false" />
           <object-type name="TABLE" enabled="true" />
-          <object-type name="VIEW" enabled="true" />
-          <object-type name="MATERIALIZED VIEW" enabled="true" />
-          <object-type name="INDEX" enabled="true" />
-          <object-type name="CONSTRAINT" enabled="true" />
-          <object-type name="DATASET TRIGGER" enabled="true" />
-          <object-type name="DATABASE TRIGGER" enabled="true" />
+          <object-type name="VİEW" enabled="true" />
+          <object-type name="MATERİALİZED VİEW" enabled="true" />
+          <object-type name="İNDEX" enabled="true" />
+          <object-type name="CONSTRAİNT" enabled="true" />
+          <object-type name="DATASET TRİGGER" enabled="true" />
+          <object-type name="DATABASE TRİGGER" enabled="true" />
           <object-type name="SYNONYM" enabled="false" />
           <object-type name="SEQUENCE" enabled="true" />
           <object-type name="PROCEDURE" enabled="true" />
-          <object-type name="FUNCTION" enabled="true" />
+          <object-type name="FUNCTİON" enabled="true" />
           <object-type name="PACKAGE" enabled="true" />
           <object-type name="TYPE" enabled="true" />
-          <object-type name="DIMENSION" enabled="false" />
+          <object-type name="DİMENSİON" enabled="false" />
           <object-type name="CLUSTER" enabled="false" />
-          <object-type name="DBLINK" enabled="true" />
+          <object-type name="DBLİNK" enabled="true" />
         </lookup-objects>
         <force-database-load value="false" />
         <prompt-connection-selection value="true" />
