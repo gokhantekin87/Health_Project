@@ -10,10 +10,10 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
       And Admin yeni hasta olustur kutusunu tıklar
       And Admin  hasta bilgilerini girer
       And Admin kayıt butonuna tıklar
-      Then Admin islem basarili uyarisini görür
+      Then Admin save butonunun gorulemez oldugunu test eder
       And Admin sayfayi kapatir
 
-      Scenario:2- Yönetici "SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address,
+      Scenario: 2- Yönetici "SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address,
       Description, Created Date, User, Country and state / City" gibi hasta bilgilerini görebilir.
 
         Given Admin medunna url e gider
@@ -25,8 +25,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
         And Admin yeni hasta olustur kutusunu tıklar
         And Admin  hasta bilgilerini girer
         And Admin kayıt butonuna tıklar
-        And Admin ID tiklar
-        Then Admin hastanın SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and state / City bilgilerini görür"
+        Then Admin hastanın SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and stateCity bilgilerini görür
         And Admin sayfayi kapatir
 
       Scenario:3- Hasta oluşturulduğunda veya güncellendiğinde yukarıdaki öğelere data girişi yapılabilmeli.
@@ -36,14 +35,9 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
         And Admin username ve password ile giris yapar
         And Admin item&titles butonumu tıklar
         And Admin patient secenegini tıklar
-        And Admin  hasta bilgilerini girer
-        And Admin kayıt butonuna tıklar
-        And Admin listenin son sayfayasına gider
-        And Admin hastanın oldugu satırda edit butonunu tıklar
-        And Admin hastanın yeni bilgilerini girer
-        And Admin kayıt butonuna tıklar
-        Then Admin islem basarili uyarisini görür
-        And Admin sayfayi kapatir
+        And Admin ıd basligina tıklar
+        And Admin edit butonunu tiklar
+        When Admin ogelerin secilebilir oldugunu gorur
 
   Scenario: Hasta için gerekli doktoru seçebilmeli ve randevuyu oluşturmalı.
     * Kullanici  "https://medunna.com/" adresine gider
@@ -58,7 +52,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
     * Kullanici doktor secebilmeli
     * Kullanici save tusuna basar
 
-    Scenario:5- "State", "US state" olmalı ve boş bırakılmamal
+    Scenario:5- "State", "US state" olmalı ve boş bırakılmamali
     Given Admin medunna url e gider
     When Admin accountButton u tiklar
     And Admin sign in secenegini tiklar
@@ -68,7 +62,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
     And Admin yeni hasta olustur kutusunu tıklar
     And Admin state dısındaki hasta bilgilerini girer
     And Admin kayıt butonuna tıklar
-    And Admin islem basarili uyarisini görür
+    And Admin save butonunu gorur
 
       Scenario: 6- Yönetici herhangi bir hastayı silebilir
       Given Admin medunna url e gider
@@ -78,4 +72,4 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
       And Admin ıd basligina tıklar
       And Admin delete butonuna tıklar
       And Admin tekrar delete butonuna tıklar
-      When Admin islem basarili uyarisini görür
+      When Admin delete alertinin kayboldugunu gorur

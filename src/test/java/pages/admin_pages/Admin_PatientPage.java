@@ -109,8 +109,35 @@ import utilities.Driver;
      public WebElement guncelemeBasariliButton;
 
      @FindBy(xpath = " (//th[@class='hand'])[1]")
-     public WebElement patientsIdButton;
+     public WebElement idBaslik;
 
+     @FindBy(xpath = "//span[text()='SSN']")
+     public WebElement ssnBaslik;
+
+     @FindBy(xpath = "//span[text()='First Name']")
+     public WebElement firstBaslik;
+
+     @FindBy(xpath = "//span[text()='Last Name']")
+     public WebElement lastBaslik;
+
+     @FindBy(xpath = "//span[text()='Birth Date']")
+     public WebElement birthBaslik;
+
+     @FindBy(xpath = "//span[text()='Phone']")
+     public WebElement phoneBaslik;
+
+     @FindBy(xpath = "//span[text()='Gender']")
+     public WebElement genderBaslik;
+
+     @FindBy(xpath = "//span[text()='Created Date']")
+     public WebElement createdBaslik;
+
+
+     @FindBy(xpath = "(//a[@class='btn btn-link btn-sm'])[1]")
+     public WebElement patientId;
+
+     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
+     public WebElement editButton;
 
 
 }
