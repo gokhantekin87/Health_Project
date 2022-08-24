@@ -8,7 +8,7 @@ import utilities.Driver;
  public class Admin_PatientPage {
 
 
-     Admin_PatientPage(){PageFactory.initElements(Driver.getDriver(),this);};
+    public Admin_PatientPage(){PageFactory.initElements(Driver.getDriver(),this);};
 
      @FindBy(xpath = "//a[@aria-haspopup='true']")
      public WebElement accountButton;
@@ -42,6 +42,8 @@ import utilities.Driver;
      @FindBy(xpath = "//input[@name='lastName']")
      public WebElement lastnameBox;
 
+  @FindBy(xpath = "//input[@name='birthDate']")
+  public WebElement birthDateBox;
 
      @FindBy(xpath = "//input[@name='birthDate']")
      public WebElement emailBox;
@@ -101,5 +103,10 @@ import utilities.Driver;
 
      @FindBy(xpath = "//div[@class='Toastify__toast-body']")
      public WebElement güncelemeBasariliButton;
+
+     @FindBy(xpath = " (//th[@class='hand'])[1]")
+     public WebElement patientsIdButton;
+
+
 
 }
