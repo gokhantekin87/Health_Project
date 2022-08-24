@@ -10,30 +10,33 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 public class Driver {
     private static final int timeout = 5;
-    private  Driver(){
+
+    private Driver() {
 
     }
+
     static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if (driver==null) {
-            switch (ConfigReader.getProperty("browser")){
-                case "chrome" :
+        if (driver == null) {
+            switch (ConfigReader.getProperty("browser")) {
+                case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
                     break;
-                case "safari" :
+                case "safari":
                     WebDriverManager.safaridriver().setup();
-                    driver=new SafariDriver();
+                    driver = new SafariDriver();
                     break;
-                case "firefox" :
+                case "firefox":
                     WebDriverManager.firefoxdriver().setup();
-                    driver=new FirefoxDriver();
+                    driver = new FirefoxDriver();
                     break;
                 case "headless-chrome":
                     WebDriverManager.chromedriver().setup();
@@ -51,10 +54,10 @@ public class Driver {
         return driver;
     }
 
-    public static void closeDriver(){
-        if (driver!=null){ // driver'a deger atanmissa
+    public static void closeDriver() {
+        if (driver != null) { // driver'a deger atanmissa
             driver.close();
-            driver=null;
+            driver = null;
         }
     }
 
@@ -71,6 +74,7 @@ public class Driver {
             }
         }
     }
+
     public static void waitAndClick(WebElement element) {
         for (int i = 0; i < timeout; i++) {
             try {
@@ -83,8 +87,18 @@ public class Driver {
     }
 
 
+    public static void waitAndSendText(WebElement element, String text, int timeout) {
+        for (int i = 0; i < timeout; i++) {
+            try {
+                element.sendKeys(text);
+                return;
+            } catch (WebDriverException e) {
+                wait(1);
+            }
+        }
+    }
 
-    public static void waitAndSendText(WebElement element,String text, int timeout) {
+    public static void waitAndSendText(WebElement element, String text) {
         for (int i = 0; i < timeout; i++) {
             try {
                 element.sendKeys(text);
@@ -94,17 +108,8 @@ public class Driver {
             }
         }
     }
-    public static void waitAndSendText(WebElement element,String text) {
-        for (int i = 0; i < timeout; i++) {
-            try {
-                element.sendKeys(text);
-                return;
-            } catch (WebDriverException e) {
-                wait(1);
-            }
-        }
-    }
-    public static void waitAndSendTextWithDefaultTime(WebElement element,String text) {
+
+    public static void waitAndSendTextWithDefaultTime(WebElement element, String text) {
         for (int i = 0; i < timeout; i++) {
             try {
                 element.sendKeys(text);
@@ -116,7 +121,7 @@ public class Driver {
     }
 
     public static String waitAndGetText(WebElement element, int timeout) {
-        String text="";
+        String text = "";
         for (int i = 0; i < timeout; i++) {
             try {
                 text = element.getText();
@@ -133,35 +138,35 @@ public class Driver {
     //Iedriver
     //FirefoxDriver
 
-    public static void wait2(int sec){
+    public static void wait2(int sec) {
         try {
-            Thread.sleep(1000*sec);
-        }catch (NoSuchElementException e){
+            Thread.sleep(1000 * sec);
+        } catch (NoSuchElementException e) {
             e.printStackTrace();
-        }catch (TimeoutException e){
+        } catch (TimeoutException e) {
             e.printStackTrace();
-        }catch (StaleElementReferenceException e){
+        } catch (StaleElementReferenceException e) {
             e.printStackTrace();
-        }catch (ElementClickInterceptedException e){
+        } catch (ElementClickInterceptedException e) {
             e.printStackTrace();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
+
     //5 seconds
-    public static void waitAndClickElement(WebElement element , int seconds){
-        for (int i = 0; i < seconds ; i++) {
+    public static void waitAndClickElement(WebElement element, int seconds) {
+        for (int i = 0; i < seconds; i++) {
 
             try {
                 element.click();
                 break;
-            }catch (Exception e){
+            } catch (Exception e) {
                 wait2(1);
             }
         }
     }
-
 
 
     public static void wait(int secs) {
@@ -174,9 +179,9 @@ public class Driver {
             e.printStackTrace();
         } catch (NoSuchElementException e) {
             e.printStackTrace();
-        }catch (StaleElementReferenceException e) {
+        } catch (StaleElementReferenceException e) {
             e.printStackTrace();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -185,10 +190,12 @@ public class Driver {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
+
     public static WebElement waitForVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
+
     public static Boolean waitForInVisibility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
@@ -218,4 +225,16 @@ public class Driver {
         }
     }
 
+    public static void clickWithJS(WebElement element) {
+
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+    }
+
+    public static void clickWithJSAsList(List<WebElement> elements) {
+        for (WebElement each : elements) {
+            ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", waitForVisibility(each, 5));
+            ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", each);
+        }
+    }
 }
