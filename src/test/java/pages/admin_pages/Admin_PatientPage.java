@@ -57,6 +57,9 @@ import utilities.Driver;
 
      @FindBy(xpath = "//select[@name='bloodGroup']")
      public WebElement bloodGroupBox;
+     @FindBy(xpath = "//option[@value='Apositive']")
+     public WebElement aGroupBox;
+
 
      @FindBy(xpath = "//input[@name='adress']")
      public WebElement adressBox;
@@ -69,6 +72,9 @@ import utilities.Driver;
 
      @FindBy(xpath = "//option[@value='80065']")
      public WebElement usaBox;
+     @FindBy(xpath = "//option[@value='80084']")
+     public WebElement usBox;
+
 
 
      @FindBy(xpath = "//select[@name='cstate.id']")

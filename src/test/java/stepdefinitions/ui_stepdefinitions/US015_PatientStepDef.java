@@ -44,20 +44,43 @@ public class US015_PatientStepDef {
 
     @Then("Admin  hasta bilgilerini girer")
     public void admin_hasta_bilgilerini_girer() throws InterruptedException {
-        admin_patientPage.firstnameBox.sendKeys("Ayla");
+        admin_patientPage.firstnameBox.sendKeys("Ayse");
         admin_patientPage.lastnameBox.sendKeys("Ayla");
 
         Actions action = new Actions(Driver.getDriver());
-        action.click(admin_patientPage.birthDateBox).sendKeys("01011991").
-                sendKeys(Keys.TAB).sendKeys("0101").
-                sendKeys(Keys.TAB).sendKeys("ayla@gmail.com").
+        action.click(admin_patientPage.birthDateBox).sendKeys("01011995").
+                sendKeys(Keys.TAB).sendKeys("0105").
+                sendKeys(Keys.TAB).sendKeys("ayse@gmail.com").
                 sendKeys(Keys.TAB).sendKeys("5554443322").perform();
 
-                action.sendKeys(Keys.TAB).sendKeys("FEMALE").
+
+
+        clickElementByJS(admin_patientPage.genderBox);
+        Select select=new Select(admin_patientPage.genderBox);
+        select.selectByValue("FEMALE");
+
+        //clickElementByJS(admin_patientPage.bloodGroupBox);
+        Select select2=new Select(admin_patientPage.bloodGroupBox);
+        select2.selectByIndex(3);
+
+        action.click(admin_patientPage.adressBox).sendKeys("ss sokak").
+                sendKeys(Keys.TAB). sendKeys("oksuruk").
+                sendKeys(Keys.TAB).sendKeys("bakalim").perform();
+
+
+
+        clickElementByJS(admin_patientPage.countryIdBox);
+       admin_patientPage.usBox.click();
+
+        clickElementByJS(admin_patientPage.cStateBox);
+        admin_patientPage.californiaOption.click();
+
+
+                /*action.click(admin_patientPage.genderBox).sendKeys("FEMALE").
                 sendKeys(Keys.TAB).sendKeys("A+").
                 sendKeys(Keys.TAB).sendKeys("light sokak").
                 sendKeys(Keys.TAB).sendKeys("oksuruk").
-                sendKeys(Keys.TAB).sendKeys("bakalım").
+                sendKeys(Keys.TAB).sendKeys("team59medunna").
                 sendKeys(Keys.TAB).sendKeys(admin_patientPage.usaBox).
                 sendKeys(Keys.TAB).sendKeys(admin_patientPage.californiaOption).
                 perform();
@@ -136,14 +159,10 @@ Select select4=new Select(admin_patientPage.countryIdBox);
 
     @Then("Admin sayfayi kapatir")
     public void admin_sayfayi_kapatir() {
-       Driver.closeDriver();;
+       Driver.closeDriver();
     }
 
-    @When("Admin listenin son sayfayasına Kullanici_register_sayfasina_gider")
-    public void admin_listenin_son_sayfayasına_kullanici_register_sayfasina_gider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
 
     @Then("Admin hastanın SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and state \\/ City bilgilerini görür\"")
     public void admin_hastanın_ssn_first_name_last_name_birth_date_phone_gender_blood_group_address_description_created_date_user_country_and_state_city_bilgilerini_görür() {
@@ -151,27 +170,22 @@ Select select4=new Select(admin_patientPage.countryIdBox);
         throw new io.cucumber.java.PendingException();
     }
 
-    @Then("Admin listenin son sayfayasına gider")
-    public void admin_listenin_son_sayfayasına_gider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
+
 
     @Then("Admin hastanın oldugu satırda edit butonunu tıklar")
     public void admin_hastanın_oldugu_satırda_edit_butonunu_tıklar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
     }
 
     @Then("Admin hastanın yeni bilgilerini girer")
     public void admin_hastanın_yeni_bilgilerini_girer() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @When("Admin state dısındaki hasta bilgilerini girer")
     public void admin_state_dısındaki_hasta_bilgilerini_girer() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
+
+    @And("Admin ID tiklar")
+    public void adminIDTiklar() {admin_patientPage.patientsIdButton.click(); }
 }
