@@ -8,7 +8,7 @@ import utilities.Driver;
 
 public class Doctor_MyAppointmentsPage {
 
-   Doctor_MyAppointmentsPage(){PageFactory.initElements(Driver.getDriver(),this);}
+   public Doctor_MyAppointmentsPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
         @FindBy(xpath = "//a[@aria-haspopup='true']")
         public WebElement accountButton;
@@ -28,7 +28,6 @@ public class Doctor_MyAppointmentsPage {
         @FindBy(xpath = "//a[@aria-haspopup='true']")
         public WebElement myPagesButton;
 
-
         @FindBy(xpath = "//a[@class='dropdown-item']")
         public WebElement myAppointmentButton;
 
@@ -46,6 +45,16 @@ public class Doctor_MyAppointmentsPage {
         @FindBy(xpath = "//select[@id='appointment-status']")
         public WebElement statüsBox;
 
+        @FindBy(xpath = "//option[@value='PENDING']")
+        public WebElement statusPending;
+    @FindBy(xpath = "//option[@value='COMPLETED']")
+    public WebElement statusCompleted;
+    @FindBy(xpath = "//option[@value='CANCELLED']")
+    public WebElement statusCancelled;
+    //option[@value='PENDING']COMPLETED
+    //option[@value='COMPLETED']
+    //option[@value='CANCELLED']
+
         @FindBy(xpath = "//div[@class='invalid-feedback']")
         public WebElement invalidFeedbackBox;
 
@@ -54,6 +63,7 @@ public class Doctor_MyAppointmentsPage {
 
      @FindBy(xpath = "(//div[@class='text-danger form-group'])[2]")
      public WebElement anamnesisHataBox;
+
 
         @FindBy(xpath = "//textarea[@name='treatment']")
         public WebElement treatmentBox;
@@ -75,8 +85,10 @@ public class Doctor_MyAppointmentsPage {
         @FindBy(xpath = "//textarea[@name='description']")
         public WebElement descriptionBox;
 
-        @FindBy(xpath = "//button[@type='submit']")
-        public WebElement saveButton;
+       // @FindBy(xpath = "//button[@type='submit']")
+        //public WebElement saveButton;
+        @FindBy(xpath = "//button[@id='save-entity']")
+      public WebElement save;
 
 
         @FindBy(xpath = "//div[@role='alert']")
@@ -135,7 +147,9 @@ public class Doctor_MyAppointmentsPage {
         public WebElement patient;
 
 
-
+//div[@role='alert'] kaydınız basarılı
+    //button[@id='save-entity'] tahlil save
+    //div[@role='alert']
 
     }
 

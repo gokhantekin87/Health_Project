@@ -14,61 +14,93 @@ public class US002_Registration2 {
 
     Faker faker = new Faker();
 
-    @Given("kullanici ana sayafaya gider")
-    public void kullanici_ana_sayafaya_gider() {
+    @Given("kullanıcı ana sayfaya gider")
+    public void kullanıcı_ana_sayfaya_gider() {
         Driver.getDriver().get("https://www.medunna.com");
     }
 
-    @When("kullanici sag üst karaktere tiklar")
-    public void kullanici_sag_üst_karaktere_tiklar() {
-        this.us02Page.character.click();
+    @And("kullanici sağ üstteki profil simgesine tıklar")
+    public void kullanici_sağ_üstteki_profil_simgesine_tıklar() {
+        Driver.wait(1);
+        Driver.waitAndClick(us02Page.dropDownmenu);
     }
 
-    @Given("kullanici Register buttonuna tiklar")
-    public void kullanici_register_buttonuna_tiklar() {
-        this.us02Page.Register.click();
+    @And("kullanici registration butonun tıklar")
+    public void kullanici_registration_butonun_tıklar() {
+        us02Page.registerButton.click();
+        Driver.wait(1);
     }
 
-    @Then("kullanici username kutusuna gider")
-    public void kullanici_username_kutusuna_gider(String username) {
-        us02Page.usernameTextBox.sendKeys(username);
+    @And("kullanici {string} SSN box girer")
+    public void kullanici_SSN_box_girer(String SSN) {
+        us02Page.ssnTextBox.sendKeys(SSN);
     }
 
-    @Then("kullanici email kutusuna gider")
-    public void kullanici_email_kutusuna_gider(String email) {
+    @And("kullanici{string} firstname box girer")
+    public void kullanici_firstname_box_girer(String firstname) {
+        us02Page.firstNameTextBox.sendKeys(firstname);
+    }
+
+    @Then("kullanici {string} lastname box girer")
+    public void kullanici_lastname_box_girer(String lastname) {
+        us02Page.lastNameTextBox.sendKeys(lastname);
+    }
+
+    @Then("kullanici{string} username box girer")
+    public void kullanici_username_box_girer(String username) {
+        us02Page.userNameTextBox.sendKeys(username);
+    }
+
+    @Then("kullanici{string} email box girer")
+    public void kullanici_email_box_girer(String email) {
         us02Page.emailTextBox.sendKeys(email);
     }
 
-    //////////////
-    @Then("kullanıcı username kusutusuna giriş yapamaz")
-    public void kullanıcı_username_kusutusuna_giriş_yapamaz() {
-        us02Page.usernameTextBox.sendKeys("");
+    @And("kullanici {string} password box girer")
+    public void kullanici_password_box_girer(String password){
+        us02Page.firstPasswordTextBox.sendKeys(password);
     }
 
-    @And("kullanıcı kulanıcı ismi gerekli olduğunu görür")
-    public void kullanıcı_kulanıcı_ismi_gerekli_olduğunu_görür() {
+    @And("kullanici aynı{string} password confirmation box girer")
+    public void kullanici_aynı_password_confirmation_box_girer(String password) {
+        us02Page.secondPasswordTextBox.sendKeys(password);
+    }
+
+    @Then("kullanici register button tıklar")
+    public void kullanici_register_button_tıklar() {
+        Driver.waitAndClick (us02Page.registerSubmitButton);
+    }
+
+    //////////////////////
+
+    @Then("kullanici username box kutusuna username girmez")
+    public void kullanici_username_box_kutusuna_username_girmez() {
+        us02Page.userNameTextBox.sendKeys("");
+    }
+
+    @And("kullanici Kullanıcı adınız gerekli görünüyor uyarı mesajı alır")
+    public void kullanici_Kullanıcı_adınız_gerekli_görünüyor_uyarı_mesajı_alır() {
         Assert.assertTrue(Driver.waitForVisibility(us02Page.usernameIsRequiredMessage, 8).isDisplayed());
     }
 
-    @Then("kullanıci email kutusuna gecersiz email girer")
-    public void kullanıci_email_kutusuna_gecersiz_email_girer() {
-        us02Page.emailTextBox.sendKeys("calismailcom");
+    @Then("kullanici email box kutusuna geçersiz email girer")
+    public void kullanici_email_box_kutusuna_geçersiz_email_girer() {
+        us02Page.emailTextBox.sendKeys("notilusgmailcom");
     }
 
-    @And("kullanici bu alanın geçersiz olduğunu dogrular")
-    public void kullanici_bu_alanın_geçersiz_olduğunu_dogrular() {
+    @And("kullanici uyarı mesajını doğrulayın bu alan geçersiz mesajı alır")
+    public void kullanici_uyarı_mesajını_doğrulayın_bu_alan_geçersiz_mesajı_alır() {
         Assert.assertTrue(us02Page.thisFieldIsInvalidMessage.isDisplayed());
     }
 
-    @Then("kullanici email kutusunu boş bırakır")
-    public void kullanici_email_kutusunu_boş_bırakır() {
+    @Then("kullanici email box kutusunu boş bırakır")
+    public void kullanici_email_box_kutusunu_boş_bırakır() {
         us02Page.emailTextBox.sendKeys(" ");
     }
 
-    @And("kullanici email mesajınının gerekli olduğunu görüntüler")
-    public void kullanici_email_mesajınının_gerekli_olduğunu_görüntüler() {
-        Assert.assertTrue(Driver.waitForVisibility(us02Page.yourEmailIsRequiredMessage, 4).isDisplayed());
-
+    @And("kullanici epostanız gerekli mesajı görüntülendiğini doğrular")
+    public void kullanici_epostanız_gerekli_mesajı_görüntülendiğini_doğrular() {
+        Assert.assertTrue(Driver.waitForVisibility(us02Page.yourEmailIsRequiredMessage,4).isDisplayed());
 
     }
 }

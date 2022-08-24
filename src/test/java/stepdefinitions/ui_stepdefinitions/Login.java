@@ -1,11 +1,16 @@
 package stepdefinitions.ui_stepdefinitions;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class Login {
+import static utilities.ReusableMethods.waitFor;
+
+public class  Login {
     /*
     Bu methodu kullanmak icin Scenario da yazdiginiz ile method isminin ayni olmasi gerekiyor
     Bu class daki method da hic bir degisiklik yapmiyoruz
@@ -30,5 +35,31 @@ public class Login {
         loginPage.usernameTextbox.sendKeys(ConfigReader.getProperty(username));
         loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
         loginPage.signInButton.click();
+    }
+
+    @And("insan ikonuna tiklar")
+    public void insanIkonunaTiklar() {
+        loginPage.accountMenu.click();
+    }
+
+    @And("register butonuna tiklar")
+    public void registerButonunaTiklar() {
+        loginPage.register.click();
+    }
+
+    @And("kullinici {string} girisi icin {string} {string} girerek giris yapar")
+    public void kulliniciGirisiIcinGirerekGirisYapar(String rol, String username, String password) {
+        loginPage.accountMenu.click();
+        loginPage.signIn.click();
+        loginPage.usernameTextbox.sendKeys(username);
+        loginPage.passwordTextbox.sendKeys(password);
+        loginPage.signInButton.click();
+        waitFor(2);
+    }
+
+    @Then("kullanici basarili giris yapdigini dogrular {string}")
+    public void kullaniciBasariliGirisYapdiginiDogrular(String userName) {
+        Assert.assertTrue(" "+userName+" giris basarisiz",
+                Driver.getDriver().findElement(By.xpath("//span[text()='"+userName+"']")).isDisplayed());
     }
 }
