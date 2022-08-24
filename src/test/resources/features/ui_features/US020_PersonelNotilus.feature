@@ -1,7 +1,7 @@
 @US_020
 Feature: PersonelNotilus
 
-  Scenario: TC_01_yeni kullanici bilgisi gorme
+  Scenario:  TC_01_yeni kullanici bilgisi gorme
     Given admin giris sayfasina gider
     Then admin signs in tiklar
     And admin User Management a klik yaptıktan sonra Administrations a klik yapar

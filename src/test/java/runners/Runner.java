@@ -15,9 +15,9 @@ import org.junit.runner.RunWith;
                 "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
         },
         features = "./src/test/resources/features",
-        glue = "Registration2",
-        tags = "@UIhepsi",
-        dryRun = true
+        glue = "PersonelNotilus",
+        tags = "@US1",
+        dryRun = false
 )
 public class Runner {
      /*
