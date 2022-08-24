@@ -2,7 +2,7 @@ package stepdefinitions.ui_stepdefinitions;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import org.testng.Assert;
+import org.junit.Assert;
 import pages.AppointmentPage;
 
 public class US006_Patient {

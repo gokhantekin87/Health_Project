@@ -2,9 +2,13 @@ package stepdefinitions.ui_stepdefinitions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import pages.LoginPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+
+import static utilities.ReusableMethods.waitFor;
 
 public class  Login {
     /*
@@ -41,5 +45,31 @@ public class  Login {
     @And("register butonuna tiklar")
     public void registerButonunaTiklar() {
         loginPage.register.click();
+    }
+
+    @And("kullinici {string} girisi icin {string} {string} girerek giris yapar")
+    public void kulliniciGirisiIcinGirerekGirisYapar(String rol, String username, String password) {
+        loginPage.accountMenu.click();
+        loginPage.signIn.click();
+        loginPage.usernameTextbox.sendKeys(username);
+        loginPage.passwordTextbox.sendKeys(password);
+        loginPage.signInButton.click();
+        waitFor(2);
+    }
+
+    @Then("kullanici basarili giris yapdigini dogrular {string}")
+    public void kullaniciBasariliGirisYapdiginiDogrular(String userName) {
+        Assert.assertTrue(" "+userName+" giris basarisiz",
+                Driver.getDriver().findElement(By.xpath("//span[text()='"+userName+"']")).isDisplayed());
+    }
+
+    @Then("kullanici {string} ve {string} girerek giris yapar2")
+    public void kullaniciVeGirerekGirisYapar2(String username, String password) {
+        loginPage.accountMenu.click();
+        loginPage.signIn.click();
+        loginPage.usernameTextbox.sendKeys(ConfigReader.getProperty(username));
+        loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
+        loginPage.rememberMe.click();
+        loginPage.signInButton.click();
     }
 }

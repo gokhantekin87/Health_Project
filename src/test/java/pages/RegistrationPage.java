@@ -13,14 +13,17 @@ public class RegistrationPage {
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
     public WebElement userIcon;
 
+    @FindBy(xpath = "//span[text()='Register']")
+    public WebElement registertext;
+
     @FindBy(xpath = "//input[@id='ssn']")
-    public WebElement RegisterSsnBox;
+    public WebElement registerSsnBox;
 
     @FindBy(xpath = "//input[@id='firstName']")
-    public WebElement RegisterFirstNameBox;
+    public WebElement registerFirstNameBox;
 
     @FindBy(xpath = "//input[@id='lastName']")
-    public WebElement RegisterLastNameBox;
+    public WebElement registerLastNameBox;
 
     @FindBy(xpath = "//input[@id='username']")
     public WebElement usernameBox;
@@ -32,7 +35,7 @@ public class RegistrationPage {
     public WebElement RegisterNewPasswordBox;
 
     @FindBy(xpath = "//input[@id='secondPassword']")
-    public WebElement RegisterConfirmPasswordBox;
+    public WebElement registerConfirmPasswordBox;
 
     @FindBy(xpath = "//button[@id='register-submit')")
     public WebElement registerButton;

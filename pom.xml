@@ -102,12 +102,7 @@
             <scope>test</scope>
         </dependency>
         <!--org.testng -->
-      <dependency>
-            <groupId>org.testng</groupId>                                           <!-- API -->
-            <artifactId>testng</artifactId>
-            <version>7.5</version>
-            <scope>test</scope>
-        </dependency>
+
         <!--org.projectlombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>                            <!-- API -->

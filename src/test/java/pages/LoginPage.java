@@ -14,4 +14,6 @@ public class LoginPage {
  @FindBy(id = "password") public WebElement passwordTextbox;
  @FindBy(xpath = "(//span[text()='Sign in'])[3]") public WebElement signInButton; //SignIn sayfasindaki signin buttonu
  @FindBy(xpath = "//a[@href='/account/register']") public WebElement register; //us001
+ @FindBy(xpath = "//span[text()='User Me']") public WebElement usernamelogin; //
+ @FindBy(id = "rememberMe") public WebElement rememberMe;
 }

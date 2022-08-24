@@ -5,6 +5,7 @@ import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.w3c.dom.html.HTMLInputElement;
 import pages.doctor_pages.Doctor_MyAppointmentsPage;
 import utilities.ConfigReader;
@@ -15,6 +16,7 @@ import static utilities.JSUtils.clickElementByJS;
 public class US011_MyAppointmentsDef {
 
 Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
+
 
 
 
@@ -67,36 +69,26 @@ Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
         }
     }
     @When("Doktor randevuda edit butonunu tiklar")
-    public void doktor_randevuda_edit_butonunu_tiklar() {
+    public void doktor_randevuda_edit_butonunu_tiklar() throws InterruptedException {
        myAppointments.randevuEditButton.click();
+       Thread.sleep(2000);
     }
 
     @When("Doktor anamnesis, treatment ve diagnosis alanlarini doldurur")
-    public void doktor_anamnesis_treatment_ve_diagnosis_alanlarini_doldurur() {
+    public void doktor_anamnesis_treatment_ve_diagnosis_alanlarini_doldurur() throws InterruptedException {
         myAppointments.anamnesisBox.clear();
         myAppointments.treatmentBox.clear();
         myAppointments.diagnosisBox.clear();
 
         myAppointments.anamnesisBox.sendKeys(ConfigReader.getProperty("doktorNot"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(1000);
+
 
         myAppointments.treatmentBox.sendKeys(ConfigReader.getProperty("doktorNot"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(1000);
 
         myAppointments.diagnosisBox.sendKeys(ConfigReader.getProperty("doktorNot"));
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(1000);
     }
     @When("Doktor randevuyu kaydeder")
     public void doktor_randevuyu_kaydeder() throws InterruptedException {
@@ -169,30 +161,84 @@ Doctor_MyAppointmentsPage myAppointments= new Doctor_MyAppointmentsPage();
         Thread.sleep(2000);
     }
 
-    @When("Doktor statüs kutusunda pending secer")
-    public void doktor_statüs_kutusunda_pending_secer() {
+   @When("Doktor statüs kutusunda pending secer")
+    public void doktor_statüs_kutusunda_pending_secer() throws InterruptedException {
+    Select select=new Select(myAppointments.statüsBox);
+    clickElementByJS(myAppointments.statüsBox);
+    myAppointments.statusPending.click();
+
+        Thread.sleep(1000);
+
 
     }
     @When("Doktor statüs kutusunda pending yazisini gorur")
     public void doktor_statüs_kutusunda_pending_yazisini_gorur() {
+        clickElementByJS(myAppointments.statüsBox);
+
+        String actualStatus=myAppointments.statusPending.getText();
+        String expectedStatus="PENDING";
+        Assert.assertEquals(actualStatus,expectedStatus);
 
     }
     @When("Doktor statüs kutusunda completed secer")
-    public void doktor_statüs_kutusunda_completed_secer() {
+    public void doktor_statüs_kutusunda_completed_secer() throws InterruptedException {
+        Select select=new Select(myAppointments.statüsBox);
+        myAppointments.statusCompleted.click();
+
+        Thread.sleep(1000);
 
     }
     @When("Doktor statüs kutusunda completed yazisini gorur")
     public void doktor_statüs_kutusunda_completed_yazisini_gorur() {
+        String actualStatus=myAppointments.statusCompleted.getText();
+        String expectedStatus="COMPLETED";
+        Assert.assertEquals(actualStatus,expectedStatus);
 
     }
     @When("Doktor statüs kutusunda cancelled secer")
-    public void doktor_statüs_kutusunda_cancelled_secer() {
+    public void doktor_statüs_kutusunda_cancelled_secer() throws InterruptedException {
+        Select select=new Select(myAppointments.statüsBox);
+        myAppointments.statusCancelled.click();
+        Thread.sleep(1000);
 
     }
     @When("Doktor statüs kutusunda cancelled yazisini gorur")
     public void doktor_statüs_kutusunda_cancelled_yazisini_gorur() {
+        String actualStatus=myAppointments.statusCancelled.getText();
+        String expectedStatus="CANCELLED";
+        Assert.assertEquals(actualStatus, expectedStatus);
 
     }
+
+
+    @And("Doktor Requeest a test butonunu tıklar")
+    public void doktorRequeestATestButonunuTıklar() {
+        clickElementByJS(myAppointments.testRequestButton);
+
+    }
+
+    @And("Doktor Glucose, Urea, Creatinine, Sodium,Potassium, Total protein, Albumin, Hemoglobin  butonlarını tıklar")
+    public void doktorGlucoseUreaCreatinineSodiumPotassiumTotalProteinAlbuminHemoglobinButonlarınıTıklar() {
+        clickElementByJS(myAppointments.glucoseButton);
+       // myAppointments.glucoseButton.click();
+        clickElementByJS(myAppointments.ureaButton);
+        //myAppointments.ureaButton.click();
+        clickElementByJS(myAppointments.creatinineButton);
+        //myAppointments.creatinineButton.click();
+        clickElementByJS(myAppointments.sodiumButton);
+       // myAppointments.sodiumButton.click();
+        clickElementByJS(myAppointments.potasiumButton);
+        //myAppointments.potasiumButton.click();
+        clickElementByJS(myAppointments.totalProteinButton);
+       // myAppointments.totalProteinButton.click();
+        clickElementByJS(myAppointments.albuminButton);
+       // myAppointments.albuminButton.click();
+        clickElementByJS(myAppointments.hemoglobinButton);
+      //  myAppointments.hemoglobinButton.click();
+    }
+
+
+
 
 
 
