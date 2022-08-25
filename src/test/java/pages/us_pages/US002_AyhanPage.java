@@ -46,4 +46,6 @@ public class US002_AyhanPage {
     @FindBy(xpath = "//*[@id='register-form']/div[5]/div")
     public WebElement thisFieldIsInvalidMessage;
 
+
+
 }

@@ -2,12 +2,13 @@ package stepdefinitions.ui_stepdefinitions;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import pages.admin_pages.Admin_RoomsPage;
-import utilities.ConfigReader;
 import utilities.Driver;
 
 import static org.junit.Assert.assertEquals;
+import static stepdefinitions.ui_stepdefinitions.Login.signIn;
 import static utilities.Driver.waitForVisibility;
 import static utilities.ReusableMethods.waitFor;
 
@@ -71,7 +72,8 @@ public class US016_RoomStepDefs {
 
     @And("admin SUITE odalarin sirlandigini dogrular")
     public void adminSUITEOdalarinSirlandiginiDogrular() {
-        Driver.getDriver().get("https://medunna.com/room?page=51&sort=id,asc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=53&sort=roomType,desc");
+        signIn();
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"SUITE");
         }
@@ -79,7 +81,8 @@ public class US016_RoomStepDefs {
 
     @And("admin PREMIUM_DELUXE odalarin siralndigini dogrular")
     public void adminPREMIUM_DELUXEOdalarinSiralndiginiDogrular() {
-        Driver.getDriver().get("https://medunna.com/room?page=58&sort=id,asc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=60&sort=roomType,desc");
+        waitFor(5);
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"PREMIUM_DELUXE");
         }
@@ -87,7 +90,7 @@ public class US016_RoomStepDefs {
 
     @And("admin DELUXE odalarin siralandigini dogrular")
     public void adminDELUXEOdalarinSiralandiginiDogrular() {
-        Driver.getDriver().get("https://medunna.com/room?page=62&sort=id,asc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=65&sort=roomType,desc");
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"DELUXE");
         }
@@ -95,7 +98,7 @@ public class US016_RoomStepDefs {
 
     @And("admin DAYCARE odalarin siralandigini dogrular")
     public void adminDAYCAREOdalarinSiralandiginiDogrular() {
-        Driver.getDriver().get("https://medunna.com/room?page=80&sort=id,asc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=84&sort=roomType,desc");
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"DAYCARE");
         }
@@ -229,5 +232,112 @@ public class US016_RoomStepDefs {
     public void silinenOdaninIdSininOlmadiginiDogrular() {
         for (int i = 1; i <20 ; i++) {
             Assert.assertNotEquals(deleteID,Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[1]")).getText());}
+    }
+
+    @Then("Room Number basliginin gorunur oldugunu dogrular")
+    public void roomNumberBasligininGorunurOldugunuDogrular() {
+        Assert.assertTrue(page.roomNumberH.isDisplayed());
+    }
+
+    @Then("Room Number texbox in gorunur ve active oldugunu dogrular")
+    public void roomNumberTexboxInGorunurVeActiveOldugunuDogrular() {
+        Assert.assertTrue(page.roomNumberTextbox.isDisplayed()&&page.roomNumberTextbox.isEnabled());
+    }
+
+    @And("Room Number bos birakildiginda kabul etmedigini dogrular")
+    public void roomNumberBosBirakildigindaKabulEtmediginiDogrular() {
+        page.roomNumberTextbox.sendKeys(" "+Keys.ENTER);
+        Assert.assertTrue(page.requiredField.isDisplayed());
+    }
+
+    @And("Room Number {string} karakter girildiginde kabul etmedigini dogrular")
+    public void roomNumberKarakterGirildigindeKabulEtmediginiDogrular(String karakter) {
+        page.roomNumberTextbox.clear();
+        page.roomNumberTextbox.sendKeys(karakter+ Keys.ENTER);
+        Assert.assertTrue(page.numberField.isDisplayed());
+    }
+
+    @And("Room Number {string} sayi girildiginde kabul ettigini dogrular")
+    public void roomNumberSayiGirildigindeKabulEttiginiDogrular(String number) {
+        page.roomNumberTextbox.clear();
+        page.roomNumberTextbox.sendKeys(number+Keys.ENTER);
+        Assert.assertTrue(page.validField.isDisplayed());
+    }
+
+    @Then("Room Type basliginin gorunur oldugunu dogrular")
+    public void roomTypeBasligininGorunurOldugunuDogrular() {
+        Assert.assertTrue(page.roomTypeH.isDisplayed());
+    }
+
+    @Then("Room Type dropdown active oldugunu dogrular")
+    public void roomTypeDropdownActiveOldugunuDogrular() {
+        Assert.assertTrue(page.roomTypeddm.isEnabled());
+    }
+
+    @Then("{string} secili oldugunu dogrular")
+    public void seciliOldugunuDogrular(String roomType) {
+        Select select=new Select(page.roomTypeddm);
+        assertEquals(roomType,select.getFirstSelectedOption().getText());
+    }
+
+    @Then("Status basliginin gorunur oldugunu dogrular")
+    public void statusBasligininGorunurOldugunuDogrular() {
+        Assert.assertTrue(page.statusH.isDisplayed());
+    }
+
+    @Then("status checkbox gorunur ve active oldugunu dogrular")
+    public void statusCheckboxGorunurVeActiveOldugunuDogrular() {
+        Assert.assertTrue(page.roomStatusCheckbox.isDisplayed()&&page.roomStatusCheckbox.isEnabled());
+    }
+
+    @And("status checkbox click yapar")
+    public void statusCheckboxClickYapar() {
+        page.roomStatusCheckbox.click();
+    }
+
+    @Then("status checkox secili oldugunu dogrular")
+    public void statusCheckoxSeciliOldugunuDogrular() {
+        Assert.assertTrue(page.roomStatusCheckbox.isSelected());
+    }
+
+    @Then("status checkboxsecili olmadigini dogrular")
+    public void statusCheckboxseciliOlmadiginiDogrular() {
+        Assert.assertFalse(page.roomStatusCheckbox.isSelected());
+    }
+
+    @Then("Price basliginin gorunur oldugunu dogrular")
+    public void priceBasligininGorunurOldugunuDogrular() {
+    }
+
+    @Then("Price texbox in gorunur ve active oldugunu dogrular")
+    public void priceTexboxInGorunurVeActiveOldugunuDogrular() {
+    }
+
+    @And("Price bos birakildiginda kabul etmedigini dogrular")
+    public void priceBosBirakildigindaKabulEtmediginiDogrular() {
+    }
+
+    @And("Price {string} karakter girildiginde kabul etmedigini dogrular")
+    public void priceKarakterGirildigindeKabulEtmediginiDogrular(String arg0) {
+    }
+
+    @And("Price {string} sayi girildiginde kabul ettigini dogrular")
+    public void priceSayiGirildigindeKabulEttiginiDogrular(String arg0) {
+    }
+
+    @Then("Description basliginin gorunur oldugunu dogrular")
+    public void descriptionBasligininGorunurOldugunuDogrular() {
+    }
+
+    @Then("Description textbox gorunur ve active oldugunu dogrular")
+    public void descriptionTextboxGorunurVeActiveOldugunuDogrular() {
+    }
+
+    @And("description bos birakildiginda kabul ettigini dogrular")
+    public void descriptionBosBirakildigindaKabulEttiginiDogrular() {
+    }
+
+    @And("description herhangi bir metin {string} yazildiginda kabul ettifgini dogrular")
+    public void descriptionHerhangiBirMetinYazildigindaKabulEttifginiDogrular(String arg0) {
     }
 }
