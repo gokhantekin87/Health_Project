@@ -22,9 +22,6 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
         And Admin username ve password ile giris yapar
         And Admin item&titles butonumu tıklar
         And Admin patient secenegini tıklar
-        And Admin yeni hasta olustur kutusunu tıklar
-        And Admin  hasta bilgilerini girer
-        And Admin kayıt butonuna tıklar
         Then Admin hastanın SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and stateCity bilgilerini görür
         And Admin sayfayi kapatir
 
