@@ -7,6 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -209,6 +210,14 @@ public class Driver {
     public static WebElement waitForClickablility(By locator, int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(timeout));
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+    public static void selectByVisibleText(WebElement element, String text){
+        Select objSelect =new Select(element);
+        objSelect.selectByVisibleText(text);
+    }
+    public static void scrollIntoViewJS(WebElement element) {
+        JavascriptExecutor jsexecutor = ((JavascriptExecutor) Driver.getDriver());
+        jsexecutor.executeScript("arguments[0].scrollIntoView(true);", element);
     }
 
     public static void waitForPageToLoad(long timeOutInSeconds) {

@@ -14,3 +14,5 @@ target/
 .target/test-classes/runners/TestRunner1.class
 .target/xml-report/cucumber.xml
 /dbnavigator.xml
+/*.iml
+/*.xml

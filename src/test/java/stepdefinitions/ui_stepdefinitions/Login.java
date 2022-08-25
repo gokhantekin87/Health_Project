@@ -62,4 +62,14 @@ public class  Login {
         Assert.assertTrue(" "+userName+" giris basarisiz",
                 Driver.getDriver().findElement(By.xpath("//span[text()='"+userName+"']")).isDisplayed());
     }
+
+    @Then("kullanici {string} ve {string} girerek giris yapar2")
+    public void kullaniciVeGirerekGirisYapar2(String username, String password) {
+        loginPage.accountMenu.click();
+        loginPage.signIn.click();
+        loginPage.usernameTextbox.sendKeys(ConfigReader.getProperty(username));
+        loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
+        loginPage.rememberMe.click();
+        loginPage.signInButton.click();
+    }
 }
