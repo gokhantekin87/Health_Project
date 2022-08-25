@@ -56,14 +56,12 @@ public class US016_APIStepDefs {
         roompost.setDescription("team59 api test otomation");
 
         response = given().headers(
-
                 "Authorization",
                 "Bearer " +generateToken(),
                 "Content-Type",
                 ContentType.JSON,
                 "Accept",
                 ContentType.JSON
-
         ).body(roompost).contentType(ContentType.JSON).when().post(ConfigReader.getProperty("room_endpoint"));
     }
 

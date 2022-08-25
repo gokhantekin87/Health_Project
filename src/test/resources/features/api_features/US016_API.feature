@@ -14,3 +14,11 @@ Feature: US016 Room
     Then kullanici "DAYCARE" roomType dogrular
     Then kullanici 59 price dogrular
 
+  Scenario: kullanici put request ile oda bilgilerini gunceller
+    Given kullanici roomlar icin put request yapar
+    Then kullanici put request validation yapar
+
+  Scenario: delete rooms
+    Given kullanici delete request eder
+    Then delete validation
+
