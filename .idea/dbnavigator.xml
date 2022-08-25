@@ -39,7 +39,7 @@ select * from public.appointment
 
 select * from public.appointment where id=153033
 
-select * from public.patient
+select * from public.room
 
 select * from public.patient where id=152832
 

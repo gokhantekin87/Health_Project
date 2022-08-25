@@ -133,7 +133,7 @@ Feature: US016 ROOM
     And Price "59" sayi girildiginde kabul ettigini dogrular
     And sayfayi kapatir
 
-  Scenario: US016 TC007 Description
+  Scenario: US016 TC009 Description
     Given kullanici medunna anasayfasinda
     Then kullanici "us16Username" ve "us16Password" girerek giris yapar
     And admin Rooms sayfasina gecis yapar
@@ -141,11 +141,20 @@ Feature: US016 ROOM
     Then Description basliginin gorunur oldugunu dogrular
     Then Description textbox gorunur ve active oldugunu dogrular
     And description bos birakildiginda kabul ettigini dogrular
-    And description herhangi bir metin "team59 otomasyon testi" yazildiginda kabul ettifgini dogrular
+    And description herhangi bir metin "team59 otomasyon testi" yazildiginda kabul ettigini dogrular
     And sayfayi kapatir
 
-  Scenario: US016 TC008 Created Date
+#gg/mm/yyyy
+  Scenario: US016 TC010 Created Date
     Given kullanici medunna anasayfasinda
     Then kullanici "us16Username" ve "us16Password" girerek giris yapar
     And admin Rooms sayfasina gecis yapar
     And Create a new Room butonuna tiklar
+    Then Created Date basliginin gorunur oldugunu dogrular
+    Then Created Date box gorunur ve active oldugunu dogrular
+    And Created Date gecersiz tarih "00000" girildiginde kabul etmedigini dogrular
+    And Created Date gecersiz tarih "02312022" girildiginde kabul etmedigini dogrular
+    #Failed Step
+    And Created Date gecmis tarih "12301999" girildiginde kabul etmedigini dogrular
+    And sayfayi kapatir
+

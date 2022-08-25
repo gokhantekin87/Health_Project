@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import pages.admin_pages.Admin_RoomsPage;
 import utilities.Driver;
+import utilities.JSUtils;
 
 import static org.junit.Assert.assertEquals;
 import static stepdefinitions.ui_stepdefinitions.Login.signIn;
@@ -246,7 +247,7 @@ public class US016_RoomStepDefs {
 
     @And("Room Number bos birakildiginda kabul etmedigini dogrular")
     public void roomNumberBosBirakildigindaKabulEtmediginiDogrular() {
-        page.roomNumberTextbox.sendKeys(" "+Keys.ENTER);
+        page.roomNumberTextbox.sendKeys(Keys.ENTER);
         Assert.assertTrue(page.requiredField.isDisplayed());
     }
 
@@ -307,37 +308,82 @@ public class US016_RoomStepDefs {
 
     @Then("Price basliginin gorunur oldugunu dogrular")
     public void priceBasligininGorunurOldugunuDogrular() {
+        Assert.assertTrue(page.priceH.isDisplayed());
     }
 
     @Then("Price texbox in gorunur ve active oldugunu dogrular")
     public void priceTexboxInGorunurVeActiveOldugunuDogrular() {
+        Assert.assertTrue(page.roomPriceTextbox.isDisplayed()&&page.roomPriceTextbox.isEnabled());
     }
 
     @And("Price bos birakildiginda kabul etmedigini dogrular")
     public void priceBosBirakildigindaKabulEtmediginiDogrular() {
+        page.roomPriceTextbox.sendKeys(Keys.ENTER);
+        Assert.assertTrue(page.requiredField2.isDisplayed());
     }
 
     @And("Price {string} karakter girildiginde kabul etmedigini dogrular")
-    public void priceKarakterGirildigindeKabulEtmediginiDogrular(String arg0) {
+    public void priceKarakterGirildigindeKabulEtmediginiDogrular(String k) {
+        page.roomPriceTextbox.clear();
+        page.roomPriceTextbox.sendKeys(k+Keys.ENTER);
+        Assert.assertTrue(page.zeroField.isDisplayed());
     }
 
     @And("Price {string} sayi girildiginde kabul ettigini dogrular")
-    public void priceSayiGirildigindeKabulEttiginiDogrular(String arg0) {
+    public void priceSayiGirildigindeKabulEttiginiDogrular(String s) {
+        page.roomPriceTextbox.clear();
+        page.roomPriceTextbox.sendKeys(s+Keys.ENTER);
+        Assert.assertTrue(page.validField2.isDisplayed());
     }
 
     @Then("Description basliginin gorunur oldugunu dogrular")
     public void descriptionBasligininGorunurOldugunuDogrular() {
+        Assert.assertTrue(page.descH.isDisplayed());
     }
 
     @Then("Description textbox gorunur ve active oldugunu dogrular")
     public void descriptionTextboxGorunurVeActiveOldugunuDogrular() {
+        Assert.assertTrue(page.roomDescriptionTextbox.isDisplayed()&&page.roomDescriptionTextbox.isEnabled());
     }
 
     @And("description bos birakildiginda kabul ettigini dogrular")
     public void descriptionBosBirakildigindaKabulEttiginiDogrular() {
+        JSUtils.scrollDownByJS();
+        page.roomDescriptionTextbox.sendKeys(Keys.ENTER);
+        Assert.assertTrue(page.validField3.isDisplayed());
     }
 
-    @And("description herhangi bir metin {string} yazildiginda kabul ettifgini dogrular")
-    public void descriptionHerhangiBirMetinYazildigindaKabulEttifginiDogrular(String arg0) {
+    @And("description herhangi bir metin {string} yazildiginda kabul ettigini dogrular")
+    public void descriptionHerhangiBirMetinYazildigindaKabulEttiginiDogrular(String m) {
+        page.roomDescriptionTextbox.sendKeys(m+Keys.ENTER);
+        Assert.assertTrue(page.validField2.isDisplayed());
     }
+
+    @Then("Created Date basliginin gorunur oldugunu dogrular")
+    public void createdDateBasligininGorunurOldugunuDogrular() {
+        JSUtils.scrollDownByJS();
+        Assert.assertTrue(page.dateH.isDisplayed());
+    }
+
+    @Then("Created Date box gorunur ve active oldugunu dogrular")
+    public void createdDateBoxGorunurVeActiveOldugunuDogrular() {
+        Assert.assertTrue(page.roomDateTextbox.isDisplayed()&&page.roomDateTextbox.isEnabled());
+    }
+
+    @And("Created Date gecersiz tarih {string} girildiginde kabul etmedigini dogrular")
+    public void createdDateGecersizTarihGirildigindeKabulEtmediginiDogrular(String invalid) {
+        Driver.getDriver().navigate().refresh();
+        JSUtils.scrollDownByJS();
+        page.roomDateTextbox.sendKeys(invalid+Keys.ENTER);
+        Assert.assertTrue(page.validField4.isDisplayed());
+    }
+
+    @And("Created Date gecmis tarih {string} girildiginde kabul etmedigini dogrular")
+    public void createdDateGecmisTarihGirildigindeKabulEtmediginiDogrular(String past) {
+        Driver.getDriver().navigate().refresh();
+        JSUtils.scrollDownByJS();
+        page.roomDateTextbox.sendKeys(past+Keys.ENTER);
+        Assert.assertFalse(page.validField.isDisplayed());
+    }
+
 }
