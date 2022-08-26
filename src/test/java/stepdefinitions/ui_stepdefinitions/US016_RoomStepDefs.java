@@ -36,7 +36,6 @@ public class US016_RoomStepDefs {
 
     @Then("basligin {string} icerdigini dogrular")
     public void basliginIcerdiginiDogrular(String testData) {
-        System.out.println(page.pageHead.getText());
         Assert.assertTrue(page.pageHead.getText().contains(testData));
     }
 
@@ -385,5 +384,6 @@ public class US016_RoomStepDefs {
         page.roomDateTextbox.sendKeys(past+Keys.ENTER);
         Assert.assertFalse(page.validField.isDisplayed());
     }
+
 
 }
