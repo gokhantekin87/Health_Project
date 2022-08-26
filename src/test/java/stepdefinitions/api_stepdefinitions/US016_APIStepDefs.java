@@ -8,7 +8,6 @@ import org.junit.Assert;
 import pojos.Room;
 import pojos.RoomPost;
 import utilities.ConfigReader;
-
 import java.io.IOException;
 import java.util.Optional;
 
