@@ -53,8 +53,7 @@ public class US016_RoomStepDefs {
 
     @And("Create a new Room butonunun erisilebilir ve gorunur oldugunu dogrular")
     public void createANewRoomButonununErisilebilirVeGorunurOldugunuDogrular() {
-        Assert.assertTrue(page.createButton.isDisplayed());
-        Assert.assertTrue(page.createButton.isEnabled());
+        Assert.assertTrue(page.createButton.isDisplayed() && page.createButton.isEnabled());
     }
 
     @And("admin Room Type gore odalari siralar")
