@@ -23,3 +23,8 @@ Feature: US017 Test Item
     And Default Max. "59" girer
     And created Date "01092022" girer
     And Save butonuna tiklar
+
+  Scenario: US017 TC002 admin test item guncelleyebilir
+    Given kullanici medunna anasayfasinda
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
+    And admin Test Items sayfasina gecis yapar
