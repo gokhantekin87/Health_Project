@@ -16,9 +16,9 @@ import org.junit.runner.RunWith;
 
         },
         features = "./src/test/resources/features",
-        glue = "Registration2",
-        tags = "@UIhepsi",
-        dryRun = true
+        glue = "PersonelNotilus",
+        tags = "@US1",
+        dryRun = false
 )
 public class Runner {
      /*

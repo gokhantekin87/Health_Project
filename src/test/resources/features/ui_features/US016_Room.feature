@@ -1,4 +1,5 @@
 Feature: US016 ROOM
+  #her sefer problemsiz calisir
   Scenario: US016 TC000 admin room sayfasini dogrular
     Given kullanici medunna anasayfasinda
     Then kullanici "us16Username" ve "us16Password" girerek giris yapar2
@@ -9,9 +10,10 @@ Feature: US016 ROOM
     And Create a new Room butonunun erisilebilir ve gorunur oldugunu dogrular
     And sayfayi kapatir
 
+#Sayfa numaralari oda eklendikce degisecek
   Scenario: US016 TC001 Admin ayni tur odalari gorebilir
     Given kullanici medunna anasayfasinda
-    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar2
     And admin Rooms sayfasina gecis yapar
     And admin Room Type gore odalari siralar
     Then admin TWIN odalarin siralandigini dogrular
@@ -44,7 +46,7 @@ Feature: US016 ROOM
     Then created date "25/08/22" oldugunu dogrular
     And sayfayi kapatir
 
-
+#1 failed step var
   Scenario: US016 TC003 Admin odalari guncelleyebilmeli
     Given kullanici medunna anasayfasinda
     Then kullanici "us16Username" ve "us16Password" girerek giris yapar
@@ -63,6 +65,7 @@ Feature: US016 ROOM
     Then created date "27/08/22" oldugunu dogrular
     And sayfayi kapatir
 
+#kendisi oda olusuturp siliyor o yuzden her sefer calisir
   Scenario: US016 TC004 Admin odayi silebilmeli
     Given kullanici medunna anasayfasinda
     Then kullanici "us16Username" ve "us16Password" girerek giris yapar
@@ -74,6 +77,75 @@ Feature: US016 ROOM
     Then silinen odanin id sinin olmadigini dogrular
     And sayfayi kapatir
 
+  Scenario: US016 TC005 Room Number
+    Given kullanici medunna anasayfasinda
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
+    And admin Rooms sayfasina gecis yapar
+    And Create a new Room butonuna tiklar
+    Then Room Number basliginin gorunur oldugunu dogrular
+    Then Room Number texbox in gorunur ve active oldugunu dogrular
+    And Room Number bos birakildiginda kabul etmedigini dogrular
+    And Room Number "aye" karakter girildiginde kabul etmedigini dogrular
+    And Room Number "5940" sayi girildiginde kabul ettigini dogrular
+    And sayfayi kapatir
 
+  Scenario: US016 TC006 Room Type
+    Given kullanici medunna anasayfasinda
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
+    And admin Rooms sayfasina gecis yapar
+    And Create a new Room butonuna tiklar
+    Then Room Type basliginin gorunur oldugunu dogrular
+    Then Room Type dropdown active oldugunu dogrular
+    And Room Type "TWIN" secer
+    Then "TWIN" secili oldugunu dogrular
+    And Room Type "DELUXE" secer
+    Then "DELUXE" secili oldugunu dogrular
+    And Room Type "PREMIUM_DELUXE" secer
+    Then "PREMIUM_DELUXE" secili oldugunu dogrular
+    And Room Type "SUITE" secer
+    Then "SUITE" secili oldugunu dogrular
+    And Room Type "DAYCARE" secer
+    Then "DAYCARE" secili oldugunu dogrular
+    And sayfayi kapatir
 
+  Scenario: US016 TC007 Status
+    Given kullanici medunna anasayfasinda
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
+    And admin Rooms sayfasina gecis yapar
+    And Create a new Room butonuna tiklar
+    Then Status basliginin gorunur oldugunu dogrular
+    Then status checkbox gorunur ve active oldugunu dogrular
+    And status checkbox click yapar
+    Then status checkox secili oldugunu dogrular
+    And status checkbox click yapar
+    Then status checkboxsecili olmadigini dogrular
+    And sayfayi kapatir
 
+  Scenario: US016 TC008 Price
+    Given kullanici medunna anasayfasinda
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
+    And admin Rooms sayfasina gecis yapar
+    And Create a new Room butonuna tiklar
+    Then Price basliginin gorunur oldugunu dogrular
+    Then Price texbox in gorunur ve active oldugunu dogrular
+    And Price bos birakildiginda kabul etmedigini dogrular
+    And Price "aye" karakter girildiginde kabul etmedigini dogrular
+    And Price "59" sayi girildiginde kabul ettigini dogrular
+    And sayfayi kapatir
+
+  Scenario: US016 TC007 Description
+    Given kullanici medunna anasayfasinda
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
+    And admin Rooms sayfasina gecis yapar
+    And Create a new Room butonuna tiklar
+    Then Description basliginin gorunur oldugunu dogrular
+    Then Description textbox gorunur ve active oldugunu dogrular
+    And description bos birakildiginda kabul ettigini dogrular
+    And description herhangi bir metin "team59 otomasyon testi" yazildiginda kabul ettifgini dogrular
+    And sayfayi kapatir
+
+  Scenario: US016 TC008 Created Date
+    Given kullanici medunna anasayfasinda
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
+    And admin Rooms sayfasina gecis yapar
+    And Create a new Room butonuna tiklar

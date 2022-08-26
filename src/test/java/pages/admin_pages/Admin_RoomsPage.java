@@ -10,7 +10,7 @@ public class Admin_RoomsPage {
     public Admin_RoomsPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
     @FindBy(id = "entity-menu") public WebElement itemTitlesMenu;
-    @FindBy(id = "rememberMe") public WebElement rememberMe;
+    @FindBy(xpath= "//input[@id='rememberMe']") public WebElement rememberMe;
     @FindBy(xpath = "(//a[@href='/room'])[1]") public WebElement roomButton;
     //https://medunna.com/room?page=1&sort=id,asc    //tr[1]//td[3]//span[text()='DELUXE']
     @FindBy(xpath = "//thead") public WebElement headers;
@@ -33,6 +33,17 @@ public class Admin_RoomsPage {
     @FindBy(xpath = "//dl[@class='jh-entity-details']") public WebElement viewTable;
     @FindBy(xpath = "//dd[6]//span") public WebElement dateActual;
     @FindBy(id = "jhi-confirm-delete-room") public WebElement deleteButton;
+
+    @FindBy(id = "roomNumberLabel") public WebElement roomNumberH;
+    @FindBy(xpath = "//*[text()='This field is required.']") public WebElement requiredField;
+    @FindBy(xpath = "//*[text()='This field should be a number.']") public WebElement numberField;
+    @FindBy(xpath = "//input[@class='form-control is-touched is-dirty av-valid form-control']") public WebElement validField;
+    //form-control is-touched is-dirty av-invalid is-invalid form-control
+    @FindBy(id = "roomTypeLabel") public WebElement roomTypeH;
+    @FindBy(id = "statusLabel") public WebElement statusH;
+    @FindBy(id = "priceLabel") public WebElement priceH;
+    @FindBy(id = "descriptionLabel") public WebElement descH;
+    @FindBy(id = "createdDateLabel") public WebElement dateH;
 
 
 

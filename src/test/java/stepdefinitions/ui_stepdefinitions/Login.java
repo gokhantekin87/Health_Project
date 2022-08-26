@@ -22,7 +22,7 @@ public class  Login {
     Then kullanici "staffUsername" ve "staffPassword" girerek giris yapar
      */
 
-    LoginPage loginPage=new LoginPage();
+    static LoginPage loginPage=new LoginPage();
 
     @Given("kullanici medunna anasayfasinda") public void kullaniciMedunnaAnasayfasinda(){
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
@@ -69,6 +69,13 @@ public class  Login {
         loginPage.signIn.click();
         loginPage.usernameTextbox.sendKeys(ConfigReader.getProperty(username));
         loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
+        loginPage.rememberMe.click();
+        loginPage.signInButton.click();
+    }
+
+    public static void signIn (){
+        loginPage.usernameTextbox.sendKeys("admin59");
+        loginPage.passwordTextbox.sendKeys("admin");
         loginPage.rememberMe.click();
         loginPage.signInButton.click();
     }

@@ -63,5 +63,33 @@ public class US020_Page {
 
     @FindBy(xpath = "//div[@class='info jhi-item-count']")
     public WebElement userCount;
+    /////
+
+    @FindBy(xpath = "//*[@id='login-item']/span")
+    public WebElement signInLocation;
+
+    @FindBy(xpath = "//input[@name='username']")
+    public WebElement usernameBox;
+
+    @FindBy(xpath = "//input[@name='password']")
+    public WebElement passwordBox;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement signInButton;
+
+    @FindBy(id="account-menu")
+    public WebElement signInAndRegistrationPortal;
+
+    @FindBy(id="login-item")
+    public WebElement signIn;
+
+    @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
+    public WebElement insan;
+    ///
+
+
+
+
+
 
 }

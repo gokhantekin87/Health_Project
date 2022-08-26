@@ -10,7 +10,8 @@ import utilities.Driver;
 import utilities.ReusableMethods;
 
 
-public class US010_My_Appointments_for_Physician {
+public class
+US010_My_Appointments_for_Physician {
 
     DoctorPage dp =new DoctorPage();
     JavascriptExecutor js= (JavascriptExecutor) Driver.getDriver();
