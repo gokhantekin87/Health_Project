@@ -33,12 +33,18 @@ public class Admin_RoomsPage {
     @FindBy(xpath = "//dl[@class='jh-entity-details']") public WebElement viewTable;
     @FindBy(xpath = "//dd[6]//span") public WebElement dateActual;
     @FindBy(id = "jhi-confirm-delete-room") public WebElement deleteButton;
-
+//=======
     @FindBy(id = "roomNumberLabel") public WebElement roomNumberH;
-    @FindBy(xpath = "//*[text()='This field is required.']") public WebElement requiredField;
+    @FindBy(xpath = "(//*[text()='This field is required.'])[1]") public WebElement requiredField;
+    @FindBy(xpath = "(//*[text()='This field is required.'])[2]") public WebElement requiredField2;
+    @FindBy(xpath = "//*[text()='This field should be at least 0.']") public WebElement zeroField;
     @FindBy(xpath = "//*[text()='This field should be a number.']") public WebElement numberField;
     @FindBy(xpath = "//input[@class='form-control is-touched is-dirty av-valid form-control']") public WebElement validField;
-    //form-control is-touched is-dirty av-invalid is-invalid form-control
+    @FindBy(xpath = "//input[@class='is-touched is-dirty av-valid form-control']") public WebElement validField2;
+    @FindBy(xpath = "//input[@class='is-touched is-pristine av-invalid is-invalid form-control']")
+    public WebElement validField3;
+    @FindBy(xpath = "//input[@class='form-control is-touched is-dirty is-bad-input av-invalid is-invalid form-control']")
+    public WebElement validField4;
     @FindBy(id = "roomTypeLabel") public WebElement roomTypeH;
     @FindBy(id = "statusLabel") public WebElement statusH;
     @FindBy(id = "priceLabel") public WebElement priceH;
