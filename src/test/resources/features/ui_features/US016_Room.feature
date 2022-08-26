@@ -2,7 +2,7 @@ Feature: US016 ROOM
   #her sefer problemsiz calisir
   Scenario: US016 TC000 admin room sayfasini dogrular
     Given kullanici medunna anasayfasinda
-    Then kullanici "us16Username" ve "us16Password" girerek giris yapar2
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
     And admin Rooms sayfasina gecis yapar
     Then url nin "room" icerdigini dogrular
     Then basligin "Rooms" icerdigini dogrular

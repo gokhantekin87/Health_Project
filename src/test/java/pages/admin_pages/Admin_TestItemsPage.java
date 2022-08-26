@@ -11,5 +11,7 @@ public class Admin_TestItemsPage {
 
     @FindBy(id = "entity-menu") public WebElement itemTitlesMenu;
     @FindBy(xpath = "(//a[@href='/c-test-item'])[1]") public WebElement testItemButton;
-
+    @FindBy(xpath = "//thead") public WebElement headers;
+    @FindBy(id = "c-test-item-heading") public WebElement pageHead;
+    @FindBy(id = "jh-create-entity") public WebElement createButton;
 }
