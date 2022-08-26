@@ -36,7 +36,6 @@ public class US016_RoomStepDefs {
 
     @Then("basligin {string} icerdigini dogrular")
     public void basliginIcerdiginiDogrular(String testData) {
-        System.out.println(page.pageHead.getText());
         Assert.assertTrue(page.pageHead.getText().contains(testData));
     }
 
@@ -54,8 +53,7 @@ public class US016_RoomStepDefs {
 
     @And("Create a new Room butonunun erisilebilir ve gorunur oldugunu dogrular")
     public void createANewRoomButonununErisilebilirVeGorunurOldugunuDogrular() {
-        Assert.assertTrue(page.createButton.isDisplayed());
-        Assert.assertTrue(page.createButton.isEnabled());
+        Assert.assertTrue(page.createButton.isDisplayed() && page.createButton.isEnabled());
     }
 
     @And("admin Room Type gore odalari siralar")
@@ -385,5 +383,6 @@ public class US016_RoomStepDefs {
         page.roomDateTextbox.sendKeys(past+Keys.ENTER);
         Assert.assertFalse(page.validField.isDisplayed());
     }
+
 
 }
