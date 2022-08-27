@@ -55,7 +55,7 @@ public class US_018Page {
     public WebElement saveButton;
 
     @FindBy(xpath = "//*[text()='Physicians']")
-    public WebElement phsicianHead;
+    public WebElement physicianHead;
     /*TC04*/
     @FindBy(xpath = "(//*[text()='Medunna'])[1]")
     public WebElement medunnaAltBaslik;
