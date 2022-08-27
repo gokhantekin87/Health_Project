@@ -34,7 +34,6 @@ public class DBUtils {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         try {
@@ -211,4 +210,5 @@ public class DBUtils {
         }
         return columns;
     }
+
 }
