@@ -70,6 +70,19 @@ public class US_018Page {
     @FindBy(xpath="//div[@class='Toastify__toast-body']")
     public WebElement silinemediMesaji;
 
+    @FindBy(xpath="//button[@id='jhi-confirm-delete-physician']")
+    public WebElement deleteButtonPenc;
+
+    @FindBy(xpath = "//thead")
+    public WebElement basliklar;
+
+    //TC06
+    @FindBy(xpath="//td[1]")
+    public WebElement drSEC;
+
+    @FindBy(xpath="//*[text()='An unexpected error has occurred.']")
+    public WebElement secilemediMesaji;
+
 
 }
 
