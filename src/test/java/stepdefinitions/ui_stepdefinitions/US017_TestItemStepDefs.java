@@ -130,4 +130,20 @@ public class US017_TestItemStepDefs {
         Assert.assertTrue(waitForVisibility(page.sucsessMesage,2).isDisplayed());
         Assert.assertTrue(page.sucsessMesage.getText().contains(message));
     }
+
+    @And("olusturdugu test ogesine gecis yapar")
+    public void olusturduguTestOgesineGecisYapar() {
+    }
+
+    @And("Delete butona tiklar")
+    public void deleteButonaTiklar() {
+    }
+
+    @And("dogrulama sayfasinda Delete butona tiklar")
+    public void dogrulamaSayfasindaDeleteButonaTiklar() {
+    }
+
+    @Then("silinen test ogesinin id sinin olmadigini dogrular")
+    public void silinenTestOgesininIdSininOlmadiginiDogrular() {
+    }
 }

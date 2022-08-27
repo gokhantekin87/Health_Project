@@ -57,3 +57,9 @@ Feature: US017 Test Item
     Given kullanici medunna anasayfasinda
     Then kullanici "us16Username" ve "us16Password" girerek giris yapar
     And admin Test Items sayfasina gecis yapar
+    And olusturdugu test ogesine gecis yapar
+    And Delete butona tiklar
+    And dogrulama sayfasinda Delete butona tiklar
+    Then "A Test Item is deleted" yazisi oldugunu dogrular
+    Then silinen test ogesinin id sinin olmadigini dogrular
+    And sayfayi kapatir
