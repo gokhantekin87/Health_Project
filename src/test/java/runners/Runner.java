@@ -16,8 +16,8 @@ import org.junit.runner.RunWith;
 
         },
         features = "./src/test/resources/features",
-        glue = "PersonelNotilus",
-        tags = "@US1",
+        glue = "stepdefinitions",
+        tags = "@US028ApiUlke",
         dryRun = false
 )
 public class Runner {

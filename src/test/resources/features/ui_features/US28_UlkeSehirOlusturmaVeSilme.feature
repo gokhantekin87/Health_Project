@@ -1,5 +1,5 @@
 @US028_UI_feature
-Feature:Admin yeni ulke/eyalet ve sehir olusturup silebilir
+Feature:Admin yeni ulke, eyalet ve sehir olusturup silebilir
 
   @US028_TC01
   Scenario Outline: Admin yeni bir ulke olusturabilir

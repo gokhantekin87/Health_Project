@@ -26,54 +26,54 @@ public class US028_StepDefs {
     }
     @Given("admin sign in butona tiklar")
     public void admin_sign_in_butona_tiklar()throws InterruptedException {
-        Thread.sleep(2000);
+
         adminUS028.homePageSignIn.click();
     }
     @Given("admin username {string} ve password {string} girer")
     public void admin_username_ve_password_girer(String username, String password) throws InterruptedException {
-        Thread.sleep(1000);
+
         adminUS028.username.sendKeys("bergin");
         adminUS028.password.sendKeys("ABCDEF");
     }
     @Given("admin sign in sayfasinda sign in butona tiklar")
     public void admin_sign_in_sayfasinda_sign_in_butona_tiklar()throws InterruptedException {
-        Thread.sleep(1000);
+
         adminUS028.signInPageSignInButton.click();
     }
     @Given("admin admin sayfasini goruntuler")
     public void admin_admin_sayfasini_goruntuler() throws InterruptedException {
-        Thread.sleep(1000);
+
         Assert.assertTrue(adminUS028.adminPage.isDisplayed());
     }
     @Given("admin items and titles dropdowna tiklar")
     public void admin_items_and_titles_dropdowna_tiklar() throws InterruptedException {
-        Thread.sleep(1000);
+
         adminUS028.itemsTitles.click();
     }
     @Given("admin country buttona tiklar")
     public void admin_country_buttona_tiklar() throws InterruptedException {
-        Thread.sleep(1000);
+
         adminUS028.countryDropdown.click();
     }
     @Given("admin countries sayfasini goruntuler")
     public void admin_countries_sayfasini_goruntuler() throws InterruptedException {
-        Thread.sleep(1000);
+
         Assert.assertTrue(adminUS028.countriesHeader.isDisplayed());
     }
     @Given("admin create a new Country buttona tiklar")
     public void admin_create_a_new_country_buttona_tiklar() throws InterruptedException {
-        Thread.sleep(1000);
+
         adminUS028.createANewCountryButton.click();
     }
     @Given("admin ulke ismini girer {string}")
     public void admin_ulke_ismini_girer(String countryname) throws InterruptedException {
-        Thread.sleep(1000);
+
         adminUS028.countryNameBox.sendKeys("Sri Lanka");
     }
     @Given("admin Save buttona tiklar")
     public void admin_save_buttona_tiklar() throws InterruptedException, IOException {
         adminUS028.saveButton.click();
-        Thread.sleep(2000);
+
     }
     @Given("admin a new country is created with identifier mesajini goruntuler")
     public void admin_a_new_country_is_created_with_identifier_mesajini_goruntuler() {
@@ -84,12 +84,12 @@ public class US028_StepDefs {
 
     @And("admin yeni ulke ismini girer {string}")
     public void adminYeniUlkeIsminiGirer(String countryname) throws InterruptedException {
-        Thread.sleep(1000);
+
         adminUS028.countryNameBox.sendKeys("Gine Conakry");
     }
     @Given("admin bir ulke secer")
     public void admin_bir_ulke_secer() {
-       // Driver.scrollIntoViewJS(admin028.deleteCountry);
+        // Driver.scrollIntoViewJS(admin028.deleteCountry);
         //Driver.selectByVisibleText(admin028.deleteCountry, "Gine Conakry");
         //Driver.wait(8);
     }
@@ -104,7 +104,7 @@ public class US028_StepDefs {
     @Given("admin a country is deleted with identifier yazisini goruntuler")
     public void admin_a_country_is_deleted_with_identifier_yazisini_goruntuler()throws InterruptedException {
         Assert.assertTrue(adminUS028.deletedMessage.isDisplayed());
-        Thread.sleep(2000);
+
     }
     @Then("admin driveri kapatir")
     public void admin_driveri_kapatir() {Driver.closeDriver();;
@@ -114,7 +114,7 @@ public class US028_StepDefs {
 
     @Given("admin states and cities buttona tiklar")
     public void admin_states_and_cities_buttona_tiklar()throws InterruptedException {
-        Thread.sleep(1000);
+
         adminUS028.stateCityHeader.click();
     }
     @Given("admin crete a new StateCity buttona tiklar")
@@ -131,8 +131,9 @@ public class US028_StepDefs {
         Driver.wait(2);
     }
     @Given("admin Field translation-not-found[hospitalmsappfrontendApp.CState.country] cannot be empty! mesajini BUG olarak gorur")
-    public void admin_field_translation_not_found_hospitalmsappfrontend_app_c_state_country_cannot_be_empty_mesajini_bug_olarak_gorur()throws IOException {
+    public void admin_field_translation_not_found_hospitalmsappfrontend_app_c_state_country_cannot_be_empty_mesajini_bug_olarak_gorur() throws IOException, InterruptedException {
         Assert.assertTrue(adminUS028.stateCityAlert.isDisplayed());
+        Thread.sleep(1000);
         ReusableMethods.getScreenshot("sehir olusturulamadi");
     }
 
