@@ -8,6 +8,7 @@ import pages.admin_pages.Admin_TestItemsPage;
 import utilities.Driver;
 
 import static org.junit.Assert.assertEquals;
+import static utilities.Driver.waitForVisibility;
 
 public class US017_TestItemStepDefs {
 
@@ -120,11 +121,13 @@ public class US017_TestItemStepDefs {
 
 
     @And("{string} id li test ogesinin View butonuna tiklar")
-    public void idLiTestOgesininViewButonunaTiklar(String arg0) {
-        
+    public void idLiTestOgesininViewButonunaTiklar(String id) {
+        Driver.getDriver().findElement(By.xpath("(//a[@href='/c-test-item/"+id+"'])[2]")).click();
     }
 
     @Then("{string} yazisi oldugunu dogrular")
-    public void yazisiOldugunuDogrular(String arg0) {
+    public void yazisiOldugunuDogrular(String message) {
+        Assert.assertTrue(waitForVisibility(page.sucsessMesage,2).isDisplayed());
+        Assert.assertTrue(page.sucsessMesage.getText().contains(message));
     }
 }
