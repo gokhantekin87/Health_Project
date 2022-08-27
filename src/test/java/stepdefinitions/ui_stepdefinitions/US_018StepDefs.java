@@ -56,6 +56,7 @@ public class US_018StepDefs {
 
     @Then("{string} {string} butonuna tıklar")
     public void butonuna_tıklar(String admin, String itemsTitles) {
+        ReusableMethods.waitFor(5);
         this.us18page.createNewPhysician.click();
     }
     @Then("{string} {string} kutusuna tıklar")
@@ -189,17 +190,36 @@ public class US_018StepDefs {
 
         ReusableMethods.waitFor(1);
     }*/
-
+    // TC05
     @Then("admin mevcut doktorun delete butonuna tiklar")
     public void adminMevcutDoktorunDeleteButonunaTiklar() {
-        this.us18page.deleteButton.click();
+        ReusableMethods.waitForVisibility(this.us18page.basliklar,50);
+        //this.us18page.deleteButton.click();
+        WebElement deleteButton = Driver.getDriver().findElement(By.xpath("//a[@class='btn btn-danger btn-sm']"));
+        jse.executeScript("arguments[0].click();",deleteButton);
+        this.us18page.deleteButtonPenc.click();
 
     }
-    // TC05
-    @And("admin doktorun silinemedigini dogrular")
-    public void adminDoktorunSilinemediginiDogrular() {
-        WebElement silinemediMesaji = Driver.getDriver().findElement(By.xpath("//div[@class='Toastify__toast-body']"));
-        Assert.assertTrue(silinemediMesaji.isDisplayed());
+
+    @And("admin doktorun silindigini dogrular")
+    public void adminDoktorunSilindiginiDogrular() {
+        WebElement birinciSıraDR = Driver.getDriver().findElement(By.xpath("//td[1]"));
+        Assert.assertTrue(birinciSıraDR.getText().contains("3651"));
     }
+    // TC06
+    @Given("admin doktoru secebilir")
+    public void adminDoktoruSecebilir() {
+        ReusableMethods.waitForVisibility(this.us18page.basliklar,50);
+        WebElement drSEC = Driver.getDriver().findElement(By.xpath("//a[@class='btn btn-link btn-sm']"));
+        jse.executeScript("arguments[0].click();",drSEC);
+       // this.us18page.drSEC.click();
+    }
+
+    @Then("admin physician secilebilir oldugunu dogrular")
+    public void adminPhysicianSecilebilirOldugunuDogrular() {
+        WebElement secilemediMesaji= Driver.getDriver().findElement(By.xpath("//*[text()='An unexpected error has occurred.']"));
+        Assert.assertFalse(secilemediMesaji.isDisplayed());
+    }
+
 
 }
