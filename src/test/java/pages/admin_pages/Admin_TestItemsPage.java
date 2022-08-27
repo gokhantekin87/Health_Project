@@ -22,5 +22,13 @@ public class Admin_TestItemsPage {
     @FindBy(id = "c-test-item-defaultValMax") public WebElement testItemDMaxTextbox;
     @FindBy(id = "c-test-item-createdDate") public WebElement testItemDateTextbox;
     @FindBy(id = "save-entity") public WebElement saveButton;
+    @FindBy(xpath = "//div[@class='Toastify__toast-body']") public WebElement sucsessMesage;
+    //A Test Item is deleted with identifier 237537
+    //A Test Item is updated with identifier 237539
+    //A new Test Item is created with identifier 237540
+    @FindBy(xpath = "//th//span[text()='ID']") public WebElement ID;
+    @FindBy(xpath = "//dl[@class='jh-entity-details']") public WebElement viewTable;
+    @FindBy(xpath = "//dd[6]//span") public WebElement dateActual;
+
 
 }
