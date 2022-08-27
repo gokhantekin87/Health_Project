@@ -16,7 +16,8 @@ public class Admin_RoomsPage {
     @FindBy(xpath = "//thead") public WebElement headers;
     @FindBy(xpath = "//th//span[text()='ID']") public WebElement ID;
     @FindBy(xpath = "//th//span[text()='Room Type']") public WebElement RoomType;
-    @FindBy(id = "room-heading") public WebElement pageHead;
+    //@FindBy(id = "room-heading") public WebElement pageHead;
+    @FindBy(xpath = "//h2") public WebElement pageHead;
     @FindBy(id = "jh-create-entity") public WebElement createButton;
     @FindBy(xpath = "//h2") public WebElement createPageHead;
     //https://medunna.com/room/new       class=Toastify__toast-body
