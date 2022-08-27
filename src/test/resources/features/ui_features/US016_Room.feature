@@ -1,3 +1,4 @@
+@us16
 Feature: US016 ROOM
   #her sefer problemsiz calisir
   Scenario: US016 TC000 admin room sayfasini dogrular
@@ -13,7 +14,7 @@ Feature: US016 ROOM
 #Sayfa numaralari oda eklendikce degisecek
   Scenario: US016 TC001 Admin ayni tur odalari gorebilir
     Given kullanici medunna anasayfasinda
-    Then kullanici "us16Username" ve "us16Password" girerek giris yapar2
+    Then kullanici "us16Username" ve "us16Password" girerek giris yapar
     And admin Rooms sayfasina gecis yapar
     And admin Room Type gore odalari siralar
     Then admin TWIN odalarin siralandigini dogrular
