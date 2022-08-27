@@ -10,7 +10,7 @@ import java.util.List;
 import static utilities.DBUtils.getColumnData;
 import static utilities.DBUtils.getResultset;
 
-public class US_009_DBStepDefs {
+public class US009_DBStepDefs {
 
 
     List<Object> firstNameList;
