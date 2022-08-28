@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import pages.admin_pages.Admin_RoomsPage;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.JSUtils;
-
 import static org.junit.Assert.assertEquals;
 import static stepdefinitions.ui_stepdefinitions.Login.signIn;
 import static utilities.Driver.waitForVisibility;
@@ -71,7 +71,7 @@ public class US016_RoomStepDefs {
 
     @And("admin SUITE odalarin sirlandigini dogrular")
     public void adminSUITEOdalarinSirlandiginiDogrular() {
-        Driver.getDriver().navigate().to("https://medunna.com/room?page=53&sort=roomType,desc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=60&sort=roomType,desc");
         signIn();
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"SUITE");
@@ -80,7 +80,7 @@ public class US016_RoomStepDefs {
 
     @And("admin PREMIUM_DELUXE odalarin siralndigini dogrular")
     public void adminPREMIUM_DELUXEOdalarinSiralndiginiDogrular() {
-        Driver.getDriver().navigate().to("https://medunna.com/room?page=60&sort=roomType,desc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=68&sort=roomType,desc");
         waitFor(5);
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"PREMIUM_DELUXE");
@@ -89,7 +89,7 @@ public class US016_RoomStepDefs {
 
     @And("admin DELUXE odalarin siralandigini dogrular")
     public void adminDELUXEOdalarinSiralandiginiDogrular() {
-        Driver.getDriver().navigate().to("https://medunna.com/room?page=65&sort=roomType,desc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=74&sort=roomType,desc");
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"DELUXE");
         }
@@ -97,7 +97,7 @@ public class US016_RoomStepDefs {
 
     @And("admin DAYCARE odalarin siralandigini dogrular")
     public void adminDAYCAREOdalarinSiralandiginiDogrular() {
-        Driver.getDriver().navigate().to("https://medunna.com/room?page=84&sort=roomType,desc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=93&sort=roomType,desc");
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"DAYCARE");
         }
@@ -187,6 +187,11 @@ public class US016_RoomStepDefs {
     public void createdDateOldugunuDogrular(String date) {
         Assert.assertTrue("EXPECTED DATE ---> "+date+" \nACTUAL DATE ---> "+page.dateActual.getText()+" ",
                 page.viewTable.getText().contains(date));
+    }
+    @And("close driver")
+    public void closeDriver() {
+        Driver.closeDriver();
+
     }
 
     @And("{string} id li odanin Edit butonuna tiklar")
@@ -385,4 +390,28 @@ public class US016_RoomStepDefs {
     }
 
 
+    @And("kullanici account menu tiklar")
+    public void kullaniciAccountMenuTiklar() {
+        page.accountMenu.click();
+    }
+
+    @And("kullanici sign in tiklar")
+    public void kullaniciSignInTiklar() {
+        page.signIn.click();
+    }
+
+    @And("kullanici username olarak {string} girer")
+    public void kullaniciUsernameOlarakGirer(String name) {
+        page.usernameTextbox.sendKeys(ConfigReader.getProperty(name));
+    }
+
+    @And("kullanici password olarak {string} girer")
+    public void kullaniciPasswordOlarakGirer(String pass) {
+        page.passwordTextbox.sendKeys(ConfigReader.getProperty(pass));
+    }
+
+    @And("sign in butonuna tiklar")
+    public void signInButonunaTiklar() {
+        page.signInButton.click();
+    }
 }
