@@ -83,8 +83,7 @@ public class US020_Page {
     @FindBy(id="login-item")
     public WebElement signIn;
 
-    @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
-    public WebElement insan;
+
     ///
 
 
