@@ -55,6 +55,7 @@ Feature: US017 Test Item
     Then created date "29/08/22" oldugunu dogrular
     And close driver
 
+    #calisiyor
   Scenario: US017 TC003 admin test item silebilir
     And olusturdugu test ogesine gecis yapar
     And Delete butona tiklar

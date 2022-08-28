@@ -137,7 +137,7 @@ public class US017_TestItemStepDefs {
         page.testItemPriceTextbox.sendKeys("59");
         page.saveButton.click();
         waitForVisibility(page.sucsessMesage,3);
-        deleteID=page.sucsessMesage.getText().substring(38);
+        deleteID=page.sucsessMesage.getText().substring(43);
         page.ID.click();
     }
 
