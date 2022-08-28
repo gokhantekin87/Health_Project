@@ -9,6 +9,7 @@ import utilities.Driver;
 
 import static org.junit.Assert.assertEquals;
 import static utilities.Driver.waitForVisibility;
+import static utilities.ReusableMethods.waitFor;
 
 public class US017_TestItemStepDefs {
 
@@ -133,14 +134,24 @@ public class US017_TestItemStepDefs {
 
     @And("olusturdugu test ogesine gecis yapar")
     public void olusturduguTestOgesineGecisYapar() {
+        page.createButton.click();
+        page.testItemNameTextbox.sendKeys("test item no:02");
+        page.testItemPriceTextbox.sendKeys("59");
+        page.saveButton.click();
+        waitForVisibility(page.sucsessMesage,3);
+        deleteID=page.sucsessMesage.getText().substring(38);
+        page.ID.click();
     }
 
     @And("Delete butona tiklar")
     public void deleteButonaTiklar() {
+        Driver.getDriver().findElement(By.xpath("//a[@href='/room/"+deleteID+"/delete?page=1&sort=id,desc']")).click();
+        waitFor(4);
     }
 
     @And("dogrulama sayfasinda Delete butona tiklar")
     public void dogrulamaSayfasindaDeleteButonaTiklar() {
+
     }
 
     @Then("silinen test ogesinin id sinin olmadigini dogrular")
