@@ -29,6 +29,7 @@ public class Admin_TestItemsPage {
     @FindBy(xpath = "//th//span[text()='ID']") public WebElement ID;
     @FindBy(xpath = "//dl[@class='jh-entity-details']") public WebElement viewTable;
     @FindBy(xpath = "//dd[6]//span") public WebElement dateActual;
+    @FindBy(id = "jhi-confirm-delete-cTestItem") public WebElement deleteButton;
 
 
 }
