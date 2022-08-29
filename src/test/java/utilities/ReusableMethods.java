@@ -145,4 +145,10 @@ public class ReusableMethods {
         });
         return element;
     }
+
+    //**********Click Method**************
+    public static void clickWithJs(WebElement element){
+        ((JavascriptExecutor)Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);",element);
+        ((JavascriptExecutor)Driver.getDriver()).executeScript("arguments[0].click();",element);
+    }
 }
