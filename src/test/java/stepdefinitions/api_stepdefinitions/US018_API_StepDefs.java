@@ -1,6 +1,7 @@
 package stepdefinitions.api_stepdefinitions;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.restassured.http.ContentType;
@@ -64,4 +65,6 @@ public class US018_API_StepDefs {
         assertEquals(jsonPath.get("gender"),adress);
         assertEquals(jsonPath.get("adress"),gender);
     }
+
+
 }
