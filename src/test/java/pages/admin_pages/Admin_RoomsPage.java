@@ -53,6 +53,16 @@ public class Admin_RoomsPage {
     @FindBy(id = "createdDateLabel") public WebElement dateH;
 
 
+    //******
+    @FindBy(xpath = "//*[@id='account-menu']") public WebElement accountMenu;
+    @FindBy(id = "login-item") public WebElement signIn; //SignIn sayfasini acma butonu
+    @FindBy(id = "username") public WebElement usernameTextbox;
+    @FindBy(id = "password") public WebElement passwordTextbox;
+    @FindBy(xpath = "(//span[text()='Sign in'])[3]") public WebElement signInButton; //SignIn sayfasindaki signin buttonu
+    @FindBy(xpath = "//a[@href='/account/register']") public WebElement register; //us001
+    @FindBy(xpath = "//span[text()='User Me']") public WebElement usernamelogin; //
+
+
 
 
 
