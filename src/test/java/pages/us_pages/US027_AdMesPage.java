@@ -8,8 +8,8 @@ import utilities.Driver;
 
 import java.util.List;
 
-public class US027_AdminMessages {
-    public US027_AdminMessages(){
+public class US027_AdMesPage {
+    public US027_AdMesPage(){
         PageFactory.initElements(Driver.getDriver(),this);}
 
     @FindBy(xpath = "//a[@class='d-flex align-items-center dropdown-toggle nav-link']")
@@ -27,14 +27,14 @@ public class US027_AdminMessages {
     @FindBy(xpath = "(//span[text()='Sign in'])[3]")
     public WebElement signInButton; //SignIn sayfasindaki signin buttonu
 
-    @FindBy(xpath = "//li[@id='admin-menu']")
+    @FindBy(xpath = "//*[@id='admin-menu']/a/span")
     public WebElement administrationDropdown;
 
-    @FindBy (xpath = "(//li[@id='entity-menu']")
+    @FindBy (xpath = "//span[normalize-space()='Items&Titles']")
     public WebElement ıtemsAndTitlesDropDown;
 
-    @FindBy (xpath = "(//*[.='Messages'])[1]")
-    public WebElement ItemsAndTitlesDropdownMessagesButton;
+    @FindBy (xpath = "//span[normalize-space()='Messages']")
+    public WebElement ıtemsAndTitlesDropdownMessagesButton;
 
     @FindBy (xpath = "(//*[.='Messages'])[2]")
     public WebElement messagePageMessagesText;
@@ -57,11 +57,8 @@ public class US027_AdminMessages {
     @FindBy (xpath = "//table//tbody//tr//td[5]")
     public List<WebElement> messagesMessageColumn;
 
-    @FindBy (xpath = "//*[.='Create a new Message']")
+    @FindBy (xpath = "//span[normalize-space()='Create a new Message']")
     public WebElement createANewMessage;
-
-    @FindBy (xpath = "//*[.='Create a new Message']")
-    public WebElement creatingANewMessage;
 
     @FindBy (xpath = "(//*[.='Create or edit a Message'])[4]")
     public WebElement createOrEditAMessagePageText;
