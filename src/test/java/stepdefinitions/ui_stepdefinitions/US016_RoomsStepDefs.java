@@ -13,7 +13,7 @@ import static stepdefinitions.ui_stepdefinitions.Login.signIn;
 import static utilities.Driver.waitForVisibility;
 import static utilities.ReusableMethods.waitFor;
 
-public class US016_RoomSteps {
+public class US016_RoomsStepDefs {
     Admin_RoomsPage page=new Admin_RoomsPage();
 
     String actualID;
