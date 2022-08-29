@@ -45,7 +45,7 @@ public class US019_StepDefiniations {
     @And("kullanici {int} saniye bekler")
     public void kullaniciSaniyeBekler(int Integer ) throws InterruptedException {
 
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
 
