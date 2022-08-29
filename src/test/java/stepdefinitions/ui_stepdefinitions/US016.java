@@ -1,5 +1,7 @@
 package stepdefinitions.ui_stepdefinitions;
-import io.cucumber.java.en.*;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,14 +10,13 @@ import pages.admin_pages.Admin_RoomsPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.JSUtils;
+
 import static org.junit.Assert.assertEquals;
 import static stepdefinitions.ui_stepdefinitions.Login.signIn;
 import static utilities.Driver.waitForVisibility;
 import static utilities.ReusableMethods.waitFor;
 
-
-public class US016_RoomStepDefs {
-
+public class US016 {
     Admin_RoomsPage page=new Admin_RoomsPage();
 
 
