@@ -59,10 +59,12 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
     And Admin yeni hasta olustur kutusunu tıklar
     And Admin state dısındaki hasta bilgilerini girer
     And Admin kayıt butonuna tıklar
-    And Admin save butonunu gorur
+    Then Admin save butonunun gorulemez oldugunu test eder
 
       Scenario: 6- Yönetici herhangi bir hastayı silebilir
       Given Admin medunna url e gider
+      When Admin accountButton u tiklar
+      And Admin sign in secenegini tiklar
       Then Admin username ve password ile giris yapar
       And Admin item&titles butonumu tıklar
       And Admin patient secenegini tıklar
