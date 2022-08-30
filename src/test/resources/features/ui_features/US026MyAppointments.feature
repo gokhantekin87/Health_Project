@@ -2,6 +2,7 @@
 
 Feature: İletişim Mesajı (Contact messages)
 
+
   Scenario:Herhangi bir kullanici bilgi almak icin "Contact portal" üzerinden istek gonderebilmeli.
   Kullanici "Name, Email, Subject, Message" bolumlerine data girebilmeli ve mesajini gonderebilmeli.
 

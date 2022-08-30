@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.interactions.Actions;
 import pages.doctor_pages.DoctorPage;
 import pages.us_pages.US024_page;
+import utilities.ConfigReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
@@ -23,6 +24,21 @@ public class US024_MyAppointmentsStepdefinations {
 
         ReusableMethods.waitFor(1);
         js.executeScript("arguments[0].click();",usp.MyPAGESpatient);
+    }
+
+    @Then("Doktor  baslangic tarihi girer")
+    public void doktor_baslangic_tarihi_girer() {
+
+        DoctorPage.baslangictarihi.sendKeys("10082022");
+        //DoctorPage.bas.sendKeys(ConfigReader.getProperty("bitisTarihi"));
+
+    }
+
+    @Then("Doktor bitis tarihi girer")
+    public void doktor_bitis_tarihi_girer() {
+        DoctorPage.bitistarihi.sendKeys("18082022");
+        ReusableMethods.waitFor(2);
+
     }
 
     @Then("Kullanici sayfadaki ShowTests kismina tiklar")
