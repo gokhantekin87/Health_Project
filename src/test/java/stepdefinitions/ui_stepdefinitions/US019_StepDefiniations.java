@@ -7,6 +7,8 @@ import org.junit.Assert;
 import pages.admin_pages.Admin_PatientPage;
 import utilities.ReusableMethods;
 
+import static utilities.JSUtils.clickElementByJS;
+
 public class US019_StepDefiniations {
 
     Admin_PatientPage admin_patientPage=new Admin_PatientPage();
@@ -127,7 +129,7 @@ public class US019_StepDefiniations {
 
     @And("save button click")
     public void saveButtonClick() {
-        ReusableMethods.clickWithJs(admin_patientPage.saveBTN);
+        clickElementByJS(admin_patientPage.saveBTN);
 
     }
 
