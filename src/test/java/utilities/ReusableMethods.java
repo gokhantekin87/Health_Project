@@ -145,10 +145,23 @@ public class ReusableMethods {
         });
         return element;
     }
+/////////////////
 
-    //**********Click Method**************
-    public static void clickWithJs(WebElement element){
-        ((JavascriptExecutor)Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);",element);
-        ((JavascriptExecutor)Driver.getDriver()).executeScript("arguments[0].click();",element);
+    // javascript executer methodlari
+    public static void scroolOfBottomOfPage() {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("window.scrollBy(0,250)");
+    }
+    public static void scrooltoWebelement(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].scrollIntoView(true);", element);
+    }
+    public static void scroolDowntoPixel(int pixel) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("scroll(0, " + pixel + ");");
+    }
+    public static void jsClick(WebElement element) {
+        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
+        jse.executeScript("arguments[0].click();", element);
     }
 }

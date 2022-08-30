@@ -9,6 +9,7 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 import static utilities.ReusableMethods.waitFor;
+import static utilities.ReusableMethods.waitForClickablility;
 
 public class  Login {
     /*
@@ -22,7 +23,7 @@ public class  Login {
     Then kullanici "staffUsername" ve "staffPassword" girerek giris yapar
      */
 
-    LoginPage loginPage=new LoginPage();
+    static LoginPage loginPage=new LoginPage();
 
     @Given("kullanici medunna anasayfasinda") public void kullaniciMedunnaAnasayfasinda(){
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
@@ -65,11 +66,30 @@ public class  Login {
 
     @Then("kullanici {string} ve {string} girerek giris yapar2")
     public void kullaniciVeGirerekGirisYapar2(String username, String password) {
-        loginPage.accountMenu.click();
+        waitForClickablility(loginPage.accountMenu,3).click();
         loginPage.signIn.click();
         loginPage.usernameTextbox.sendKeys(ConfigReader.getProperty(username));
         loginPage.passwordTextbox.sendKeys(ConfigReader.getProperty(password));
         loginPage.rememberMe.click();
         loginPage.signInButton.click();
+    }
+
+    public static void signIn (){
+        loginPage.usernameTextbox.sendKeys("admin59");
+        loginPage.passwordTextbox.sendKeys("admin");
+        loginPage.rememberMe.click();
+        loginPage.signInButton.click();
+    }
+
+
+    @And("sayfayi kapat")
+    public void sayfayiKapat() {
+        Driver.getDriver().close();
+
+    }
+
+    @And("quite")
+    public void quite() {
+        Driver.getDriver().quit();
     }
 }

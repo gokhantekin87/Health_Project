@@ -8,7 +8,7 @@ import utilities.Driver;
  public class Admin_PatientPage {
 
 
-    public Admin_PatientPage(){PageFactory.initElements(Driver.getDriver(),this);};
+    public Admin_PatientPage(){PageFactory.initElements(Driver.getDriver(),this);}
 
      @FindBy(xpath = "//a[@aria-haspopup='true']")
      public WebElement accountButton;
@@ -57,6 +57,9 @@ import utilities.Driver;
 
      @FindBy(xpath = "//select[@name='bloodGroup']")
      public WebElement bloodGroupBox;
+     @FindBy(xpath = "//option[@value='Apositive']")
+     public WebElement aGroupBox;
+
 
      @FindBy(xpath = "//input[@name='adress']")
      public WebElement adressBox;
@@ -69,12 +72,15 @@ import utilities.Driver;
 
      @FindBy(xpath = "//option[@value='80065']")
      public WebElement usaBox;
+     @FindBy(xpath = "//option[@value='80084']")
+     public WebElement usBox;
+
 
 
      @FindBy(xpath = "//select[@name='cstate.id']")
      public WebElement cStateBox;
 
-     @FindBy(xpath = "//option[@value='43522']")
+     @FindBy(xpath = "//option[@value='43522']")//option[@value='43522']
      public WebElement californiaOption;
 
      @FindBy(id = "save-entity")
@@ -98,15 +104,40 @@ import utilities.Driver;
      @FindBy(xpath = "(//button[@type='button'])[4]")
      public WebElement delete2Button;
 
-     @FindBy(xpath = "//div[@class='Toastify__toast-body']")
-     public WebElement serverErrorButton;
 
      @FindBy(xpath = "//div[@class='Toastify__toast-body']")
-     public WebElement güncelemeBasariliButton;
+     public WebElement guncelemeBasariliButton;
 
      @FindBy(xpath = " (//th[@class='hand'])[1]")
-     public WebElement patientsIdButton;
+     public WebElement idBaslik;
 
+     @FindBy(xpath = "//span[text()='SSN']")
+     public WebElement ssnBaslik;
+
+     @FindBy(xpath = "//span[text()='First Name']")
+     public WebElement firstBaslik;
+
+     @FindBy(xpath = "//span[text()='Last Name']")
+     public WebElement lastBaslik;
+
+     @FindBy(xpath = "//span[text()='Birth Date']")
+     public WebElement birthBaslik;
+
+     @FindBy(xpath = "//span[text()='Phone']")
+     public WebElement phoneBaslik;
+
+     @FindBy(xpath = "//span[text()='Gender']")
+     public WebElement genderBaslik;
+
+     @FindBy(xpath = "//span[text()='Created Date']")
+     public WebElement createdBaslik;
+
+
+     @FindBy(xpath = "(//a[@class='btn btn-link btn-sm'])[1]")
+     public WebElement patientId;
+
+     @FindBy(xpath = "(//a[@class='btn btn-primary btn-sm'])[1]")
+     public WebElement editButton;
 
 
 
