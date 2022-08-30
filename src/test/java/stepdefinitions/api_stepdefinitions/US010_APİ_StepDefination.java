@@ -2,7 +2,6 @@ package stepdefinitions.api_stepdefinitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -13,7 +12,6 @@ import utilities.ConfigReader;
 
 import java.util.List;
 
-import static io.restassured.RestAssured.given;
 
 public class US010_APİ_StepDefination {
 
@@ -21,15 +19,17 @@ public class US010_APİ_StepDefination {
     static RequestSpecification spec;
 
 
+
     @Given("Physician URLe alma istegi gonderir")
     public void physician_ur_le_alma_istegi_gonderir() {
 
-        String token = Authentication.generateToken();
-        response= given().headers(
-                "Authorization","Bearer "+ token,
-                "Content-Type", ContentType.JSON,
-                "Accept",ContentType.JSON
-        ).spec(spec).when().get("/{first}/{second}");
+
+            response = ApiUtils.getRequestdoktor(
+                    Authentication.generateToken1(
+                            ConfigReader.getProperty("doktorusarname"),
+                            ConfigReader.getProperty("doktorpassword")),
+                    "https://medunna.com/api/appointments");
+            response.prettyPrint();
 
 
 
@@ -51,8 +51,10 @@ public class US010_APİ_StepDefination {
         List<Integer> firstname =js.getList("firstName");
         List<Integer> login =js.getList("login");
         System.out.println(rdnid);
+        System.out.println(firstname);
+        System.out.println(login);
 
-        Assert.assertTrue(rdnid.contains("171178"));
+        Assert.assertTrue(rdnid.contains(4669));
 
 
 

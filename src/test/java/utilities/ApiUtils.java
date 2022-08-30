@@ -22,7 +22,19 @@ public class ApiUtils {
                 "Accept",
                 ContentType.JSON).when().get(endpoint);
         return  response;
+
     }
+    public static Response getRequestdoktor(String token, String endpoint) {
+        Response response = given().headers(
+                "Authorization",
+                "Bearer " + token,
+                "Content-Type",
+                ContentType.JSON,
+                "Accept",
+                ContentType.JSON).when().get(endpoint);
+        return response;
+    }
+
 
     //yeni data olusturma post request ile : Room icin sadece ornek olarak kullanabilirsiniz
     public static Response postRequest(String endpoint, Room1Post data){
