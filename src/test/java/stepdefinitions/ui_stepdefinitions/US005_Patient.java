@@ -71,9 +71,6 @@ public class US005_Patient {
     @Then("kayıt oluşturulup oluşturulmadıgını kontrol eder")
     public void kayıt_oluşturulup_oluşturulmadıgını_kontrol_eder() {
         Assert.assertTrue(appointmentPage.firstNameRequiredYazi.isDisplayed());
-        if (appointmentPage.firstNameRequiredYazi.isDisplayed()){
-            System.out.println("First Name eksik oldugu icin kayıt olusturalamadı..!");
-        }
 
     }
 
