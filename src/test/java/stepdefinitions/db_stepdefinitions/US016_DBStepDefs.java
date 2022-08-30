@@ -27,4 +27,5 @@ public class US016_DBStepDefs {
         Assert.assertEquals(DBUtils.getResultset().getObject(column), testdata);
     }
 
+
 }
