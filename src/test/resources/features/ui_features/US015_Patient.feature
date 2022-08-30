@@ -1,5 +1,5 @@
 Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
-
+#############
     Scenario: 1- Yeni hastalar yalnızca yönetici tarafından oluşturulabilir
       Given Admin medunna url e gider
       And Admin accountButton u tiklar
@@ -12,7 +12,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
       And Admin kayıt butonuna tıklar
       Then Admin save butonunun gorulemez oldugunu test eder
       And Admin sayfayi kapatir
-
+#calisiyor
       Scenario: 2- Yönetici "SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address,
       Description, Created Date, User, Country and state / City" gibi hasta bilgilerini görebilir.
 
@@ -24,7 +24,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
         And Admin patient secenegini tıklar
         Then Admin hastanın SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and stateCity bilgilerini görür
         And Admin sayfayi kapatir
-
+#caliyor
       Scenario:3- Hasta oluşturulduğunda veya güncellendiğinde yukarıdaki öğelere data girişi yapılabilmeli.
         Given Admin medunna url e gider
         Then Admin accountButton u tiklar
@@ -35,7 +35,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
         And Admin ıd basligina tıklar
         And Admin edit butonunu tiklar
         When Admin ogelerin secilebilir oldugunu gorur
-
+#gerek yok
   Scenario: Hasta için gerekli doktoru seçebilmeli ve randevuyu oluşturmalı.
     * Kullanici  "https://medunna.com/" adresine gider
     * Kullanici sag ustteki adam ikonuna tiklar
@@ -48,7 +48,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
     * Kullanici sayfadaki Edit kismina tiklar
     * Kullanici doktor secebilmeli
     * Kullanici save tusuna basar
-
+#gerek yok
     Scenario:5- "State", "US state" olmalı ve boş bırakılmamali
     Given Admin medunna url e gider
     When Admin accountButton u tiklar
@@ -60,7 +60,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
     And Admin state dısındaki hasta bilgilerini girer
     And Admin kayıt butonuna tıklar
     Then Admin save butonunun gorulemez oldugunu test eder
-
+#
       Scenario: 6- Yönetici herhangi bir hastayı silebilir
       Given Admin medunna url e gider
       When Admin accountButton u tiklar
