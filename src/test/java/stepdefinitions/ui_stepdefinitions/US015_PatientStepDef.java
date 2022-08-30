@@ -1,5 +1,6 @@
 package stepdefinitions.ui_stepdefinitions;
 
+import com.github.javafaker.Faker;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.JavascriptExecutor;
@@ -13,6 +14,8 @@ import utilities.Driver;
 import static utilities.JSUtils.clickElementByJS;
 
 public class US015_PatientStepDef {
+
+    Faker faker = new Faker();
     Admin_PatientPage admin_patientPage = new Admin_PatientPage();
     public JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
     public Actions actions = new Actions(Driver.getDriver());
@@ -56,14 +59,15 @@ public class US015_PatientStepDef {
 
     @Then("Admin  hasta bilgilerini girer")
     public void admin_hasta_bilgilerini_girer() throws InterruptedException {
-        admin_patientPage.firstnameBox.sendKeys("meliha");
-        admin_patientPage.lastnameBox.sendKeys("gün");
+
+        admin_patientPage.firstnameBox.sendKeys("süheyla");
+        admin_patientPage.lastnameBox.sendKeys("kara");
 
        Actions action = new Actions(Driver.getDriver());
-        action.click(admin_patientPage.birthDateBox).sendKeys("01011995").
+        action.click(admin_patientPage.birthDateBox).sendKeys("01011991").
                 sendKeys(Keys.TAB).sendKeys("0105").
-                sendKeys(Keys.TAB).sendKeys("melih@gmail.com").
-                sendKeys(Keys.TAB).sendKeys("5554443322").perform();
+                sendKeys(Keys.TAB).sendKeys("suheyla@gmail.com").
+                sendKeys(Keys.TAB).sendKeys("5554443388").perform();
 
         clickElementByJS(admin_patientPage.genderBox);
         Select select = new Select(admin_patientPage.genderBox);
@@ -71,13 +75,13 @@ public class US015_PatientStepDef {
 
         //clickElementByJS(admin_patientPage.bloodGroupBox);
         Select select2 = new Select(admin_patientPage.bloodGroupBox);
-        select2.selectByIndex(2);
+        select2.selectByIndex(1);
 
         actions.sendKeys(Keys.ARROW_DOWN).perform();
 
         action.click(admin_patientPage.adressBox).sendKeys("ss sokak").
                 sendKeys(Keys.TAB).sendKeys("oksuruk").
-                sendKeys(Keys.TAB).sendKeys("bakalim").perform();
+                sendKeys(Keys.TAB).sendKeys("mustafatekin").perform();
 
 
         clickElementByJS(admin_patientPage.countryIdBox);
@@ -176,15 +180,14 @@ Actions actions=new Actions(Driver.getDriver());
 
     @When("Admin state dısındaki hasta bilgilerini girer")
     public void admin_state_dısındaki_hasta_bilgilerini_girer() {
-        admin_patientPage.firstnameBox.sendKeys("Ayse");
-        admin_patientPage.lastnameBox.sendKeys("Ayla");
+        admin_patientPage.firstnameBox.sendKeys("süheyla");
+        admin_patientPage.lastnameBox.sendKeys("kara");
 
         Actions action = new Actions(Driver.getDriver());
-        action.click(admin_patientPage.birthDateBox).sendKeys("01011995").
+        action.click(admin_patientPage.birthDateBox).sendKeys("01011991").
                 sendKeys(Keys.TAB).sendKeys("0105").
-                sendKeys(Keys.TAB).sendKeys("ayse@gmail.com").
-                sendKeys(Keys.TAB).sendKeys("5554443322").perform();
-
+                sendKeys(Keys.TAB).sendKeys("suheyla@gmail.com").
+                sendKeys(Keys.TAB).sendKeys("5554443388").perform();
 
         clickElementByJS(admin_patientPage.genderBox);
         Select select = new Select(admin_patientPage.genderBox);
@@ -192,14 +195,44 @@ Actions actions=new Actions(Driver.getDriver());
 
         //clickElementByJS(admin_patientPage.bloodGroupBox);
         Select select2 = new Select(admin_patientPage.bloodGroupBox);
-        select2.selectByIndex(3);
+        select2.selectByIndex(1);
 
         actions.sendKeys(Keys.ARROW_DOWN).perform();
 
         action.click(admin_patientPage.adressBox).sendKeys("ss sokak").
                 sendKeys(Keys.TAB).sendKeys("oksuruk").
-                sendKeys(Keys.TAB).sendKeys("bakalim").perform();
+                sendKeys(Keys.TAB).sendKeys("mustafatekin").perform();
 
+/*
+        fakeMail = faker.internet().emailAddress();
+
+        fakeLastName = faker.name().lastName();
+        fakeSSN = faker.idNumber().ssnValid();
+        fakeUsername = faker.name().username();
+        fakeBirthDate = faker.idNumber().birthDate();
+        fakeBirthTime = faker.idNumber().birthTime();
+        fakePhoneNumber = faker.idNumber().phoneNumber();
+        fakeGender = faker.name().gender();
+        fakeBlood = faker.name().blood();
+        fakeAdress = faker.name().address();
+        fakeDescription = faker.name().description();
+        fakeState = faker.name().state();
+        fakeCountry = faker.name().country();
+
+
+        Actions action = new Actions(Driver.getDriver());
+        action.click(admin_patientPage.firstnameBox).sendKeys(faker.name().firstName()).
+                sendKeys(Keys.TAB).sendKeys(faker.name().lastName()).
+                sendKeys(Keys.TAB).sendKeys(faker.name().username()).
+                sendKeys(Keys.TAB).sendKeys(faker.date().birthday()).
+                sendKeys(Keys.TAB).sendKeys(fakeMail).
+                sendKeys(Keys.TAB).sendKeys(fakePhoneNumber).
+                sendKeys(Keys.TAB).sendKeys(fakeGender).
+                sendKeys(Keys.TAB).sendKeys(fakeBlood).
+                sendKeys(Keys.TAB).sendKeys(fakeDescription).
+                sendKeys(Keys.TAB).sendKeys(fakeUsername).
+                sendKeys(Keys.TAB).sendKeys(fakeCountry).
+                sendKeys(Keys.TAB).sendKeys(fakeState).perform();*/
 
     }
 
@@ -249,13 +282,13 @@ Actions actions=new Actions(Driver.getDriver());
 
     @And("Admin save butonunu gorur")
     public void adminSaveButonunuGorur() {
-        Assert.assertTrue(admin_patientPage.saveButton.isDisplayed());
+        Assert.assertFalse(admin_patientPage.saveButton.isDisplayed());
     }
 
 
     @When("Admin delete alertinin kayboldugunu gorur")
     public void adminDeleteAlertininKayboldugunuGorur() {
-        Assert.assertTrue(admin_patientPage.delete2Button.isDisplayed());
+        Assert.assertFalse(admin_patientPage.delete2Button.isDisplayed());
     }
 
     @Then("Admin save butonunun gorulemez oldugunu test eder")

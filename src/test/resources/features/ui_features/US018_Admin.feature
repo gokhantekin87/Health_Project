@@ -20,12 +20,12 @@ Feature: Admin physician olusturabilir,guncelleyebilir,goruntuleyebilir,silebili
     Scenario:TC02 kisilerin "firstname,lastname vs bilgileri doldurulabilmeli
     And "admin" "Create a new Physician" butonuna tıklar
     And "admin" "use search" kutusuna tıklar
-    And "admin" kayitli bir "Physician SSN" icin arama yapar
+    And "admin" kayitli bir "149-79-1478" icin arama yapar
     When admin physician'ın "firstname,lastname vs" bilgilerini doldurur
     When admin tarih "01.01.2000" bilgisini girer
     When admin telefon "222-222-2222" bilgisini girer
     When admin adress "mumdan gemi" bilgisini girer
-    #When admin cinsiyet icin "female" secer
+    #When admin cinsiyet icin "FEMALE" secer
     When admin speciality icin "Pediatrics" secer
     #When admin blood group icin "A+" secer
     When admin description icin "sehname" bilgisini girer
@@ -42,19 +42,18 @@ Feature: Admin physician olusturabilir,guncelleyebilir,goruntuleyebilir,silebili
 
   @US018All @TC04
   Scenario: TC04 Admin doktorlarin bilgilerini duzenleyebilir
-    And admin 21 sayfaya gecer
-    And admin firstname "leylamecnun2" olan doktorun idisini alir
-    #And admin firstname "leylamecnun2" olan doktorun edit butona tiklar
-    When admin tarih "01.01.2003" bilgisini girer
-    When admin telefon "222-222-2223" bilgisini girer
-    When admin adress "mumdan gemi3" bilgisini girer
-    When admin cinsiyet icin "FEMALE" secer
-    When admin speciality icin "Pathology" secer
+    And admin 24 sayfaya gecer
+    And admin firstname "neriman" olan doktorun idisini alir
+    And admin firstname "neriman" olan doktorun edit butona tiklar
+    When admin edit tarih "03.03.1994" bilgisini girer
+    When admin edit telefon "333-333-3434" bilgisini girer
+    When admin edit adress "Fatih İstanbul" bilgisini girer
+    #When admin edit cinsiyet icin "FEMALE" secer
+    When admin edit speciality icin "Psychiatry" secer
     #When admin blood group icin "A+" secer
-    When admin description icin "sehname3" bilgisini girer
-    And admin fotograf yukler
-    And admin "300" ucret bilgisi girer
-    And admin "Germany" country bilgisi girer
+    When admin edit description icin "Peyami Safa" bilgisini girer
+    #And admin "340" edit ucret bilgisi girer
+    And admin "Turkey" edit country bilgisi girer
     Then admin save butonuna tıklar ve dogrulama mesajinin gorundugunu test eder
     And sayfayi kapatir
 
