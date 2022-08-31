@@ -80,6 +80,7 @@ public class US017_TestItemStepDefs {
 
     @Then("{string} yazisi gorunur oldugunu dogrular")
     public void yazisiGorunurOldugunuDogrular(String message) {
+        waitFor(2);
         Assert.assertTrue(page.sucsessMesage.isDisplayed());
         Assert.assertTrue(page.sucsessMesage.getText().contains(message));
         sucsessMessage=page.sucsessMesage.getText();
@@ -126,6 +127,7 @@ public class US017_TestItemStepDefs {
 
     @Then("{string} yazisi oldugunu dogrular")
     public void yazisiOldugunuDogrular(String message) {
+        waitFor(2);
         Assert.assertTrue(waitForVisibility(page.sucsessMesage,2).isDisplayed());
         Assert.assertTrue(page.sucsessMesage.getText().contains(message));
     }
