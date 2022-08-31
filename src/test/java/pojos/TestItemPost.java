@@ -1,24 +1,15 @@
 package pojos;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+public class TestItemPost {
 
-public class TestItem {
-    private int id;
     private String name;
     private String description;
     private int price;
     private String defaultValMin;
     private String defaultValMax;
-
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -58,5 +49,27 @@ public class TestItem {
 
     public void setDefaultValMax(String defaultValMax) {
         this.defaultValMax = defaultValMax;
+    }
+
+    public TestItemPost() {
+    }
+
+    public TestItemPost(String name, String description, int price, String defaultValMin, String defaultValMax) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.defaultValMin = defaultValMin;
+        this.defaultValMax = defaultValMax;
+    }
+
+    @Override
+    public String toString() {
+        return "TestItemPost{" +
+                "name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", price=" + price +
+                ", defaultValMin='" + defaultValMin + '\'' +
+                ", defaultValMax='" + defaultValMax + '\'' +
+                '}';
     }
 }

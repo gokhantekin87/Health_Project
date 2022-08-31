@@ -7,3 +7,5 @@ Feature: US10 Appoinments bilgileri test edilebilmeli
     Given Physician URLe alma istegi gonderir
     And Physician Status Code 200 oldugunu dogrular
     Then Physician Appointmentsleri kontrol eder
+
+
