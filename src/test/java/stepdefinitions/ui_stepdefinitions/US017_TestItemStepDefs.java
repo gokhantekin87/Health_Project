@@ -1,14 +1,13 @@
 package stepdefinitions.ui_stepdefinitions;
-
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import pages.admin_pages.Admin_TestItemsPage;
 import utilities.Driver;
-
 import static org.junit.Assert.assertEquals;
 import static utilities.Driver.waitForVisibility;
+import static utilities.ReusableMethods.waitFor;
 
 public class US017_TestItemStepDefs {
 
@@ -133,17 +132,31 @@ public class US017_TestItemStepDefs {
 
     @And("olusturdugu test ogesine gecis yapar")
     public void olusturduguTestOgesineGecisYapar() {
+        page.createButton.click();
+        page.testItemNameTextbox.sendKeys("test item no:02");
+        page.testItemPriceTextbox.sendKeys("59");
+        page.saveButton.click();
+        waitForVisibility(page.sucsessMesage,3);
+        deleteID=page.sucsessMesage.getText().substring(43);
+        page.ID.click();
     }
 
     @And("Delete butona tiklar")
     public void deleteButonaTiklar() {
+        Driver.getDriver().findElement(By.xpath("//a[@href='/c-test-item/"+deleteID+"/delete?page=1&sort=id,desc']")).click();
+        waitFor(4);
     }
 
     @And("dogrulama sayfasinda Delete butona tiklar")
     public void dogrulamaSayfasindaDeleteButonaTiklar() {
+        page.deleteButton.click();
     }
 
     @Then("silinen test ogesinin id sinin olmadigini dogrular")
     public void silinenTestOgesininIdSininOlmadiginiDogrular() {
+        for (int i = 1; i <20 ; i++) {
+     Assert.assertNotEquals(deleteID,Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[1]")).getText());}
     }
+
+
 }

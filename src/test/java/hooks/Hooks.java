@@ -1,4 +1,5 @@
 package hooks;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.restassured.builder.RequestSpecBuilder;
@@ -24,7 +25,7 @@ public class Hooks {
         DBUtils.createConnection();
     }
 
-   //--> @After
+//    @After
     public void tearDown(Scenario scenario) {
         if (scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
