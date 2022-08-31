@@ -68,8 +68,14 @@ public class US016_RoomsStepDefs {
 
     @And("admin SUITE odalarin sirlandigini dogrular")
     public void adminSUITEOdalarinSirlandiginiDogrular() {
-        Driver.getDriver().navigate().to("https://medunna.com/room?page=60&sort=roomType,desc");
-        signIn();
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=66&sort=roomType,desc");
+
+
+    }
+
+    @And("admin SUITE odalarin sirlandigini dogrula")
+    public void adminSUITEOdalarinSirlandiginiDogrula() {
+
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"SUITE");
         }
@@ -77,7 +83,7 @@ public class US016_RoomsStepDefs {
 
     @And("admin PREMIUM_DELUXE odalarin siralndigini dogrular")
     public void adminPREMIUM_DELUXEOdalarinSiralndiginiDogrular() {
-        Driver.getDriver().navigate().to("https://medunna.com/room?page=68&sort=roomType,desc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=76&sort=roomType,desc");
         waitFor(5);
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"PREMIUM_DELUXE");
@@ -86,7 +92,7 @@ public class US016_RoomsStepDefs {
 
     @And("admin DELUXE odalarin siralandigini dogrular")
     public void adminDELUXEOdalarinSiralandiginiDogrular() {
-        Driver.getDriver().navigate().to("https://medunna.com/room?page=74&sort=roomType,desc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=88&sort=roomType,desc");
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"DELUXE");
         }
@@ -94,7 +100,7 @@ public class US016_RoomsStepDefs {
 
     @And("admin DAYCARE odalarin siralandigini dogrular")
     public void adminDAYCAREOdalarinSiralandiginiDogrular() {
-        Driver.getDriver().navigate().to("https://medunna.com/room?page=93&sort=roomType,desc");
+        Driver.getDriver().navigate().to("https://medunna.com/room?page=105&sort=roomType,desc");
         for (int i = 1; i <=20 ; i++) {
             assertEquals(Driver.getDriver().findElement(By.xpath("//tr["+i+"]//td[3]//span")).getText(),"DAYCARE");
         }
@@ -172,9 +178,8 @@ public class US016_RoomsStepDefs {
         Driver.getDriver().findElement(By.xpath("(//a[@href='/room/"+actualID+"'])[2]")).click();
     }
 
-    @Then("yeni odanin bilgilerinin {string} {string} {string} {string} oldugunu dogrular")
-    public void yeniOdaninBilgilerininOldugunuDogrular(String roomNumber, String roomType, String price, String desc) {
-        Assert.assertTrue(page.viewTable.getText().contains(roomNumber));
+    @Then("yeni odanin bilgilerinin {string} {string} {string} oldugunu dogrular")
+    public void yeniOdaninBilgilerininOldugunuDogrular(String roomType, String price, String desc) {
         Assert.assertTrue(page.viewTable.getText().contains(roomType));
         Assert.assertTrue(page.viewTable.getText().contains(price));
         Assert.assertTrue(page.viewTable.getText().contains(desc));
