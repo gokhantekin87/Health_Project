@@ -9,7 +9,7 @@ Feature: Admin physician olusturabilir,guncelleyebilir,goruntuleyebilir,silebili
     And "admin" physicians sekmesine gecis yapar ve tıklar
 
 
-  @US018All @TC01
+   @US018All @TC01
     Scenario: TC01 Admin SSN ile kayitli bir physician arar
     And "admin" "Create a new Physician" butonuna tıklar
     And "admin" "use search" kutusuna tıklar
