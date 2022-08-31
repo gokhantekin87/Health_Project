@@ -1,4 +1,4 @@
-https://github.com/JasminaArslanova/health_project_team59.gitFeature: Staff hastalar için randevuları görür
+Feature: https://github.com/JasminaArslanova/health_project_team59.gitFeature: Staff hastalar için randevuları görür
   Scenario:Kullanıcı (Staff) hastanın SSN id ile arama yapabilir.
   * Kullanici  "https://medunna.com/" adresine gider
   * Kullanici sag ustteki adam ikonuna tiklar
