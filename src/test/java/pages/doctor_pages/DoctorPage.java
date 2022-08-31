@@ -114,6 +114,13 @@ public class DoctorPage {
     @FindBy(id = "app-view-container")
     public WebElement physicianUpdatedMessage;
 
+    @FindBy(xpath = "//input[@id='fromDate']")
+    public static WebElement baslangictarihi;
+
+
+    @FindBy(xpath = "//input[@id='toDate']")
+    public static WebElement bitistarihi;
+
 
 
 }

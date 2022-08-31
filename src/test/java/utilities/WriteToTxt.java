@@ -1,7 +1,6 @@
 package utilities;
 
-import pojos.Appointment;
-import pojos.Messages;
+import pojos.Appointments;
 import pojos.Registrant;
 
 import java.io.BufferedWriter;
@@ -12,42 +11,45 @@ import java.util.List;
 public class WriteToTxt {
 
 
-    public static void saveRegistrantData(Registrant registrant) {
-        try {
+
+    public static void saveRegistrantData(Registrant registrant){
+        try{
             //src/resources/testdata/Registrantdata.txt
             FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("api_registrant_data"), true);
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
 
-            writer.append(registrant + "\n");
+            writer.append(registrant+"\n");
 
 
             writer.close();
 
 
-        } catch (Exception e) {
+
+        }catch (Exception e){
             e.printStackTrace();
         }
 
 
     }
 
-    public static void saveAppointData(Appointment appointment) {
+    public static void saveAppointData(Appointments appointment){
 
-        try {
+        try{
 
             //src/resources/testdata/Registrantdata.txt
             FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("appointment_records"), true);
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            writer.append(appointment + "\n");
+            writer.append(appointment+"\n");
 
 
             writer.close();
 
 
-        } catch (Exception e) {
+
+        }catch (Exception e){
             e.printStackTrace();
         }
 
@@ -55,21 +57,24 @@ public class WriteToTxt {
     }
 
 
-    public static void saveRegistrantData(List<Object> SSNIds) {
-        try {
+
+
+    public static void saveRegistrantData(List<Object> SSNIds){
+        try{
             //src/resources/testdata/Registrantdata.txt
             FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("database_registrant_data"), false);
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
-            for (Object eachSSN : SSNIds) {
+            for(Object eachSSN: SSNIds) {
                 writer.append(eachSSN + ",\n");
             }
 
             writer.close();
 
 
-        } catch (Exception e) {
+
+        }catch (Exception e){
             e.printStackTrace();
         }
 
@@ -77,23 +82,24 @@ public class WriteToTxt {
     }
 
 
-    public static void saveRegistrantData(Registrant[] registrants) {
-        try {
+    public static void saveRegistrantData(Registrant [] registrants){
+        try{
             //src/resources/testdata/Registrantdata.txt
             FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("api_all_registrant_data"), false);
 
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
 
-            for (int i = 0; i < registrants.length; i++) {
-                writer.append(registrants[i].getFirstName() + "," + registrants[i].getLastName() + "," + registrants[i].getSsn() + "," + registrants[i].getLogin() +
-                        "," + registrants[i].getId() + "," + registrants[i].getEmail() + "\n");
+            for(int i=0; i< registrants.length;i++) {
+                writer.append(registrants[i].getFirstName()+","+ registrants[i].getLastName()+","+registrants[i].getSsn()+","+ registrants[i].getLogin()+
+                        ","+ registrants[i].getId()+","+registrants[i].getEmail()+ "\n");
             }
 
             writer.close();
 
 
-        } catch (Exception e) {
+
+        }catch (Exception e){
             e.printStackTrace();
         }
 
@@ -115,49 +121,30 @@ public class WriteToTxt {
 //        }
 //    }
 
-    public static void savePhysicianIds(String fileName, List<Object> id) {
+    public static void savePhysicianIds(String fileName, List<Object> id){
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,false));
 
-            for (int i = 0; i < id.size(); i++)
-                writer.append(id.get(i).toString() + ",\n");
+            for (int i=0; i< id.size(); i++)
+                writer.append(id.get(i).toString()+",\n");
 
             writer.close();
-        } catch (IOException e) {
+        } catch (IOException e){
         }
     }
 
-    public static void savePhysicianName(String fileName, List<Object> firstname) {
+    public static void savePhysicianName(String fileName, List<Object> firstname){
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,false));
 
-            for (int i = 0; i < firstname.size(); i++)
-                writer.append(firstname.get(i).toString() + ",\n");
+            for (int i=0; i< firstname.size(); i++)
+                writer.append(firstname.get(i).toString()+",\n");
 
             writer.close();
-        } catch (IOException e) {
+        } catch (IOException e){
         }
     }
 
 
-    public static void saveMessagesData(Messages messages) {
 
-        try {
-            FileWriter fileWriter = new FileWriter(ConfigReader.getProperty("messagesFile"), true);
-
-
-            BufferedWriter writer = new BufferedWriter(fileWriter);
-
-
-
-            writer.append(messages.toString() + ", \n");
-            writer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 }
-
-
-
-

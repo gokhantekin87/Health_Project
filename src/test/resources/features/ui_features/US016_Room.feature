@@ -98,7 +98,7 @@ Feature: US016 ROOM
     And Created Date gecersiz tarih "02312022" girildiginde kabul etmedigini dogrular
     #Failed Step
     And Created Date gecmis tarih "12301999" girildiginde kabul etmedigini dogrular
-    And sayfayi kapatir
+    And close driver
 
 
   # 1 fail olacak step var, tek basina senaryo calistirldiginda her test den once

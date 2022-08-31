@@ -140,4 +140,46 @@ import utilities.Driver;
      public WebElement editButton;
 
 
+
+
+
+
+     //ErkamUzun
+
+     @FindBy(xpath = "(//a[@class='dropdown-item'])[2]")
+     public WebElement staffButton;
+     @FindBy(xpath = "//span[text()='Create a new Staff']")
+     public WebElement createAnewStaffButton;
+     @FindBy(xpath = "//input[@id='searchSSN']")
+     public WebElement ssnTextBox;
+     @FindBy(xpath = "//button[@class='btn btn-secondary']")
+     public WebElement searchUserButton;
+     @FindBy(xpath = "//div[text()='User found with search SSN']")
+     public WebElement kullaniciBulunduYazi;
+
+     @FindBy(xpath = "//input[@name='description']")
+     public WebElement desciriptonBox;
+     @FindBy(xpath = "//option[@value='83961']")
+     public WebElement userIdSecim;
+     @FindBy(xpath = "//option[@value='1201']")
+     public WebElement secilenUlke;
+     @FindBy(xpath = "//option[@value='207079']")
+     public WebElement secilenSehir;
+     @FindBy(xpath = "//a[@class='btn btn-info btn-sm']")
+     public WebElement wievButton;
+     @FindBy(xpath = "//h2")
+     public WebElement userYazi;
+     @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
+     public WebElement editBUtton;
+     @FindBy(xpath = "//span[text()='Save']")
+     public WebElement saveBTN;
+     @FindBy(xpath = "//div[@role='alert']")
+     public WebElement bilgilerGüncellendiYazi;
+     @FindBy(xpath = "(//a[@class='btn btn-danger btn-sm'])[3]")
+     public WebElement deleteBTN;
+     @FindBy(xpath = "(//button[@type='button'])[24]")
+     public WebElement deleteBTN2;
+
+
+
 }
