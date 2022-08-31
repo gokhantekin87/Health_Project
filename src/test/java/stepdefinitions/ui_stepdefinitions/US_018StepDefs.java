@@ -32,8 +32,8 @@ public class US_018StepDefs {
     public void adminMedunnaUrlEGider() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
     }
-    @When("{string} Sign in sekmesine gecis yapar ve tıklar")
-    public void sign_in_sekmesine_gecis_yapar_ve_tıklar(String string) {
+    @When("{string} Sign in sekmesine gecis yapar ve tiklar")
+    public void sign_in_sekmesine_gecis_yapar_ve_tiklar(String string) {
         this.us13page.signInSekmesi.click();
     }
     @Then("{string} giris yapar")
@@ -45,22 +45,22 @@ public class US_018StepDefs {
         ReusableMethods.waitFor(2);
         this.us13page.signInButonu2.click();
     }
-    @Then("{string} items&titles sekmesine gecis yapar ve tıklar")
-    public void items_titles_sekmesine_gecis_yapar_ve_tıklar(String string) {
+    @Then("{string} items&titles sekmesine gecis yapar ve tiklar")
+    public void items_titles_sekmesine_gecis_yapar_ve_tiklar(String string) {
         this.us18page.itemsTitles.click();
     }
-    @Then("{string} physicians sekmesine gecis yapar ve tıklar")
-    public void physicians_sekmesine_gecis_yapar_ve_tıklar(String string) {
+    @Then("{string} physicians sekmesine gecis yapar ve tiklar")
+    public void physicians_sekmesine_gecis_yapar_ve_tiklar(String string) {
         this.us18page.physicianSekmesi.click();
     }
 
-    @Then("{string} {string} butonuna tıklar")
-    public void butonuna_tıklar(String admin, String itemsTitles) {
+    @Then("{string} {string} butonuna tiklar")
+    public void butonuna_tiklar(String admin, String itemsTitles) {
         ReusableMethods.waitFor(5);
         this.us18page.createNewPhysician.click();
     }
-    @Then("{string} {string} kutusuna tıklar")
-    public void kutusuna_tıklar(String string, String string2) {
+    @Then("{string} {string} kutusuna tiklar")
+    public void kutusuna_tiklar(String string, String string2) {
         this.us18page.useCheckbox.click();
     }
     //TC02
@@ -129,8 +129,8 @@ public class US_018StepDefs {
         select.selectByVisibleText(country);
     }
 
-    @Then("admin save butonuna tıklar ve dogrulama mesajinin gorundugunu test eder")
-    public void adminSaveButonunaTıklarVeDogrulamaMesajininGorundugunuTestEder() {
+    @Then("admin save butonuna tiklar ve dogrulama mesajinin gorundugunu test eder")
+    public void adminSaveButonunaTiklarVeDogrulamaMesajininGorundugunuTestEder() {
         jse.executeScript("arguments[0].click();", us18page.saveButton);
         ReusableMethods.waitFor(5);
         us18page.physicianHead.isDisplayed();
@@ -287,6 +287,5 @@ public class US_018StepDefs {
         WebElement secilemediMesaji= Driver.getDriver().findElement(By.xpath("//*[text()='An unexpected error has occurred.']"));
         Assert.assertFalse(secilemediMesaji.isDisplayed());
     }
-
 
 }
