@@ -3,23 +3,23 @@ Feature: Admin physician olusturabilir,guncelleyebilir,goruntuleyebilir,silebili
 
  Background:
     Given admin medunna url'e gider
-    When "admin" Sign in sekmesine gecis yapar ve tıklar
+    When "admin" Sign in sekmesine gecis yapar ve tiklar
     Then "admin" giris yapar
-    And "admin" items&titles sekmesine gecis yapar ve tıklar
-    And "admin" physicians sekmesine gecis yapar ve tıklar
+    And "admin" items&titles sekmesine gecis yapar ve tiklar
+    And "admin" physicians sekmesine gecis yapar ve tiklar
 
 
   @JenkinsDeneme @US018All @TC01
     Scenario: TC01 Admin SSN ile kayitli bir physician arar
-    And "admin" "Create a new Physician" butonuna tıklar
-    And "admin" "use search" kutusuna tıklar
+    And "admin" "Create a new Physician" butonuna tiklar
+    And "admin" "use search" kutusuna tiklar
     And "admin" kayitli bir "149-79-1478" icin arama yapar
     And sayfayi kapatir
 
   @US018All @TC02
     Scenario:TC02 kisilerin "firstname,lastname vs bilgileri doldurulabilmeli
-    And "admin" "Create a new Physician" butonuna tıklar
-    And "admin" "use search" kutusuna tıklar
+    And "admin" "Create a new Physician" butonuna tiklar
+    And "admin" "use search" kutusuna tiklar
     And "admin" kayitli bir "149-79-1478" icin arama yapar
     When admin physician'ın "firstname,lastname vs" bilgilerini doldurur
     When admin tarih "01.01.2000" bilgisini girer
@@ -32,7 +32,7 @@ Feature: Admin physician olusturabilir,guncelleyebilir,goruntuleyebilir,silebili
     And admin fotograf yukler
     And admin "400" ucret bilgisi girer
     And admin "France" country bilgisi girer
-   Then admin save butonuna tıklar ve dogrulama mesajinin gorundugunu test eder
+   Then admin save butonuna tiklar ve dogrulama mesajinin gorundugunu test eder
     And sayfayi kapatir
 
   @US018All @TC03
@@ -54,7 +54,7 @@ Feature: Admin physician olusturabilir,guncelleyebilir,goruntuleyebilir,silebili
     When admin edit description icin "Peyami Safa" bilgisini girer
     #And admin "340" edit ucret bilgisi girer
     And admin "Turkey" edit country bilgisi girer
-    Then admin save butonuna tıklar ve dogrulama mesajinin gorundugunu test eder
+    Then admin save butonuna tiklar ve dogrulama mesajinin gorundugunu test eder
     And sayfayi kapatir
 
     # BUG--> Doktor silinemiyor-->
