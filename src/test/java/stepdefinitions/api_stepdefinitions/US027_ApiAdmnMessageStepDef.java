@@ -13,22 +13,22 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import utilities.ConfigReader;
 import pojos.Messages;
-import utilities.WriteToTxt;
+
 
 import java.io.IOException;
-import java.util.concurrent.ExecutionException;
+
 
 
 import static hooks.Hooks.spec;
 import static io.restassured.RestAssured.given;
 import static utilities.Authentication.generateToken;
-import static utilities.WriteToTxt.saveMessagesData;
+
 
 
 public class US027_ApiAdmnMessageStepDef {
 
-    static Response response;
-    static Messages admmes=new Messages();
+    Response response;
+    Messages admmes=new Messages();
 
     @Given("Admin mesajlar için set the path params yapar")
     public void admin_mesajlar_için_set_the_path_params_yapar() {
@@ -54,19 +54,6 @@ public class US027_ApiAdmnMessageStepDef {
         response.prettyPrint();
     }
 
-    @When("Admin mesaj bilgilerinin tümünü API ile kaydeter")
-    public void admin_mesaj_bilgilerinin_tümünü_apı_ile_kaydeter() {
-        try {
-            response.then().statusCode(201);
-            saveMessagesData(admmes);
-            System.out.println(admmes.toString());
-        }catch (Exception e){
-
-        }
-
-
-
-    }
 
     @Then("Admin API ile kayıtlı tüm mesaj bilgilerini doğrular")
     public void admin_apı_ile_kayıtlı_tüm_mesaj_bilgilerini_doğrular() throws IOException {

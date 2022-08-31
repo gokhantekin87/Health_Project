@@ -5,7 +5,6 @@
      Given Admin mesajlar için set the path params yapar
      When Admin mesajlar için beklenen dataları girer
      And Admin mesajlar için post request yapar ve  yanıt alır
-     And Admin mesaj bilgilerinin tümünü API ile kaydeter
      Then Admin API ile kayıtlı tüm mesaj bilgilerini doğrular
 
     Scenario: Admin, API kullanarak ileti okumayı doğrulamalıdır
