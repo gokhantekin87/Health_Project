@@ -34,40 +34,40 @@ public class US_020_KullaniciAktifEtmestepdefinitions {
     public void yeniKayitYapilir() {
         yeniKayitOlusturma();
     }
-    @Given("AdminN medunna ana sayfasina gider")
-    public void adminN_medunna_ana_sayfasina_gider() {
+    @Given("Admin medunna ana sayfasina gider")
+    public void admin_medunna_ana_sayfasina_gider() {
         Driver.getDriver().get(ConfigReader.getProperty("medunnaUrl"));
 
     }
-    @When("AdminN hesap butonunu tiklar")
-    public void adminN_hesap_butonunu_tiklar() {
+    @When("Admin hesap butonunu tiklar")
+    public void admin_hesap_butonunu_tiklar() {
         adminPage.dprofilSimgesi.click();
 
     }
-    @Then("AdminN sign in butonunu tiklar")
-    public void adminN_sign_in_butonunu_tiklar() {
+    @Then("Admin sign in butonunu tiklar")
+    public void admin_sign_in_butonunu_tiklar() {
         adminPage.signInButonu.click();
         ;
     }
-    @Then("AdminN gecerli username ve sifresini girer")
-    public void adminN_gecerli_username_ve_sifresini_girer() {
+    @Then("Admin gecerli username ve sifresini girer")
+    public void admin_gecerli_username_ve_sifresini_girer() {
 
         adminPage.duserName.click();
-        adminPage.duserName.sendKeys(ConfigReader.getProperty("adminNUser"));
-        adminPage.dpassword.sendKeys(ConfigReader.getProperty("adminNSifre"));
+        adminPage.duserName.sendKeys(ConfigReader.getProperty("adminUser"));
+        adminPage.dpassword.sendKeys(ConfigReader.getProperty("adminSifre"));
 
     }
-    @Then("AdminN sing in butonuna tiklar")
-    public void adminN_sing_in_butonuna_tiklar() {
+    @Then("Admin sing in butonuna tiklar")
+    public void admin_sing_in_butonuna_tiklar() {
         adminPage.signInButonu2.submit();
 
     }
-    @Then("AdminN Administration butonunu tiklar")
+    @Then("Admin Administration butonunu tiklar")
     public void admin_administration_butonunu_tiklar() {
         adminPage.administrationbotunu.click();
 
     }
-    @Then("AdminN User management butonunu tiklar")
+    @Then("Admin User management butonunu tiklar")
     public void admin_user_management_butonunu_tiklar() {
         adminPage.userManagementButonu.click();
         actions.sendKeys(Keys.PAGE_DOWN).perform();
@@ -76,8 +76,8 @@ public class US_020_KullaniciAktifEtmestepdefinitions {
 
 
     }
-    @Then("AdminN viev butonunu tiklar")
-    public void adminN_viev_butonunu_tiklar() {
+    @Then("Admin viev butonunu tiklar")
+    public void admin_viev_butonunu_tiklar() {
         actions.sendKeys(Keys.END).perform();
         ReusableMethods.waitFor(2);
         System.out.println("adminPage.vievbutonu.size() = " + adminPage.vievbutonu.size());
@@ -86,8 +86,8 @@ public class US_020_KullaniciAktifEtmestepdefinitions {
 
 
     }
-    @Then("AdminN, kayıtlı kişilerin firstname lastname email gibi bilgileri gorur")
-    public void adminN_kayıtlı_kişilerin_firstname_lastname_email_gibi_bilgileri_gorur() {
+    @Then("Admin, kayıtlı kişilerin firstname lastname email gibi bilgileri gorur")
+    public void admin_kayıtlı_kişilerin_firstname_lastname_email_gibi_bilgileri_gorur() {
         adminPage.bilgilerTablosu.isDisplayed();
         ReusableMethods.waitFor(2);
 
@@ -103,8 +103,8 @@ public class US_020_KullaniciAktifEtmestepdefinitions {
     }
 
 
-    @And("AdminN Admin Create or edit a user sayfasina gider Activated secer")
-    public void adminNAdminCreateOrEditAUserSayfasinaGiderActivatedSecer() {
+    @And("Admin Admin Create or edit a user sayfasina gider Activated secer")
+    public void adminAdminCreateOrEditAUserSayfasinaGiderActivatedSecer() {
 
 
         js.executeScript("arguments[0].click();",adminPage.editButonu.get(adminPage.editButonu.size()-1));
@@ -118,8 +118,8 @@ public class US_020_KullaniciAktifEtmestepdefinitions {
 
     }
 
-    @And("AdminN rollerini ADMIN, USER PATIENT, STAFF ve PHYSICIAN olarak atar")
-    public void adminNRolleriniADMINUSERPATIENTSTAFFVePHYSICIANOlarakAtar() throws IOException {
+    @And("Admin rollerini ADMIN, USER PATIENT, STAFF ve PHYSICIAN olarak atar")
+    public void adminRolleriniADMINUSERPATIENTSTAFFVePHYSICIANOlarakAtar() throws IOException {
 
         Select select=new Select(adminPage.profiles);
         List<WebElement> statusOptions=select.getOptions();
@@ -135,8 +135,8 @@ public class US_020_KullaniciAktifEtmestepdefinitions {
 
     }
 
-    @And("AdminN kullaniciyi siler")
-    public void adminNKullaniciyiSiler() throws IOException {
+    @And("Admin kullaniciyi siler")
+    public void adminKullaniciyiSiler() throws IOException {
         js.executeScript("arguments[0].click();", adminPage.sonSayfayaGitme);
         ReusableMethods.waitFor(7);
         js.executeScript("arguments[0].click();", adminPage.deleteButonu.get(adminPage.deleteButonu.size()-1));
