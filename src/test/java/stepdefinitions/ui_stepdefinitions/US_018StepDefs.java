@@ -39,7 +39,7 @@ public class US_018StepDefs {
     @Then("{string} giris yapar")
     public void giris_yapar(String admin) {
         this.us13page.signInButonu.click();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(5);
         this.us13page.usernameKutusu.sendKeys("malikaMasal");
         this.us13page.passwordKutusu.sendKeys("123456.");
         ReusableMethods.waitFor(2);

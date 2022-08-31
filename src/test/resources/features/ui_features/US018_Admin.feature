@@ -9,7 +9,7 @@ Feature: Admin physician olusturabilir,guncelleyebilir,goruntuleyebilir,silebili
     And "admin" physicians sekmesine gecis yapar ve tıklar
 
 
-   @US018All @TC01
+  @JenkinsDeneme @US018All @TC01
     Scenario: TC01 Admin SSN ile kayitli bir physician arar
     And "admin" "Create a new Physician" butonuna tıklar
     And "admin" "use search" kutusuna tıklar
@@ -42,7 +42,7 @@ Feature: Admin physician olusturabilir,guncelleyebilir,goruntuleyebilir,silebili
 
   @US018All @TC04
   Scenario: TC04 Admin doktorlarin bilgilerini duzenleyebilir
-    And admin 24 sayfaya gecer
+    And admin 23 sayfaya gecer
     And admin firstname "neriman" olan doktorun idisini alir
     And admin firstname "neriman" olan doktorun edit butona tiklar
     When admin edit tarih "03.03.1994" bilgisini girer
