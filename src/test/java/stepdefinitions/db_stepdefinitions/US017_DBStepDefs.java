@@ -31,8 +31,8 @@ public class US017_DBStepDefs {
     @Then("kullanici test ogesinin {string}  {string} oldugunu dogrular")
     public void kullaniciTestOgesininOldugunuDogrular(String column, String testdata) throws SQLException {
         DBUtils.getResultset().next();
+        //System.out.println(DBUtils.getResultset().getObject("price"));
         Assert.assertEquals(DBUtils.getResultset().getObject(column), testdata);
     }
-
 
 }
