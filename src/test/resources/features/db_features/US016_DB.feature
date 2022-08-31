@@ -1,4 +1,6 @@
 Feature: US016 Room
+
+  #calisiyor
   Scenario: US016 TC001 kullanici id li oda bilgilerini dogrular
     Given kullanici database baglanir
     And kullanici 228125 "ID" li odanin bilgilerini "*" "room" tablosundan alir

@@ -1,5 +1,6 @@
 Feature: US017 Test Item
 
+  #calisiyor
   Scenario: US017 TC001 kullanici id li test item bilgilerini dogrular
     Given kullanici database baglanir
     And kullanici 250218 "ID" li test ogesinin bilgilerini "*" "c_test_item" tablosundan alir

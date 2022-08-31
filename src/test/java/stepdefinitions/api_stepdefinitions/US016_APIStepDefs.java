@@ -7,6 +7,7 @@ import io.restassured.response.Response;
 import org.junit.Assert;
 import pojos.Room;
 import pojos.RoomPost;
+import pojos.TestItem;
 import utilities.ConfigReader;
 import java.io.IOException;
 import java.util.Optional;
@@ -46,11 +47,11 @@ public class US016_APIStepDefs {
             }
     }
 
-    @Given("kullanici oda icin post request yapar")
-    public void kullaniciOdaIcinPostRequestYapar() {
+    @Given("kullanici oda icin post request yapar roomNumber {int} girer")
+    public void kullaniciOdaIcinPostRequestYaparRoomNumberGirer(int roomNumber) {
         roompost.setRoomType("DAYCARE");
         roompost.setPrice(59);
-        roompost.setRoomNumber(5960);
+        roompost.setRoomNumber(roomNumber);
         roompost.setStatus(false);
         roompost.setDescription("team59 api test otomation");
 
@@ -62,15 +63,21 @@ public class US016_APIStepDefs {
                 "Accept",
                 ContentType.JSON
         ).body(roompost).contentType(ContentType.JSON).when().post(ConfigReader.getProperty("room_endpoint"));
+
     }
 
+
     @Then("kullanici olusturulan oda bilgilerini dogrular")
-    public void kullaniciOlusturulanOdaBilgileriniDogrular() {
+    public void kullaniciOlusturulanOdaBilgileriniDogrular() throws IOException {
         response.then().assertThat().statusCode(201);
 
-        response.then().assertThat().body("price",equalTo(59))
-                .body("roomNumber",equalTo(5960))
-                .body("roomType",equalTo("DAYCARE"));
+        ObjectMapper obj=new ObjectMapper();
+        Room roomActualData=obj.readValue(response.asString(), Room.class);
+
+        assertEquals(roompost.getPrice(),roomActualData.getPrice());
+        assertEquals(roompost.getDescription(),roomActualData.getDescription());
+        assertEquals(roompost.getRoomNumber(),roomActualData.getRoomNumber());
+        assertEquals(roompost.getRoomType(),roomActualData.getRoomType());
     }
 
     @Given("kullanici id ile oda bilgileri icin get request yapar")
@@ -98,6 +105,8 @@ public class US016_APIStepDefs {
         response.then().assertThat().statusCode(200);
         response.prettyPrint();
     }
+
+
 
     @Then("kullanici oda bilgilerini dogrular {string} {string} {string} {string} {string} {string}")
     public void kullaniciOdaBilgileriniDogrular(int roomNumber, String roomType, int price, boolean status, String desc, String createdBy) {
@@ -127,5 +136,31 @@ public class US016_APIStepDefs {
     public void kullaniciPriceDogrular(int price) {
         JsonPath jsonpath=response.jsonPath();
         assertEquals(jsonpath.get("price"), Optional.of(price));
+    }
+
+
+    @Given("kullanici roomlar icin put request yapar")
+    public void kullaniciRoomlarIcinPutRequestYapar() {
+    }
+
+    @Then("kullanici put request validation yapar")
+    public void kullaniciPutRequestValidationYapar() {
+    }
+
+    @Given("kullanici {int} delete request eder")
+    public void kullaniciDeleteRequestEder(int id) {
+        response = given().headers(
+                        "Authorization",
+                        "Bearer " +generateToken(),
+                        "Content-Type",
+                        ContentType.JSON,
+                        "Accept",
+                        ContentType.JSON)
+                .when().delete(ConfigReader.getProperty("room_endpoint")+"/"+id);
+    }
+
+    @Then("delete validation")
+    public void deleteValidation() {
+        response.then().assertThat().statusCode(204);
     }
 }
