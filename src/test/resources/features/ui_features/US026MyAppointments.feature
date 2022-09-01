@@ -1,9 +1,9 @@
+@E2E
+
+Feature: US26 İletişim Mesajı (Contact messages)
 
 
-Feature: İletişim Mesajı (Contact messages)
-
-
-  Scenario:Herhangi bir kullanici bilgi almak icin "Contact portal" üzerinden istek gonderebilmeli.
+  Scenario:US26 TC01 Herhangi bir kullanici bilgi almak icin "Contact portal" üzerinden istek gonderebilmeli.
   Kullanici "Name, Email, Subject, Message" bolumlerine data girebilmeli ve mesajini gonderebilmeli.
 
     Given kullanici medunna anasayfasinda

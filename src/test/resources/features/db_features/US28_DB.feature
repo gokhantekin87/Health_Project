@@ -1,6 +1,6 @@
-@US028_DB
+@E2E
 Feature: US028 Ulke ve sehir bilgilerini DB ile okuma
-  Scenario: Kullanici ulke ve sehir datalarini okur
+  Scenario: US028 TC001 Kullanici ulke ve sehir datalarini okur
     Given kullanici database e baglanir
     And kullanici bilgileri "*"  "country" tabledan alir
     And kullanici "country"  "name"  "Turkiye" goruntuler

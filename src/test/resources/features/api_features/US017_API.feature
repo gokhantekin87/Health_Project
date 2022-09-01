@@ -1,10 +1,11 @@
-Feature: US017 Test Item
+@E2E
+Feature: US017 API validation / Test Item
 #calisiyor
-  Scenario: kullanici get request ile test item bilgilerini alir
+  Scenario: US017 TC001 kullanici get request ile test item bilgilerini alir
     Given kullanici test item bilgileri icin get request yapar
     And kullanici gelen test item datayi deserialize eder
 #calisiyor
-  Scenario: kullanici test item bilgilerini get request ile alir ve dogrular
+  Scenario:US016 TC002  kullanici test item bilgilerini get request ile alir ve dogrular
     Given kullanici id ile test item bilgileri icin get request yapar
     Then kullanici "test item no:03" name dogrular
     Then kullanici "test item for api/db test validation" description dogrular
@@ -13,8 +14,8 @@ Feature: US017 Test Item
     Then kullanici test item "100" defaultMaxValue dogrular
 
 #calisiyor / her calistirildiginda name sonundaki sayi bir artirilacak/ ayni name ile 2 post yapilirsa hata verir
-  Scenario: kullanici post request ile yeni test item olusturur
-    Given kullanici test item icin post request yapar name "test item no:04" girer
+  Scenario: US016 TC003 kullanici post request ile yeni test item olusturur
+    Given kullanici test item icin post request yapar name "test item no:0011" girer
     Then kullanici olusturulan test item bilgilerini dogrular
 
 #  Scenario: kullanici put request ile test item bilgilerini gunceller
@@ -23,7 +24,10 @@ Feature: US017 Test Item
 
 
 #calisiyor / her sefer id numara degisekecek
-  #silmek icin id : 33002 / 33008 / 33008
-  Scenario: delete test item
-    Given kullanici test 33001 item icin delete request yapar
+  #silmek icin id : 33002 /
+  Scenario: US016 TC004 delete test item
+    Given kullanici test 265132 item icin delete request yapar
     Then kullanici test item delete request validation yapar
+
+  Scenario:US017
+    Given kullanici id ile test item bilgileri icin get request yapar

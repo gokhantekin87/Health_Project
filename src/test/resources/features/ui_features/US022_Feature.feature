@@ -1,5 +1,7 @@
-Feature: Hasta Test sonuçları (Staff)
-Scenario: Kullanıcı (Staff) hastanın SSN id ile arama yapabilir.
+@E2E
+
+Feature:US22 Hasta Test sonuçları (Staff)
+Scenario:US22 TC01 Kullanıcı (Staff) hastanın SSN id ile arama yapabilir.
     * Kullanici "https://medunna.com/" adresine gider
     * Kullanici sag ustteki adam ikonuna tiklar
     * Kullanici Sign in e tiklar
@@ -9,7 +11,9 @@ Scenario: Kullanıcı (Staff) hastanın SSN id ile arama yapabilir.
     * kullanici Search Patient yazisina tiklar
     * Kullanici Patient SSN kutucuguna SSN girer
     * Kullanici assagidaki listede hastanin ciktigini test eder
- Scenario:kullanıcı (Staff) test sonuçlarını görebilmelidir.
+  And sayfayi kapatir
+
+ Scenario:US22 TC02 kullanıcı (Staff) test sonuçlarını görebilmelidir.
     * Kullanici "https://medunna.com/" adresine gider
     * Kullanici sag ustteki adam ikonuna tiklar
     * Kullanici Sign in e tiklar
@@ -20,7 +24,10 @@ Scenario: Kullanıcı (Staff) hastanın SSN id ile arama yapabilir.
     * Kullanici  sayfadaki Show Appointments kismina tiklar
     * Kullanici sayfadaki Show Tests kismina tiklar
     * Kullanici No Tests found yazisinin gorundugunu test eder
-  Scenario:Kullanıcı "ID, Date, Result, description, Created date" vb. sonuç bilgilerini görebilmeli ve
+   And sayfayi kapatir
+
+
+  Scenario:US22 TC03 Kullanıcı "ID, Date, Result, description, Created date" vb. sonuç bilgilerini görebilmeli ve
   güncelleyebilmelidir.
     * Kullanici "https://medunna.com/" adresine gider
     * Kullanici sag ustteki adam ikonuna tiklar
@@ -31,5 +38,6 @@ Scenario: Kullanıcı (Staff) hastanın SSN id ile arama yapabilir.
     * kullanici Search Patient yazisina tiklar
     * Kullanici  sayfadaki Show Appointments kismina tiklar
     * Kullanici sayfadaki Show Tests kismina tiklar
-    * Kullanici View Results butonuna tiklar
-    * Kullanici ID-Result gordugunu tets eder
+ #   * Kullanici View Results butonuna tiklar
+ #   * Kullanici ID-Result gordugunu tets eder
+    And sayfayi kapatir

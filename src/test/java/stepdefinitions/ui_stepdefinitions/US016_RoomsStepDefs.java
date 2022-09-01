@@ -178,6 +178,14 @@ public class US016_RoomsStepDefs {
         Driver.getDriver().findElement(By.xpath("(//a[@href='/room/"+actualID+"'])[2]")).click();
     }
 
+    @Then("yeni odanin bilgilerinin {string} {string} {string} {string} oldugunu dogrular")
+    public void yeniOdaninBilgilerininOldugunuDogrular(String roomNumber, String roomType, String price, String desc) {
+        Assert.assertTrue(page.viewTable.getText().contains(roomNumber));
+        Assert.assertTrue(page.viewTable.getText().contains(roomType));
+        Assert.assertTrue(page.viewTable.getText().contains(price));
+        Assert.assertTrue(page.viewTable.getText().contains(desc));
+    }
+
     @Then("yeni odanin bilgilerinin {string} {string} {string} oldugunu dogrular")
     public void yeniOdaninBilgilerininOldugunuDogrular(String roomType, String price, String desc) {
         Assert.assertTrue(page.viewTable.getText().contains(roomType));
@@ -373,6 +381,7 @@ public class US016_RoomsStepDefs {
     @Then("Created Date box gorunur ve active oldugunu dogrular")
     public void createdDateBoxGorunurVeActiveOldugunuDogrular() {
         Assert.assertTrue(page.roomDateTextbox.isDisplayed()&&page.roomDateTextbox.isEnabled());
+        Assert.assertTrue("efe",page.roomDateTextbox.isDisplayed()||page.roomDateTextbox.isEnabled());
     }
 
     @And("Created Date gecersiz tarih {string} girildiginde kabul etmedigini dogrular")

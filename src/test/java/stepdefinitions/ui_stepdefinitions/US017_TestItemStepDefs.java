@@ -3,8 +3,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import pages.admin_pages.Admin_TestItemsPage;
 import utilities.Driver;
+import utilities.JSUtils;
+
 import static org.junit.Assert.assertEquals;
 import static utilities.Driver.waitForVisibility;
 import static utilities.ReusableMethods.waitFor;
@@ -161,4 +164,78 @@ public class US017_TestItemStepDefs {
     }
 
 
+    @Then("Name basliginin gorunur oldugunu dogrular")
+    public void nameBasligininGorunurOldugunuDogrular() {
+        Assert.assertTrue(page.nameH.isDisplayed());
+    }
+
+    @Then("Name texbox in gorunur ve active oldugunu dogrular")
+    public void nameTexboxInGorunurVeActiveOldugunuDogrular() {
+        Assert.assertTrue(page.testItemNameTextbox.isDisplayed()&&page.testItemNameTextbox.isEnabled());
+    }
+
+    @And("Name bos birakildiginda kabul etmedigini dogrular")
+    public void nameBosBirakildigindaKabulEtmediginiDogrular() {
+        page.testItemNameTextbox.sendKeys(Keys.ENTER);
+        Assert.assertTrue(page.requiredField.isDisplayed());
+    }
+
+    @And("Name {string} unique name girildiginde kabul ettigini dogrular")
+    public void nameUniqueNameGirildigindeKabulEttiginiDogrular(String testdata) {
+        page.testItemNameTextbox.clear();
+        page.testItemNameTextbox.sendKeys(testdata+Keys.ENTER);
+        Assert.assertTrue(page.validField1.isDisplayed());
+    }
+
+    @And("Name {string} unique olamyan name girildiginde kabul etmedigini dogrular")
+    public void nameUniqueOlamyanNameGirildigindeKabulEtmediginiDogrular(String testdata) {
+        page.testItemNameTextbox.clear();
+        page.testItemPriceTextbox.sendKeys("10");
+        page.testItemNameTextbox.sendKeys(testdata+Keys.ENTER);
+
+        waitFor(2);
+        Assert.assertTrue(page.sucsessMesage.isDisplayed());
+
+    }
+
+    @Then("price basliginin gorunur oldugunu dogrular")
+    public void priceBasligininGorunurOldugunuDogrular() {
+        Assert.assertTrue(page.priceH.isDisplayed());
+    }
+
+    @Then("price texbox in gorunur ve active oldugunu dogrular")
+    public void priceTexboxInGorunurVeActiveOldugunuDogrular() {
+        Assert.assertTrue(page.testItemPriceTextbox.isDisplayed()&&page.testItemPriceTextbox.isEnabled());
+    }
+
+    @And("price bos birakildiginda kabul etmedigini dogrular")
+    public void priceBosBirakildigindaKabulEtmediginiDogrular() {
+        page.testItemPriceTextbox.sendKeys(Keys.ENTER);
+        Assert.assertTrue(page.requiredField2.isDisplayed());
+    }
+
+    @And("price {string} karakter girildiginde kabul etmedigini dogrular")
+    public void priceKarakterGirildigindeKabulEtmediginiDogrular(String testdata) {
+        page.testItemPriceTextbox.sendKeys(testdata+Keys.ENTER);
+        Assert.assertTrue(page.invalidField.isDisplayed());
+    }
+
+    @And("price {string} sayi girildiginde kabul ettigini dogrular")
+    public void priceSayiGirildigindeKabulEttiginiDogrular(String testdata) {
+        page.testItemPriceTextbox.clear();
+        page.testItemPriceTextbox.sendKeys(testdata+Keys.ENTER);
+        Assert.assertTrue(page.validField1.isDisplayed());
+    }
+
+    @And("Created date {string} gecerli tarih girer")
+    public void createdDateGecerliTarihGirer(String testdata) {
+        JSUtils.scrollDownByJS();
+        page.testItemDateTextbox.clear();
+        page.testItemDateTextbox.sendKeys(testdata+Keys.ENTER);
+    }
+
+    @Then("girilen tarihi kabul ettigini dogrular")
+    public void girilenTarihiKabulEttiginiDogrular() {
+        Assert.assertTrue(page.testItemDateTextbox.getText().contains("09012022"));
+    }
 }

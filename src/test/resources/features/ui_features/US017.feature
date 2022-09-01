@@ -1,5 +1,6 @@
+@E2E
 #FAILED SCENARIO
-Feature: US017 Test Item
+Feature: US017 Test Item Admin test item olusturabilmeli ve guncelleyebilmeli
 
   #Her sefer calisir
 # --NAME her test de degistirilecek(ayni isimde 2 tane olamaz) ya da onceden olusturulan test item silinecek
@@ -13,7 +14,7 @@ Feature: US017 Test Item
     And admin Test Items sayfasina gecis yapar
     And Create a new test item butonuna tiklar
     Then Create or edit test item sayfasinin acildigini dogrular
-    And Name "test item no:2" girer
+    And Name "test item no:11" girer
     And description "team59 otomasyon testi" girer
     And price "59" girer
     And Default Min. "0" girer
@@ -24,7 +25,7 @@ Feature: US017 Test Item
     And yeni olusturulan test ogesinin sayfasina navigate eder
     Then yeni test ogesinin id sinin gorunur oldugunu dogrular
     And test ogesinin view butonuna tiklar
-    Then yeni test ogesinin bilgilerinin "test item no:2" "team59 otomasyon testi" "59" "0" "59" oldugunu dogrular
+    Then yeni test ogesinin bilgilerinin "test item no:11" "team59 otomasyon testi" "59" "0" "59" oldugunu dogrular
     #FAILED STEP
     Then date "28/08/22" oldugunu dogrular
     And sayfayi kapatir
@@ -46,6 +47,13 @@ Feature: US017 Test Item
     #FAILED STEP
     Then created date "29/08/22" oldugunu dogrular
     And close driver
+
+  Scenario: US017 TC06 admin Created Date duzenler
+    And admin Test Items sayfasina gecis yapar
+    And Create a new test item butonuna tiklar
+    And Created date "09012022" gecerli tarih girer
+    Then girilen tarihi kabul ettigini dogrular
+
 
     Scenario:
       And close driver

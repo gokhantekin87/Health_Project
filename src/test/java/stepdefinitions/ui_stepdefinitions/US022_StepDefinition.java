@@ -34,7 +34,9 @@ public class US022_StepDefinition {
     }
     @Given("Kullanici No Tests found yazisinin gorundugunu test eder")
     public void kullanici_no_tests_found_yazisinin_gorundugunu_test_eder() {
-     Assert.assertTrue(page22.testAdi.isDisplayed());
+     //Assert.assertTrue(page22.testAdi.isDisplayed());
+     Assert.assertTrue(page22.notestfound.isDisplayed());
+
     }
     @Given("Kullanici View Results butonuna tiklar")
     public void kullanici_view_results_butonuna_tiklar() {

@@ -29,14 +29,14 @@ public class US024_MyAppointmentsStepdefinations {
     @Then("Doktor  baslangic tarihi girer")
     public void doktor_baslangic_tarihi_girer() {
 
-        DoctorPage.baslangictarihi.sendKeys("10082022");
+        DoctorPage.baslangictarihi.sendKeys("08102022");
         //DoctorPage.bas.sendKeys(ConfigReader.getProperty("bitisTarihi"));
 
     }
 
     @Then("Doktor bitis tarihi girer")
     public void doktor_bitis_tarihi_girer() {
-        DoctorPage.bitistarihi.sendKeys("18082022");
+        DoctorPage.bitistarihi.sendKeys("08182022");
         ReusableMethods.waitFor(2);
 
     }

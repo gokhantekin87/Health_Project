@@ -1,5 +1,5 @@
-@US27
- Feature: Messages by Admin Validate with API and DB
+@E2E
+ Feature:US27  Messages by Admin Validate with API and DB
 
    Background:
      Given Admin Medunna Url'ine navigate yapar
@@ -8,8 +8,8 @@
 
 
 
-   @US027_TC01 @Smoke
-     Scenario: Admin, mesaj portalına gidebilir ve tüm mesajları, yazarlarını ve e-postalarını görüntüleyebilir.
+
+     Scenario:US27 TC01 Admin, mesaj portalına gidebilir ve tüm mesajları, yazarlarını ve e-postalarını görüntüleyebilir.
      And Admin geçerli username olarak "adminhlen41" girer
      And Admin geçerli password olarak "helen4141" girer
      And Admin signIn butonuna tıklar
@@ -21,8 +21,8 @@
      And Admin sayfayı kapatır
 
 
-   @US027_TC02
-     Scenario Outline: Admin, mesajları oluşturabilir
+
+     Scenario Outline:US27 TC02 Admin, mesajları oluşturabilir
      And Admin geçerli username olarak "adminhlen41" girer
      And Admin geçerli password olarak "helen4141" girer
      And Admin signIn butonuna tıklar
@@ -44,8 +44,8 @@
      |Name       | Email                |Subject      |Message                     |
      |Harun Bzkrt|hrun3939@hotmail.com  |Tıbbi bakım  |Hemsirelik hizmetleri iyilestirilmeli|
 
-   @US027_TC03
-     Scenario Outline: Admin, mesajları güncelleyebilir
+
+     Scenario Outline:US27 TC03 Admin, mesajları güncelleyebilir
      And Admin geçerli username olarak "adminhlen41" girer
      And Admin geçerli password olarak "helen4141" girer
      And Admin signIn butonuna tıklar
@@ -68,8 +68,8 @@
        |Suzan Geny |szngenus@hotmail.com  |Memnuniyet   |Hizmet kalitesi daha iyi olabilir |
 
 
-     @US027_TC04
-     Scenario: Admin, mesajları silebilir
+
+     Scenario:US27 TC04 Admin, mesajları silebilir
        And Admin geçerli username olarak "adminhlen41" girer
        And Admin geçerli password olarak "helen4141" girer
        And Admin signIn butonuna tıklar

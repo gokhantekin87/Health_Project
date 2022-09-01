@@ -21,6 +21,7 @@ public class US022_Page {
 
     @FindBy(xpath = "(//td['Test:128682022-06-30T19:39:46.476223Z'])[2]")
     public WebElement testAdi;
+    @FindBy(xpath = "//span[text()='No Tests found']") public WebElement notestfound;
 
     @FindBy(xpath="//span[@class='d-none d-md-inline']")
     public WebElement viewResult;

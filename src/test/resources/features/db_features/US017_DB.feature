@@ -1,4 +1,5 @@
-Feature: US017 Test Item
+@E2E
+Feature: US017 Test Item / Kullanici test item icin DB validation yapar
 
   #calisiyor
   Scenario: US017 TC001 kullanici id li test item bilgilerini dogrular
@@ -9,4 +10,10 @@ Feature: US017 Test Item
     Then kullanici test ogesinin "default_val_min" i "0" oldugunu dogrular
     Then kullanici test ogesinin "default_val_max" i "100" oldugunu dogrular
     Then kullanici test ogesinin "created_by" i "admin59" oldugunu dogrular
+    And database baglantisini kapatir
+
+
+  Scenario: US017
+    Given kullanici database baglanir
+    And kullanici 250218 "ID" li test ogesinin bilgilerini "*" "c_test_item" tablosundan alir
     And database baglantisini kapatir

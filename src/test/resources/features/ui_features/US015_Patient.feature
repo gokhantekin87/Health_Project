@@ -13,7 +13,8 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
       Then Admin save butonunun gorulemez oldugunu test eder
       And Admin sayfayi kapatir
 #calisiyor
-      Scenario: 2- Yönetici "SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address,
+  @E2E
+      Scenario: US015 TC02- Yönetici "SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address,
       Description, Created Date, User, Country and state / City" gibi hasta bilgilerini görebilir.
 
         Given Admin medunna url e gider
@@ -25,7 +26,8 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
         Then Admin hastanın SSN, First Name, Last Name, Birth Date, Phone, Gender, Blood Group, Address, Description, Created Date, User, Country and stateCity bilgilerini görür
         And Admin sayfayi kapatir
 #caliyor
-      Scenario:3- Hasta oluşturulduğunda veya güncellendiğinde yukarıdaki öğelere data girişi yapılabilmeli.
+  @E2E
+      Scenario:US015 TC03- Hasta oluşturulduğunda veya güncellendiğinde yukarıdaki öğelere data girişi yapılabilmeli.
         Given Admin medunna url e gider
         Then Admin accountButton u tiklar
         And Admin sign in secenegini tiklar
@@ -35,6 +37,7 @@ Feature: US_015 Admin tarafından hasta oluşturma ve düzenleme
         And Admin ıd basligina tıklar
         And Admin edit butonunu tiklar
         When Admin ogelerin secilebilir oldugunu gorur
+        And sayfayi kapatir
 #gerek yok
   Scenario: Hasta için gerekli doktoru seçebilmeli ve randevuyu oluşturmalı.
     * Kullanici  "https://medunna.com/" adresine gider

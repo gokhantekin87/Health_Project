@@ -1,21 +1,21 @@
-@US028ApiUlke
-Feature: API ile ulke okuma/olusturma/duzenleme/silme
-  Scenario: Ulke bilgilerini okuma
+@E2E
+Feature: US028 API ile ulke okuma/olusturma/duzenleme/silme
+  Scenario: US28 TC02 Ulke bilgilerini okuma
     Given kullanici ulke bilgilerini API olarak okur "https://medunna.com/api/countries"
-  @Tc01
-  Scenario Outline: Ulke olusturma
+
+  Scenario Outline: US28 TC03 Ulke olusturma
     Given kulanici API ile ulke olusturur "https://medunna.com/api/countries" "<idJson>" "<nameJson>"
     Examples:
       |idJson||nameJson|
       |name||Turkiye|
-  @TC02
-  Scenario Outline: Ulke duzenleme
+
+  Scenario Outline:US28 TC04  Ulke duzenleme
     Given kullanici ulke ismini duzenler "<endpoint>" "<id>" "<name>"
     Examples:
       |endpoint||id||name|
       |https://medunna.com/api/countries||210630||Turkiye|
-  @Tc03
-  Scenario Outline: Ulke silme
+
+  Scenario Outline:US28 TC05 Ulke silme
     Given kullanici ulke ismini siler "<endpoint>" "<id>"
     Examples:
       |endpoint||id|

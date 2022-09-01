@@ -31,5 +31,17 @@ public class Admin_TestItemsPage {
     @FindBy(xpath = "//dd[6]//span") public WebElement dateActual;
     @FindBy(id = "jhi-confirm-delete-cTestItem") public WebElement deleteButton;
 
+//*****
+    @FindBy(id = "nameLabel") public WebElement nameH;
+    @FindBy(id = "descriptionLabel") public WebElement descH;
+    @FindBy(id = "priceLabel") public WebElement priceH;
+    @FindBy(id = "createdDateLabel") public WebElement dateH;
+    @FindBy(id = "defaultValMinLabel") public WebElement minH;
+    @FindBy(id = "defaultValMaxLabel") public WebElement maxH;
+    @FindBy(xpath = "(//*[text()='This field is required.'])[1]") public WebElement requiredField;
+    @FindBy(xpath = "(//*[text()='This field is required.'])[2]") public WebElement requiredField2;
+    @FindBy(xpath = "//*[text()='This field should be at least 0.']") public WebElement invalidField;
+    @FindBy(xpath = "(//input[@class='is-touched is-dirty av-valid form-control'])[1]") public WebElement validField1;
+
 
 }
