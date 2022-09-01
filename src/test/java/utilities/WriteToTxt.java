@@ -147,4 +147,31 @@ public class WriteToTxt {
 
 
 
+
+    // Gökhan Tekın
+    public static void saveAppointmentDataBaseWithList (String dosyaYolu,List<Object> dataList){
+
+
+        try {
+
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(dosyaYolu,false));
+
+            for (Object w : dataList){
+
+                bw.append(w+",\n");
+
+            }
+            bw.close();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+
 }

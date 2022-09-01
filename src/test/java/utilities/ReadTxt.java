@@ -2,8 +2,7 @@ package utilities;
 import pojos.Physician;
 import pojos.Registrant;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -183,6 +182,9 @@ public class ReadTxt {
         }
         return all;
     }
+
+
+
 
 
 
