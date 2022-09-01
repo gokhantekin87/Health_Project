@@ -1,4 +1,5 @@
-Feature:
+@E2E
+Feature: US016 Admin yeni oda olusturabilir ve guncelleyebilir, Created Date duzenleyebilir
 
 
   # 1 fail olacak step var, tek basina senaryo calistirldiginda her test den once
@@ -13,7 +14,7 @@ Feature:
     And admin Rooms sayfasina gecis yapar
     And Create a new Room butonuna tiklar
     Then Create or Edit sayfasinin acildigini dogrular
-    And Room Number "59000" girer
+    And Room Number "590000" girer
     And Room Type "DAYCARE" secer
     And Price "10" girer
     And Description "team59 otomasyon testi" girer
@@ -47,7 +48,7 @@ Feature:
 
 
     #gg/mm/yyyy
-  Scenario: US016 TC010 Created Date
+  Scenario: US016 TC010 Created Date duzenlenebilmeli
     And admin Rooms sayfasina gecis yapar
     And Create a new Room butonuna tiklar
     Then Created Date basliginin gorunur oldugunu dogrular

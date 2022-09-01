@@ -1,9 +1,14 @@
+@E2E
 Feature: US019 Staff Olusturma Güncelleme
+#calisiyor
 
-  @TC001
-  Scenario: Admin SSN kullanarak kayıtlı staff arayabilir
+  Scenario:US19 TC01 Admin SSN kullanarak kayıtlı staff arayabilir
     Given kullanici medunna anasayfasinda
-    And kullanici "adminUsername" ve "adminPassword" girerek giris yapar
+    And kullanici account menu tiklar
+    And kullanici sign in tiklar
+    And kullanici username olarak "adminUsername" girer
+    And kullanici password olarak "adminPassword" girer
+    And sign in butonuna tiklar
     And Admin item&titles butonumu tıklar
     And admin staff buttonuna tıklar
     And admin create a new staff buttonuna tıklar
@@ -15,10 +20,14 @@ Feature: US019 Staff Olusturma Güncelleme
 
 
 
-    @TC002
-    Scenario: Tüm bilgiler doldurulmali
+
+    Scenario:US19 TC02 Tüm bilgiler doldurulmali
       Given kullanici medunna anasayfasinda
-      And kullanici "adminUsername" ve "adminPassword" girerek giris yapar
+      And kullanici account menu tiklar
+      And kullanici sign in tiklar
+      And kullanici username olarak "adminUsername" girer
+      And kullanici password olarak "adminPassword" girer
+      And sign in butonuna tiklar
       And Admin item&titles butonumu tıklar
       And admin staff buttonuna tıklar
       And admin create a new staff buttonuna tıklar
@@ -39,19 +48,28 @@ Feature: US019 Staff Olusturma Güncelleme
 
 
 
-      @TC003
-      Scenario: Admin kullanici kisilerden bir kullanici secebilir
+
+      Scenario:US19 TC03  Admin kullanici kisilerden bir kullanici secebilir
         Given kullanici medunna anasayfasinda
-        And kullanici "adminUsername" ve "adminPassword" girerek giris yapar
+        And kullanici account menu tiklar
+        And kullanici sign in tiklar
+        And kullanici username olarak "adminUsername" girer
+        And kullanici password olarak "adminPassword" girer
+        And sign in butonuna tiklar
         And admin girişinden userManagmente tıklar
         And Admin View buttonuna tıklar
         And User yazisini kontrol eder
+        And sayfayi kapatir
 
 
-        @TC004
-        Scenario: Admin kullanici bilgilerinde güncelleme yapabilir
+
+        Scenario:US19 TC03 Admin kullanici bilgilerinde güncelleme yapabilir
           Given kullanici medunna anasayfasinda
-          And kullanici "adminUsername" ve "adminPassword" girerek giris yapar
+          And kullanici account menu tiklar
+          And kullanici sign in tiklar
+          And kullanici username olarak "adminUsername" girer
+          And kullanici password olarak "adminPassword" girer
+          And sign in butonuna tiklar
           And admin girişinden userManagmente tıklar
           And admin edit buttonuna tıklar
           And kullanıcı lastName kutusuna "hastalık" bilgi girer
@@ -63,10 +81,14 @@ Feature: US019 Staff Olusturma Güncelleme
 
 
 
-          @TC005
-          Scenario: Admin istedigi kullaniciyi silebilmeli
+
+          Scenario:US19 TC04 Admin istedigi kullaniciyi silebilmeli
             Given kullanici medunna anasayfasinda
-            And kullanici "adminUsername" ve "adminPassword" girerek giris yapar
+            And kullanici account menu tiklar
+            And kullanici sign in tiklar
+            And kullanici username olarak "adminUsername" girer
+            And kullanici password olarak "adminPassword" girer
+            And sign in butonuna tiklar
             And admin girişinden userManagmente tıklar
             And admin kullaniciyi siler
             And kullanici 2 saniye bekler

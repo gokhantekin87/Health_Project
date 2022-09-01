@@ -1,4 +1,5 @@
-Feature: US017 Test Item
+@E2E
+Feature: US017 Test Item / Kullanici test item icin DB validation yapar
 
   #calisiyor
   Scenario: US017 TC001 kullanici id li test item bilgilerini dogrular

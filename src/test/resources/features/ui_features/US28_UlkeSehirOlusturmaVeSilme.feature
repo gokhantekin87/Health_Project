@@ -1,8 +1,8 @@
-@US028_UI_feature
-Feature:Admin yeni ulke, eyalet ve sehir olusturup silebilir
+@E2E
+Feature:US28 Admin yeni ulke, eyalet ve sehir olusturup silebilir
 
-  @US028_TC01
-  Scenario Outline: Admin yeni bir ulke olusturabilir
+
+  Scenario Outline:US28 TC01 Admin yeni bir ulke olusturabilir
     Given admin siteye gider
     And admin account dropdown menuye tiklar
     And admin sign in butona tiklar
@@ -23,8 +23,8 @@ Feature:Admin yeni ulke, eyalet ve sehir olusturup silebilir
       | bergin       | ABCDEF   |
 
 
-  @US028_TC02
-  Scenario Outline: Admin bir ulke olusturup silebilir
+
+  Scenario Outline: US28 TC02 Admin bir ulke olusturup silebilir
     Given admin siteye gider
     And admin account dropdown menuye tiklar
     And admin sign in butona tiklar
@@ -46,8 +46,8 @@ Feature:Admin yeni ulke, eyalet ve sehir olusturup silebilir
       | bergin       | ABCDEF   |
 
 
-  @US028_TC03
-  Scenario Outline: Admin eyalet ve sehir olusturabilmelidir, ancak olusturamaz
+
+  Scenario Outline:US28 TC03 Admin eyalet ve sehir olusturabilmelidir, ancak olusturamaz
     Given admin siteye gider
     And admin account dropdown menuye tiklar
     And admin sign in butona tiklar

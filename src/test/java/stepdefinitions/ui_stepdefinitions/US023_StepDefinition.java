@@ -76,9 +76,9 @@ public class US023_StepDefinition {
         Driver.wait(3);
         Assert.assertTrue(ay.examFeeTxt.isDisplayed());
         Assert.assertTrue(ay.examFeePrice.isDisplayed());
-        Assert.assertTrue(ay.diabetesFee.isDisplayed());
+        //Assert.assertTrue(ay.diabetesFee.isDisplayed());
         Assert.assertTrue(ay.theoTestFee.isDisplayed());
-        Assert.assertTrue(ay.nickyTestFee.isDisplayed());
+        //Assert.assertTrue(ay.nickyTestFee.isDisplayed());
         Driver.wait(3);
 
 

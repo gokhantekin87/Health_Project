@@ -1,4 +1,5 @@
-Feature: US017 Test Item
+@E2E
+Feature: US017 Test Item admin test item sayfasini dogrular
 
   Background:
     Given kullanici medunna anasayfasinda
@@ -27,4 +28,20 @@ Feature: US017 Test Item
     And sayfayi kapatir
 
 
-  Scenario: US017 TC004
+  Scenario: US017 TC004 Admin Name duzenleyebilir
+    And Create a new test item butonuna tiklar
+    Then Name basliginin gorunur oldugunu dogrular
+    Then Name texbox in gorunur ve active oldugunu dogrular
+    And Name bos birakildiginda kabul etmedigini dogrular
+    And Name "Test Item no:1" unique name girildiginde kabul ettigini dogrular
+    And Name "Urea" unique olamyan name girildiginde kabul etmedigini dogrular
+    And sayfayi kapatir
+
+  Scenario: US017 TC005 Admin Price duzenleyebilir
+    And Create a new test item butonuna tiklar
+    Then price basliginin gorunur oldugunu dogrular
+    Then price texbox in gorunur ve active oldugunu dogrular
+    And price bos birakildiginda kabul etmedigini dogrular
+    And price "aye" karakter girildiginde kabul etmedigini dogrular
+    And price "59" sayi girildiginde kabul ettigini dogrular
+    And sayfayi kapatir

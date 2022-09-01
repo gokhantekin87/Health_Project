@@ -15,13 +15,13 @@ public class US023_Page {
     @FindBy(xpath = "//*[contains(text(),'Exam Fee')]")
     public WebElement examFeeTxt;
 
-    @FindBy(xpath = "//*[contains(text(),'500')]")
+    @FindBy(xpath = "//*[contains(text(),'580')]")
     public WebElement examFeePrice;
 
     @FindBy(xpath = "//*[contains(text(),'98.5')]")
     public WebElement diabetesFee;
 
-    @FindBy(xpath = "//*[contains(text(),'116')]")
+    @FindBy(xpath = "//*[contains(text(),'290')]")
     public WebElement theoTestFee;
 
     @FindBy(xpath = "//*[contains(text(),'119')]")

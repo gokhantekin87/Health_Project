@@ -1,7 +1,12 @@
-Feature: Hastalarin randevu oluşturabilmesi ve görebilmesi
-  Scenario Outline: Hastalar hastaneden randevu oluşturabilmelidir
+@E2E
+Feature:US25  Hastalarin randevu oluşturabilmesi ve görebilmesi
+  Scenario Outline:US25 TC01 Hastalar hastaneden randevu oluşturabilmelidir
     Given kullanici medunna anasayfasinda
-    And kullanici "patientUserNamed" ve "patientPasswordd" girerek giris yapar
+    And kullanici account menu tiklar
+    And kullanici sign in tiklar
+    And kullanici username olarak "patientUserNamed" girer
+    And kullanici password olarak "patientPasswordd" girer
+    And sign in butonuna tiklar
     And kullanıcı myPagese tıklar
     Then kullanıcı makeAnAppoitmente tıklar
     And kullanıcı firstName kutusuna "<firstName>" bilgi girer

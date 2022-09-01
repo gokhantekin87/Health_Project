@@ -1,4 +1,5 @@
-Feature: US016 Room
+@E2E
+Feature: US016 Room / Kullanici room icin DB validation yapar
 
   #calisiyor
   Scenario: US016 TC001 kullanici id li oda bilgilerini dogrular

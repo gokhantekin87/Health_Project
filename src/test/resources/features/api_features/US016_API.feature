@@ -1,10 +1,11 @@
-Feature: US016 Room
+@E2E
+Feature: US016 API validation / Room
 #calisiyor
-  Scenario: kullanici get request ile oda bilgilerini alir
+  Scenario: US016 TC001 kullanici get request ile oda bilgilerini alir
     Given kullanici oda bilgileri icin get request yapar
     And kullanici gelen oda datayi deserialize eder
 
-  Scenario: kullanici oda bilgilerini get request ile alir ve dogrular
+  Scenario: US016 TC002 kullanici oda bilgilerini get request ile alir ve dogrular
     Given kullanici id ile oda bilgileri icin get request yapar
     Then kullanici 5910 roomNumber dogrular
     Then kullanici "DAYCARE" roomType dogrular
@@ -12,17 +13,17 @@ Feature: US016 Room
 
 
 #calisiyor / roomNumber son sayi 1 artirilacak
-  Scenario: kullanici post request ile yeni oda olusturur
-      Given kullanici oda icin post request yapar roomNumber 5905 girer
+  Scenario: US016 TC003 kullanici post request ile yeni oda olusturur
+      Given kullanici oda icin post request yapar roomNumber 59001 girer
       Then kullanici olusturulan oda bilgilerini dogrular
 
-  Scenario: kullanici put request ile oda bilgilerini gunceller
+  Scenario: US016 TC003 kullanici put request ile oda bilgilerini gunceller
     Given kullanici roomlar icin put request yapar
     Then kullanici put request validation yapar
 
     #calisiyor
     # delete id :253885
-  Scenario: delete rooms
-    Given kullanici 253886 delete request eder
+  Scenario: US016 TC004 delete rooms
+    Given kullanici 262179 delete request eder
     Then delete validation
 
