@@ -381,6 +381,7 @@ public class US016_RoomsStepDefs {
     @Then("Created Date box gorunur ve active oldugunu dogrular")
     public void createdDateBoxGorunurVeActiveOldugunuDogrular() {
         Assert.assertTrue(page.roomDateTextbox.isDisplayed()&&page.roomDateTextbox.isEnabled());
+        Assert.assertTrue("efe",page.roomDateTextbox.isDisplayed()||page.roomDateTextbox.isEnabled());
     }
 
     @And("Created Date gecersiz tarih {string} girildiginde kabul etmedigini dogrular")

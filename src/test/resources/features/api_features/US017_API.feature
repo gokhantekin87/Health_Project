@@ -28,3 +28,6 @@ Feature: US017 API validation / Test Item
   Scenario: US016 TC004 delete test item
     Given kullanici test 265132 item icin delete request yapar
     Then kullanici test item delete request validation yapar
+
+  Scenario:US017
+    Given kullanici id ile test item bilgileri icin get request yapar
