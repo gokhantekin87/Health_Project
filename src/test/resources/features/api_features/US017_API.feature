@@ -15,7 +15,7 @@ Feature: US017 API validation / Test Item
 
 #calisiyor / her calistirildiginda name sonundaki sayi bir artirilacak/ ayni name ile 2 post yapilirsa hata verir
   Scenario: US016 TC003 kullanici post request ile yeni test item olusturur
-    Given kullanici test item icin post request yapar name "test item no:0010" girer
+    Given kullanici test item icin post request yapar name "test item no:0011" girer
     Then kullanici olusturulan test item bilgilerini dogrular
 
 #  Scenario: kullanici put request ile test item bilgilerini gunceller
@@ -26,5 +26,5 @@ Feature: US017 API validation / Test Item
 #calisiyor / her sefer id numara degisekecek
   #silmek icin id : 33002 /
   Scenario: US016 TC004 delete test item
-    Given kullanici test 265131 item icin delete request yapar
+    Given kullanici test 265132 item icin delete request yapar
     Then kullanici test item delete request validation yapar

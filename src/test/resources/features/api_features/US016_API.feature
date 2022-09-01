@@ -14,7 +14,7 @@ Feature: US016 API validation / Room
 
 #calisiyor / roomNumber son sayi 1 artirilacak
   Scenario: US016 TC003 kullanici post request ile yeni oda olusturur
-      Given kullanici oda icin post request yapar roomNumber 590001 girer
+      Given kullanici oda icin post request yapar roomNumber 590002 girer
       Then kullanici olusturulan oda bilgilerini dogrular
 
   Scenario: US016 TC003 kullanici put request ile oda bilgilerini gunceller
@@ -24,6 +24,6 @@ Feature: US016 API validation / Room
     #calisiyor
     # delete id :253885
   Scenario: US016 TC004 delete rooms
-    Given kullanici 265329 delete request eder
+    Given kullanici 265331 delete request eder
     Then delete validation
 
