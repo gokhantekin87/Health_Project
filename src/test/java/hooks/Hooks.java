@@ -1,4 +1,5 @@
 package hooks;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.restassured.builder.RequestSpecBuilder;
@@ -13,6 +14,7 @@ public class Hooks {
 
     public static RequestSpecification spec;
 
+
     @Before(value="@Api")
     public void setUp(){
         spec = new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("medunnaUrl")).build();
@@ -23,15 +25,22 @@ public class Hooks {
         DBUtils.createConnection();
     }
 
-   //--> @After
+//    @After
     public void tearDown(Scenario scenario) {
-
         if (scenario.isFailed()) {
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
-
             scenario.attach(screenshot, "image/png", "screenshots");
         }
-    }
 
 
-}
+
+
+
+        }
+
+
+       }
+
+
+
+

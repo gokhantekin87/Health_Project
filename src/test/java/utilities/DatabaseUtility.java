@@ -23,7 +23,7 @@ public class DatabaseUtility {
         }
     }
     public static void main(String[] args) {
-        createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunnadb_user" , "Medunnadb_@129");
+        createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunna_user" , "medunna_pass_987");
         System.out.println(getColumnData("Select * FROM jhi_user", "first_name"));
         closeConnection();
     }
